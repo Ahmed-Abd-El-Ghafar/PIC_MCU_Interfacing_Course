@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/03_MPLAB_X_IDE_LED_and_INT0_External_Interrupt_Source_Code.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=03_MPLAB_X_IDE_LED_and_INT0_External_Interrupt_Source_Code.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=03mplabxideledandint0externalinterruptsourcecode/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/04_MPLAB_X_IDE_LED_and_INT0_INT1_External_Interrupt_Source_Code.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=04_MPLAB_X_IDE_LED_and_INT0_INT1_External_Interrupt_Source_Code.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=04mplabxideledandint0int1externalinterruptsourcecode/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/03mplabxideledandint0externalinterruptsourcecode/bin
+makeDirectory ${TMPDIR}/04mplabxideledandint0int1externalinterruptsourcecode/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/03mplabxideledandint0externalinterruptsourcecode.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/04mplabxideledandint0int1externalinterruptsourcecode.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/03mplabxideledandint0externalinterruptsourcecode.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/04mplabxideledandint0int1externalinterruptsourcecode.tar *
 checkReturnCode
 
 # Cleanup

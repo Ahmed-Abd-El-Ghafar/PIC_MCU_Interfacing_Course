@@ -529,8 +529,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 72:         PORTCbits.RC0 =~ PORTCbits.RC0;
 [e = . . _PORTCbits 0 0 -> ~ -> . . _PORTCbits 0 0 `i `uc ]
 "73
-[; ;main.c: 73:         _delay((unsigned long)((250)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;main.c: 73:         _delay((unsigned long)((1)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "74
 [; ;main.c: 74:     }
 }

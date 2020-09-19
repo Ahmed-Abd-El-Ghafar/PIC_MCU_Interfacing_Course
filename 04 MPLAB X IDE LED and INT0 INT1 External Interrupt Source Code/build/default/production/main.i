@@ -5024,6 +5024,6 @@ void main(void)
     {
 
         PORTCbits.RC0 =~ PORTCbits.RC0;
-        _delay((unsigned long)((250)*(8000000/4000.0)));
+        _delay((unsigned long)((1)*(8000000/4000000.0)));
     }
 }

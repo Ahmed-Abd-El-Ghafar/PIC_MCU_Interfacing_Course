@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=03 MPLAB X IDE LED and INT0 External Interrupt Source Code
+PROJECTNAME=04 MPLAB X IDE LED and INT0 INT1 External Interrupt Source Code
 
 # Active Configuration
 DEFAULTCONF=default

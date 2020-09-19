@@ -70,7 +70,7 @@ void main(void)
     {
         // Add your application code
         PORTCbits.RC0 =~ PORTCbits.RC0;
-        __delay_ms(250);
+        __delay_us(1);
     }
 }
 /**
