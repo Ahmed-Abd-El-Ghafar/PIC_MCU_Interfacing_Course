@@ -1,0 +1,19 @@
+
+Psect Usage Map:
+
+ Psect      | Contents                   | Memory Range      | Size
+------------|----------------------------|-------------------|------------
+ init       | Initialization code        | 000000h - 000003h |  4 bytes  
+ cinit      |                            | 00FF94h - 00FF99h |  6 bytes  
+ text3      | Program and library code   | 00FF9Ah - 00FFA3h | 10 bytes  
+ text1      | Program and library code   | 00FFA4h - 00FFADh | 10 bytes  
+ text0      | Program and library code   | 00FFAEh - 00FFCFh | 34 bytes  
+ text2      | Program and library code   | 00FFD0h - 00FFFFh | 48 bytes  
+------------|----------------------------|-------------------|------------
+ cstackCOMR |                            | 000001h - 000002h |  2 bytes  
+------------|----------------------------|-------------------|------------
+ config     | Device configuration words | 300000h - 30000Dh | 14 bytes  
+------------|----------------------------|-------------------|------------
+ idloc      | User ID registers          | 200000h - 200007h |  8 bytes  
+------------|----------------------------|-------------------|------------
+
