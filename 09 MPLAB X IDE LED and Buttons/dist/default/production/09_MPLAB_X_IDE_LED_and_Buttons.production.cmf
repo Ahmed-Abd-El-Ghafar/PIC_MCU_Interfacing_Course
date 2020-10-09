@@ -1,0 +1,433 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\startup.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 0 0 4 1
+config CONFIG 0 300000 300000 E 1
+$dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+cinit CODE 0 FF50 FF50 2A 1
+text0 CODE 0 FF44 FF44 C 1
+text1 CODE 0 FF3A FF3A A 1
+text2 CODE 0 FF7A FF7A 30 1
+text3 CODE 0 FF30 FF30 A 1
+idataCOMRAM CODE 0 FFAA FFAA 56 1
+dataCOMRAM COMRAM 1 1 1 56 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-F5F 1
+SFR F60-FFF 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+BANK8 800-8FF 1
+BANK9 900-9FF 1
+CONST 4-FF2F 1
+STACK 60-F5F 1
+SMALLCONST 1000-FF2F 1
+CODE 4-FF2F 1
+BANK10 A00-AFF 1
+BANK11 B00-BFF 1
+BANK12 C00-CFF 1
+BANK13 D00-DFF 1
+BANK14 E00-EFF 1
+BANK15 F00-F5F 1
+BIGRAM 57-F5F 1
+COMRAM 57-5F 1
+EEDATA F00000-F003FF 1
+MEDIUMCONST 1000-FF2F 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\startup.o
+0 text CODE >37:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\startup.s
+0 text CODE >38:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\startup.s
+0 text CODE >39:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\startup.s
+0 text CODE >41:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\startup.s
+0 init CODE >86:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\startup.s
+0 init CODE >88:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\startup.s
+0 reset_vec CODE >65:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\startup.s
+$dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+FF30 text3 CODE >57:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/mcc.c
+FF30 text3 CODE >60:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/mcc.c
+FF34 text3 CODE >62:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/mcc.c
+FF38 text3 CODE >63:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/mcc.c
+FF7A text2 CODE >55:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF7A text2 CODE >60:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF7E text2 CODE >61:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF82 text2 CODE >62:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF86 text2 CODE >63:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF8A text2 CODE >64:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF8E text2 CODE >69:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF92 text2 CODE >70:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF94 text2 CODE >71:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF96 text2 CODE >72:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF9A text2 CODE >73:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF9C text2 CODE >78:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF9E text2 CODE >79:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FFA2 text2 CODE >84:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FFA6 text2 CODE >85:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FFA8 text2 CODE >94:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/pin_manager.c
+FF3A text1 CODE >50:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/mcc.c
+FF3A text1 CODE >53:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/mcc.c
+FF3E text1 CODE >54:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/mcc.c
+FF42 text1 CODE >55:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\mcc_generated_files/mcc.c
+FF44 text0 CODE >26:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\main.c
+FF44 text0 CODE >29:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\main.c
+FF48 text0 CODE >30:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\main.c
+FF48 text0 CODE >33:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\main.c
+FF50 cinit CODE >3001:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF50 cinit CODE >3003:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF50 cinit CODE >3006:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF50 cinit CODE >3044:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF52 cinit CODE >3045:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF54 cinit CODE >3046:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF56 cinit CODE >3047:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF58 cinit CODE >3048:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF5A cinit CODE >3049:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF5C cinit CODE >3050:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF60 cinit CODE >3051:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF64 cinit CODE >3052:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF64 cinit CODE >3053:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF66 cinit CODE >3054:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF6A cinit CODE >3055:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF6C cinit CODE >3056:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF6E cinit CODE >3057:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF70 cinit CODE >3063:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF70 cinit CODE >3066:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF72 cinit CODE >3067:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF74 cinit CODE >3068:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+FF76 cinit CODE >3069:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\09 MPLAB X IDE LED and Buttons\dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hspace_0 30000E 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hspace_1 57 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hspace_2 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\startup.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_LATA F89 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_LATB F8A 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_LATC F8B 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_LATD F8C 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_LATE F8D 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_WPUB F7C 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+___sp 0 0 STACK 2 stack dist/default/production\startup.o
+_leds 21 0 COMRAM 1 dataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_main FF44 0 CODE 0 text0 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+start 0 0 CODE 0 init dist/default/production\startup.o
+__size_of_main 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hpowerup 0 0 CODE 0 powerup dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__accesstop 60 0 ABS 0 - dist/default/production\startup.o
+intlevel0 0 0 CODE 0 text dist/default/production\startup.o
+intlevel1 0 0 CODE 0 text dist/default/production\startup.o
+intlevel2 0 0 CODE 0 text dist/default/production\startup.o
+intlevel3 0 0 CODE 0 text dist/default/production\startup.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__pidataCOMRAM FFAA 0 CODE 0 idataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_ANSELH F7F 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+___inthi_sp 0 0 STACK 2 stack dist/default/production\startup.o
+___intlo_sp 0 0 STACK 2 stack dist/default/production\startup.o
+_leds_seq1 1 0 COMRAM 1 dataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_INTCON2bits FF1 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_PIN_MANAGER_Initialize FF7A 0 CODE 0 text2 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+start_initialization FF50 0 CODE 0 cinit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_OSCCON FD3 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+___rparam_used 1 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__end_of_SYSTEM_Initialize FF44 0 CODE 0 text1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank8 0 0 ABS 0 bank8 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank9 0 0 ABS 0 bank9 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hcinit 0 0 ABS 0 cinit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hconst 0 0 CONST 0 const dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hidata 0 0 CODE 0 idata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hstack 0 0 STACK 2 stack dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Htext0 0 0 ABS 0 text0 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Htext1 0 0 ABS 0 text1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Htext2 0 0 ABS 0 text2 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank10 0 0 ABS 0 bank10 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank11 0 0 ABS 0 bank11 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank12 0 0 ABS 0 bank12 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank13 0 0 ABS 0 bank13 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank14 0 0 ABS 0 bank14 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbank15 0 0 ABS 0 bank15 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbigram 0 0 ABS 0 bigram dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__smallconst 0 0 SMALLCONST 0 smallconst dist/default/production\startup.o
+__Hcomram 0 0 ABS 0 comram dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank8 0 0 ABS 0 bank8 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank9 0 0 ABS 0 bank9 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lcinit 0 0 ABS 0 cinit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lconst 0 0 CONST 0 const dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lidata 0 0 CODE 0 idata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lstack 0 0 STACK 2 stack dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Ltext0 0 0 ABS 0 text0 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Ltext1 0 0 ABS 0 text1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Ltext2 0 0 ABS 0 text2 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_INTCONbits FF2 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Habs1 0 0 ABS 0 abs1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hdata 0 0 ABS 0 data dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hinit 4 0 CODE 0 init dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Htemp 0 0 COMRAM 1 temp dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Htext 0 0 ABS 0 text dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Labs1 0 0 ABS 0 abs1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Ldata 0 0 ABS 0 data dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Linit 0 0 CODE 0 init dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Ltemp 0 0 COMRAM 1 temp dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Ltext 0 0 ABS 0 text dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hintret 0 0 ABS 0 intret dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hirdata 0 0 CODE 0 irdata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__S0 30000E 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__S1 57 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__S2 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_tris_reg 43 0 COMRAM 1 dataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_SYSTEM_Initialize FF3A 0 CODE 0 text1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_lat_reg 39 0 COMRAM 1 dataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_CCP2MX$PORTC 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lintentry 0 0 ABS 0 intentry dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hramtop 1000 0 RAM 0 ramtop dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__activetblptr 2 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_HFOFST$ON 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__end_of_PIN_MANAGER_Initialize FFAA 0 CODE 0 text2 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank10 0 0 ABS 0 bank10 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank11 0 0 ABS 0 bank11 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank12 0 0 ABS 0 bank12 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank13 0 0 ABS 0 bank13 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank14 0 0 ABS 0 bank14 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbank15 0 0 ABS 0 bank15 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbigram 0 0 ABS 0 bigram dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_BORV$18 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lcomram 0 0 ABS 0 comram dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lconfig 300000 0 CONFIG 0 config dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+stackhi F5F 0 ABS 0 - dist/default/production\startup.o
+stacklo 60 0 ABS 0 - dist/default/production\startup.o
+__Lintcode 0 0 CODE 0 intcode dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_OSCTUNE F9B 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lintret 0 0 ABS 0 intret dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lirdata 0 0 CODE 0 irdata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lspace_0 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lspace_1 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lspace_2 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_LVP$ON 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+end_of_initialization FF70 0 CODE 0 cinit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hintentry 0 0 ABS 0 intentry dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lramtop 1000 0 RAM 0 ramtop dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__pcinit FF50 0 CODE 0 cinit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__ptext0 FF44 0 CODE 0 text0 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__ptext1 FF3A 0 CODE 0 text1 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__ptext2 FF7A 0 CODE 0 text2 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__ptext3 FF30 0 CODE 0 text3 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__ramtop 1000 0 RAM 0 ramtop dist/default/production\startup.o
+__Lpowerup 0 0 CODE 0 powerup dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+___param_bank 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__end_of__initialization FF70 0 CODE 0 cinit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__pcstackCOMRAM 0 0 COMRAM 1 cstackCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__end_of_main FF50 0 CODE 0 text0 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_ANSEL F7E 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_PORTA F80 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_PORTB F81 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_PORTC F82 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_PORTD F83 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_PORTE F84 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_TRISA F92 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_TRISB F93 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_TRISC F94 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_TRISD F95 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_TRISE F96 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__HRAM 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hbss 0 0 RAM 1 bss dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hram 0 0 ABS 0 ram dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hsfr 0 0 ABS 0 sfr dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__LRAM 1 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lbss 0 0 RAM 1 bss dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lram 0 0 ABS 0 ram dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lsfr 0 0 ABS 0 sfr dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__end_of_OSCILLATOR_Initialize FF3A 0 CODE 0 text3 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__initialization FF50 0 CODE 0 cinit dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__pdataCOMRAM 1 0 COMRAM 1 dataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_port_reg 4D 0 COMRAM 1 dataCOMRAM dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+__Hintcode 0 0 CODE 0 intcode dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+_OSCILLATOR_Initialize FF30 0 CODE 0 text3 dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 FF50 FF50 2A 1
+idloc 0 200000 200000 8 1
+text0 0 FF44 FF44 C 1
+text1 0 FF3A FF3A A 1
+text2 0 FF7A FF7A 30 1
+text3 0 FF30 FF30 A 1
+idataCOMRAM 0 FFAA FFAA 56 1
+reset_vec 0 0 0 4 1
+dataCOMRAM 1 1 1 56 1
+config 0 300000 300000 E 1
+# OTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by OTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\09_MPLAB_X_IDE_LED_and_Buttons.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>65536</length>
+      <used>212</used>
+      <free>65324</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>3936</length>
+      <used>86</used>
+      <free>3850</free>
+    </memory>
+  </executable>
+</project>
