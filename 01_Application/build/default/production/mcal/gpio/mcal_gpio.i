@@ -4950,7 +4950,7 @@ ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, directio
 # 71 "mcal/gpio/mcal_gpio.c"
 ret_status gpio_pin_get_direction_status(port_index port, pin_index pin, direction_t *direction){
     ret_status ret = R_NOK;
-    if(pin > 8U -1 || pin < 0){
+    if(pin > 8U -1 || pin < 0 || ((void*)0) == direction){
         return ret;
     }
     else{
@@ -4983,7 +4983,7 @@ ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logi
 # 120 "mcal/gpio/mcal_gpio.c"
 ret_status gpio_pin_read_value(port_index port, pin_index pin, pin_logic_t *logic){
     ret_status ret;
-    if(pin > 8U -1){
+    if(pin > 8U -1 || ((void*)0) == logic){
         return R_NOK;
     }
     else{

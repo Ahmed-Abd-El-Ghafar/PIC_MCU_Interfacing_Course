@@ -509,8 +509,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ret `E2687 ~T0 @X0 1 a ]
 [e = _ret . `E2687 0 ]
 "73
-[; ;mcal/gpio/mcal_gpio.c: 73:     if(pin > 8U -1 || pin < 0){
-[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 316  ]
+[; ;mcal/gpio/mcal_gpio.c: 73:     if(pin > 8U -1 || pin < 0 || ((void*)0) == direction){
+[e $ ! || || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui == -> -> -> 0 `i `*v `*E2695 _direction 316  ]
 {
 "74
 [; ;mcal/gpio/mcal_gpio.c: 74:         return ret;
@@ -631,8 +631,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcal/gpio/mcal_gpio.c: 121:     ret_status ret;
 [v _ret `E2687 ~T0 @X0 1 a ]
 "122
-[; ;mcal/gpio/mcal_gpio.c: 122:     if(pin > 8U -1){
-[e $ ! > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui 327  ]
+[; ;mcal/gpio/mcal_gpio.c: 122:     if(pin > 8U -1 || ((void*)0) == logic){
+[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui == -> -> -> 0 `i `*v `*E2691 _logic 327  ]
 {
 "123
 [; ;mcal/gpio/mcal_gpio.c: 123:         return R_NOK;

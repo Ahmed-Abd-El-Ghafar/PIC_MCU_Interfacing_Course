@@ -70,7 +70,7 @@ ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, directio
  */
 ret_status gpio_pin_get_direction_status(port_index port, pin_index pin, direction_t *direction){
     ret_status ret = R_NOK;
-    if(pin > PORT_PIN_MAX_NUMBERS-1 || pin < ZERO_INIT){
+    if(pin > PORT_PIN_MAX_NUMBERS-1 || pin < ZERO_INIT || NULL == direction){
         return ret;
     }
     else{
@@ -82,10 +82,10 @@ ret_status gpio_pin_get_direction_status(port_index port, pin_index pin, directi
 }
 
 /**
- * @brief  
+ * @brief Write a specific logic on the desired pin
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param pin   : The pin number -> PIN0, PIN1, PIN2, ....
- * @param logic
+ * @param logic : The desired logic needed to be written to this pin -> PIN_LOW, PIN_HIGH
  * @return Status of the function 
  *         (R_OK) : The function done successfully
  */
@@ -97,10 +97,10 @@ ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logi
     else{
         switch(logic){
             case PIN_LOW :
-                /*  */
+                /* Logic High 5v or 3.3v written now on the (pin) */
                 CLEAR_BIT(*lat_register[port], pin); break;
             case PIN_HIGH :
-                /*  */
+                /* Logic Low 0v written now on the (pin) */
                 SET_BIT(*lat_register[port], pin); break;
             default : return R_NOK;
         }
@@ -110,16 +110,16 @@ ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logi
 }
 
 /**
- * @brief 
+ * @brief Read the logic or the voltage applied on a specific pin
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param pin   : The pin number -> PIN0, PIN1, PIN2, ....
- * @param logic
+ * @param logic : The logic or the voltage applied on the pin
  * @return Status of the function 
  *         (R_OK) : The function done successfully
  */
 ret_status gpio_pin_read_value(port_index port, pin_index pin, pin_logic_t *logic){
     ret_status ret;
-    if(pin > PORT_PIN_MAX_NUMBERS-1){
+    if(pin > PORT_PIN_MAX_NUMBERS-1 || NULL == logic){
         return R_NOK;
     }
     else{
@@ -131,7 +131,7 @@ ret_status gpio_pin_read_value(port_index port, pin_index pin, pin_logic_t *logi
 }
 
 /**
- * @brief 
+ * @brief Change the logic on a specific pin
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param pin   : The pin number -> PIN0, PIN1, PIN2, ....
  * @return Status of the function 
@@ -143,7 +143,8 @@ ret_status gpio_pin_toggle_value(port_index port, pin_index pin){
         return ret;
     }
     else{
-        *lat_register[port] ^= (PIN_MASK_VALUE << pin);
+        /* Change the logic on the pin */
+        TOGGLE_BIT(*lat_register[port], pin);
         ret = R_OK;
     }
     return ret;
