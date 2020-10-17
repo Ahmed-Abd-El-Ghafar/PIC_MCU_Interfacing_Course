@@ -1,0 +1,147 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F46K20 ]
+[d frameptr 4065 ]
+"13 D:\Embedded Systems\Spark_Application\application.c
+[e E3027 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E3017 . `uc
+PIN0 0
+PIN1 1
+PIN2 2
+PIN3 3
+PIN4 4
+PIN5 5
+PIN6 6
+PIN7 7
+]
+[e E3013 . `uc
+DIRECTION_OUTPUT 0
+DIRECTION_INPUT 1
+]
+[e E3005 . `uc
+R_NOK 0
+R_OK 1
+]
+"15
+[e E3009 . `uc
+PIN_LOW 0
+PIN_HIGH 1
+]
+"23 D:\Embedded Systems\Spark_Application\mcal/gpio/mcal_gpio.c
+[e E2515 . `uc
+R_NOK 0
+R_OK 1
+]
+"41
+[e E2537 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E2527 . `uc
+PIN0 0
+PIN1 1
+PIN2 2
+PIN3 3
+PIN4 4
+PIN5 5
+PIN6 6
+PIN7 7
+]
+[e E2523 . `uc
+DIRECTION_OUTPUT 0
+DIRECTION_INPUT 1
+]
+"88
+[e E2519 . `uc
+PIN_LOW 0
+PIN_HIGH 1
+]
+"12 D:\Embedded Systems\Spark_Application\application.c
+[v _main main `(i  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"41 D:\Embedded Systems\Spark_Application\mcal/gpio/mcal_gpio.c
+[v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(E3005  1 e 1 0 ]
+"88
+[v _gpio_pin_write_value gpio_pin_write_value `(E3005  1 e 1 0 ]
+"1532 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include/pic18f46k20.h
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"1644
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"1756
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"1868
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"1980
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"2032
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"2254
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"2476
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+"2698
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"2920
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"11 D:\Embedded Systems\Spark_Application\mcal/gpio/mcal_gpio.c
+[v _tris_register tris_register `[5]*.39VEuc  1 s 10 tris_register ]
+"13
+[v _lat_register lat_register `[5]*.39VEuc  1 s 10 lat_register ]
+"12 D:\Embedded Systems\Spark_Application\application.c
+[v _main main `(i  1 e 2 0 ]
+{
+"26
+} 0
+"88 D:\Embedded Systems\Spark_Application\mcal/gpio/mcal_gpio.c
+[v _gpio_pin_write_value gpio_pin_write_value `(E3005  1 e 1 0 ]
+{
+[v gpio_pin_write_value@port port `E2537  1 a 1 wreg ]
+[v gpio_pin_write_value@port port `E2537  1 a 1 wreg ]
+[v gpio_pin_write_value@pin pin `E2527  1 p 1 0 ]
+[v gpio_pin_write_value@logic logic `E2519  1 p 1 1 ]
+[v gpio_pin_write_value@port port `E2537  1 a 1 8 ]
+"107
+} 0
+"41
+[v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(E3005  1 e 1 0 ]
+{
+[v gpio_pin_direction_intialize@port port `E2537  1 a 1 wreg ]
+[v gpio_pin_direction_intialize@port port `E2537  1 a 1 wreg ]
+[v gpio_pin_direction_intialize@pin pin `E2527  1 p 1 0 ]
+[v gpio_pin_direction_intialize@direction direction `E2523  1 p 1 1 ]
+[v gpio_pin_direction_intialize@port port `E2537  1 a 1 8 ]
+"60
+} 0
