@@ -1,505 +1,343 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"2032 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2032: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+"2032 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f46k20.h
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
 "2254
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2254: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
 [v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
 "2476
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2476: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
 [v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
 "2698
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2698: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
 [v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
 "2920
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2920: extern volatile unsigned char TRISE __attribute__((address(0xF96)));
 [v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
 "1532
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1532: extern volatile unsigned char LATA __attribute__((address(0xF89)));
 [v _LATA `Vuc ~T0 @X0 0 e@3977 ]
 "1644
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1644: extern volatile unsigned char LATB __attribute__((address(0xF8A)));
 [v _LATB `Vuc ~T0 @X0 0 e@3978 ]
 "1756
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1756: extern volatile unsigned char LATC __attribute__((address(0xF8B)));
 [v _LATC `Vuc ~T0 @X0 0 e@3979 ]
 "1868
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1868: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
 [v _LATD `Vuc ~T0 @X0 0 e@3980 ]
 "1980
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1980: extern volatile unsigned char LATE __attribute__((address(0xF8D)));
 [v _LATE `Vuc ~T0 @X0 0 e@3981 ]
 "552
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 552: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
 [v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
 "788
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 788: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
 [v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 "996
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 996: extern volatile unsigned char PORTC __attribute__((address(0xF82)));
 [v _PORTC `Vuc ~T0 @X0 0 e@3970 ]
 "1184
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1184: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
 [v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
 "1326
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1326: extern volatile unsigned char PORTE __attribute__((address(0xF84)));
 [v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
 "23 mcal/gpio/mcal_gpio.c
 [; ;mcal/gpio/mcal_gpio.c: 23: ret_status gpio_port_default_init(uint8_t port_numbers){
-[c E2515 0 1 .. ]
-[n E2515 . R_NOK R_OK  ]
-"41
-[; ;mcal/gpio/mcal_gpio.c: 41: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction){
-[c E2537 0 1 2 3 4 .. ]
-[n E2537 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E2527 0 1 2 3 4 5 6 7 .. ]
-[n E2527 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
-[c E2523 0 1 .. ]
-[n E2523 . DIRECTION_OUTPUT DIRECTION_INPUT  ]
-"88
-[; ;mcal/gpio/mcal_gpio.c: 88: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic){
-[c E2519 0 1 .. ]
-[n E2519 . PIN_LOW PIN_HIGH  ]
-"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 54: __asm("SSPMSK equ 0F77h");
+[c E2687 0 1 .. ]
+[n E2687 . R_NOK R_OK  ]
+"42
+[; ;mcal/gpio/mcal_gpio.c: 42: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction){
+[c E2709 0 1 2 3 4 .. ]
+[n E2709 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E2699 0 1 2 3 4 5 6 7 .. ]
+[n E2699 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+[c E2695 0 1 .. ]
+[n E2695 . DIRECTION_OUTPUT DIRECTION_INPUT  ]
+"92
+[; ;mcal/gpio/mcal_gpio.c: 92: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic){
+[c E2691 0 1 .. ]
+[n E2691 . PIN_LOW PIN_HIGH  ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f46k20.h
 [; <" SSPMSK equ 0F77h ;# ">
 "124
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 124: __asm("SLRCON equ 0F78h");
 [; <" SLRCON equ 0F78h ;# ">
 "168
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 168: __asm("CM2CON1 equ 0F79h");
 [; <" CM2CON1 equ 0F79h ;# ">
 "207
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 207: __asm("CM2CON0 equ 0F7Ah");
 [; <" CM2CON0 equ 0F7Ah ;# ">
 "277
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 277: __asm("CM1CON0 equ 0F7Bh");
 [; <" CM1CON0 equ 0F7Bh ;# ">
 "347
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 347: __asm("WPUB equ 0F7Ch");
 [; <" WPUB equ 0F7Ch ;# ">
 "409
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 409: __asm("IOCB equ 0F7Dh");
 [; <" IOCB equ 0F7Dh ;# ">
 "448
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 448: __asm("ANSEL equ 0F7Eh");
 [; <" ANSEL equ 0F7Eh ;# ">
 "510
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 510: __asm("ANSELH equ 0F7Fh");
 [; <" ANSELH equ 0F7Fh ;# ">
 "554
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 554: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
 "790
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 790: __asm("PORTB equ 0F81h");
 [; <" PORTB equ 0F81h ;# ">
 "998
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 998: __asm("PORTC equ 0F82h");
 [; <" PORTC equ 0F82h ;# ">
 "1186
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1186: __asm("PORTD equ 0F83h");
 [; <" PORTD equ 0F83h ;# ">
 "1328
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1328: __asm("PORTE equ 0F84h");
 [; <" PORTE equ 0F84h ;# ">
 "1534
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1534: __asm("LATA equ 0F89h");
 [; <" LATA equ 0F89h ;# ">
 "1646
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1646: __asm("LATB equ 0F8Ah");
 [; <" LATB equ 0F8Ah ;# ">
 "1758
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1758: __asm("LATC equ 0F8Bh");
 [; <" LATC equ 0F8Bh ;# ">
 "1870
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1870: __asm("LATD equ 0F8Ch");
 [; <" LATD equ 0F8Ch ;# ">
 "1982
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 1982: __asm("LATE equ 0F8Dh");
 [; <" LATE equ 0F8Dh ;# ">
 "2034
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2034: __asm("TRISA equ 0F92h");
 [; <" TRISA equ 0F92h ;# ">
 "2039
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2039: __asm("DDRA equ 0F92h");
 [; <" DDRA equ 0F92h ;# ">
 "2256
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2256: __asm("TRISB equ 0F93h");
 [; <" TRISB equ 0F93h ;# ">
 "2261
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2261: __asm("DDRB equ 0F93h");
 [; <" DDRB equ 0F93h ;# ">
 "2478
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2478: __asm("TRISC equ 0F94h");
 [; <" TRISC equ 0F94h ;# ">
 "2483
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2483: __asm("DDRC equ 0F94h");
 [; <" DDRC equ 0F94h ;# ">
 "2700
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2700: __asm("TRISD equ 0F95h");
 [; <" TRISD equ 0F95h ;# ">
 "2705
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2705: __asm("DDRD equ 0F95h");
 [; <" DDRD equ 0F95h ;# ">
 "2922
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2922: __asm("TRISE equ 0F96h");
 [; <" TRISE equ 0F96h ;# ">
 "2927
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 2927: __asm("DDRE equ 0F96h");
 [; <" DDRE equ 0F96h ;# ">
 "3074
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3074: __asm("OSCTUNE equ 0F9Bh");
 [; <" OSCTUNE equ 0F9Bh ;# ">
 "3144
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3144: __asm("PIE1 equ 0F9Dh");
 [; <" PIE1 equ 0F9Dh ;# ">
 "3221
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3221: __asm("PIR1 equ 0F9Eh");
 [; <" PIR1 equ 0F9Eh ;# ">
 "3298
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3298: __asm("IPR1 equ 0F9Fh");
 [; <" IPR1 equ 0F9Fh ;# ">
 "3375
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3375: __asm("PIE2 equ 0FA0h");
 [; <" PIE2 equ 0FA0h ;# ">
 "3455
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3455: __asm("PIR2 equ 0FA1h");
 [; <" PIR2 equ 0FA1h ;# ">
 "3535
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3535: __asm("IPR2 equ 0FA2h");
 [; <" IPR2 equ 0FA2h ;# ">
 "3615
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3615: __asm("EECON1 equ 0FA6h");
 [; <" EECON1 equ 0FA6h ;# ">
 "3681
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3681: __asm("EECON2 equ 0FA7h");
 [; <" EECON2 equ 0FA7h ;# ">
 "3688
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3688: __asm("EEDATA equ 0FA8h");
 [; <" EEDATA equ 0FA8h ;# ">
 "3695
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3695: __asm("EEADR equ 0FA9h");
 [; <" EEADR equ 0FA9h ;# ">
 "3757
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3757: __asm("EEADRH equ 0FAAh");
 [; <" EEADRH equ 0FAAh ;# ">
 "3783
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3783: __asm("RCSTA equ 0FABh");
 [; <" RCSTA equ 0FABh ;# ">
 "3788
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3788: __asm("RCSTA1 equ 0FABh");
 [; <" RCSTA1 equ 0FABh ;# ">
 "3993
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3993: __asm("TXSTA equ 0FACh");
 [; <" TXSTA equ 0FACh ;# ">
 "3998
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 3998: __asm("TXSTA1 equ 0FACh");
 [; <" TXSTA1 equ 0FACh ;# ">
 "4249
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4249: __asm("TXREG equ 0FADh");
 [; <" TXREG equ 0FADh ;# ">
 "4254
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4254: __asm("TXREG1 equ 0FADh");
 [; <" TXREG1 equ 0FADh ;# ">
 "4261
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4261: __asm("RCREG equ 0FAEh");
 [; <" RCREG equ 0FAEh ;# ">
 "4266
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4266: __asm("RCREG1 equ 0FAEh");
 [; <" RCREG1 equ 0FAEh ;# ">
 "4273
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4273: __asm("SPBRG equ 0FAFh");
 [; <" SPBRG equ 0FAFh ;# ">
 "4278
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4278: __asm("SPBRG1 equ 0FAFh");
 [; <" SPBRG1 equ 0FAFh ;# ">
 "4285
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4285: __asm("SPBRGH equ 0FB0h");
 [; <" SPBRGH equ 0FB0h ;# ">
 "4292
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4292: __asm("T3CON equ 0FB1h");
 [; <" T3CON equ 0FB1h ;# ">
 "4404
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4404: __asm("TMR3 equ 0FB2h");
 [; <" TMR3 equ 0FB2h ;# ">
 "4411
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4411: __asm("TMR3L equ 0FB2h");
 [; <" TMR3L equ 0FB2h ;# ">
 "4418
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4418: __asm("TMR3H equ 0FB3h");
 [; <" TMR3H equ 0FB3h ;# ">
 "4425
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4425: __asm("CVRCON2 equ 0FB4h");
 [; <" CVRCON2 equ 0FB4h ;# ">
 "4452
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4452: __asm("CVRCON equ 0FB5h");
 [; <" CVRCON equ 0FB5h ;# ">
 "4531
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4531: __asm("ECCP1AS equ 0FB6h");
 [; <" ECCP1AS equ 0FB6h ;# ">
 "4613
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4613: __asm("PWM1CON equ 0FB7h");
 [; <" PWM1CON equ 0FB7h ;# ">
 "4683
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4683: __asm("BAUDCON equ 0FB8h");
 [; <" BAUDCON equ 0FB8h ;# ">
 "4688
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4688: __asm("BAUDCTL equ 0FB8h");
 [; <" BAUDCTL equ 0FB8h ;# ">
 "4849
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4849: __asm("PSTRCON equ 0FB9h");
 [; <" PSTRCON equ 0FB9h ;# ">
 "4893
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4893: __asm("CCP2CON equ 0FBAh");
 [; <" CCP2CON equ 0FBAh ;# ">
 "4957
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4957: __asm("CCPR2 equ 0FBBh");
 [; <" CCPR2 equ 0FBBh ;# ">
 "4964
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4964: __asm("CCPR2L equ 0FBBh");
 [; <" CCPR2L equ 0FBBh ;# ">
 "4971
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4971: __asm("CCPR2H equ 0FBCh");
 [; <" CCPR2H equ 0FBCh ;# ">
 "4978
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 4978: __asm("CCP1CON equ 0FBDh");
 [; <" CCP1CON equ 0FBDh ;# ">
 "5060
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5060: __asm("CCPR1 equ 0FBEh");
 [; <" CCPR1 equ 0FBEh ;# ">
 "5067
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5067: __asm("CCPR1L equ 0FBEh");
 [; <" CCPR1L equ 0FBEh ;# ">
 "5074
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5074: __asm("CCPR1H equ 0FBFh");
 [; <" CCPR1H equ 0FBFh ;# ">
 "5081
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5081: __asm("ADCON2 equ 0FC0h");
 [; <" ADCON2 equ 0FC0h ;# ">
 "5152
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5152: __asm("ADCON1 equ 0FC1h");
 [; <" ADCON1 equ 0FC1h ;# ">
 "5203
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5203: __asm("ADCON0 equ 0FC2h");
 [; <" ADCON0 equ 0FC2h ;# ">
 "5322
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5322: __asm("ADRES equ 0FC3h");
 [; <" ADRES equ 0FC3h ;# ">
 "5329
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5329: __asm("ADRESL equ 0FC3h");
 [; <" ADRESL equ 0FC3h ;# ">
 "5336
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5336: __asm("ADRESH equ 0FC4h");
 [; <" ADRESH equ 0FC4h ;# ">
 "5343
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5343: __asm("SSPCON2 equ 0FC5h");
 [; <" SSPCON2 equ 0FC5h ;# ">
 "5405
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5405: __asm("SSPCON1 equ 0FC6h");
 [; <" SSPCON1 equ 0FC6h ;# ">
 "5475
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5475: __asm("SSPSTAT equ 0FC7h");
 [; <" SSPSTAT equ 0FC7h ;# ">
 "5700
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5700: __asm("SSPADD equ 0FC8h");
 [; <" SSPADD equ 0FC8h ;# ">
 "5707
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5707: __asm("SSPBUF equ 0FC9h");
 [; <" SSPBUF equ 0FC9h ;# ">
 "5714
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5714: __asm("T2CON equ 0FCAh");
 [; <" T2CON equ 0FCAh ;# ">
 "5785
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5785: __asm("PR2 equ 0FCBh");
 [; <" PR2 equ 0FCBh ;# ">
 "5790
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5790: __asm("MEMCON equ 0FCBh");
 [; <" MEMCON equ 0FCBh ;# ">
 "5895
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5895: __asm("TMR2 equ 0FCCh");
 [; <" TMR2 equ 0FCCh ;# ">
 "5902
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 5902: __asm("T1CON equ 0FCDh");
 [; <" T1CON equ 0FCDh ;# ">
 "6005
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6005: __asm("TMR1 equ 0FCEh");
 [; <" TMR1 equ 0FCEh ;# ">
 "6012
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6012: __asm("TMR1L equ 0FCEh");
 [; <" TMR1L equ 0FCEh ;# ">
 "6019
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6019: __asm("TMR1H equ 0FCFh");
 [; <" TMR1H equ 0FCFh ;# ">
 "6026
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6026: __asm("RCON equ 0FD0h");
 [; <" RCON equ 0FD0h ;# ">
 "6159
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6159: __asm("WDTCON equ 0FD1h");
 [; <" WDTCON equ 0FD1h ;# ">
 "6187
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6187: __asm("HLVDCON equ 0FD2h");
 [; <" HLVDCON equ 0FD2h ;# ">
 "6192
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6192: __asm("LVDCON equ 0FD2h");
 [; <" LVDCON equ 0FD2h ;# ">
 "6457
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6457: __asm("OSCCON equ 0FD3h");
 [; <" OSCCON equ 0FD3h ;# ">
 "6534
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6534: __asm("T0CON equ 0FD5h");
 [; <" T0CON equ 0FD5h ;# ">
 "6604
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6604: __asm("TMR0 equ 0FD6h");
 [; <" TMR0 equ 0FD6h ;# ">
 "6611
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6611: __asm("TMR0L equ 0FD6h");
 [; <" TMR0L equ 0FD6h ;# ">
 "6618
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6618: __asm("TMR0H equ 0FD7h");
 [; <" TMR0H equ 0FD7h ;# ">
 "6625
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6625: __asm("STATUS equ 0FD8h");
 [; <" STATUS equ 0FD8h ;# ">
 "6696
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6696: __asm("FSR2 equ 0FD9h");
 [; <" FSR2 equ 0FD9h ;# ">
 "6703
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6703: __asm("FSR2L equ 0FD9h");
 [; <" FSR2L equ 0FD9h ;# ">
 "6710
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6710: __asm("FSR2H equ 0FDAh");
 [; <" FSR2H equ 0FDAh ;# ">
 "6717
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6717: __asm("PLUSW2 equ 0FDBh");
 [; <" PLUSW2 equ 0FDBh ;# ">
 "6724
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6724: __asm("PREINC2 equ 0FDCh");
 [; <" PREINC2 equ 0FDCh ;# ">
 "6731
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6731: __asm("POSTDEC2 equ 0FDDh");
 [; <" POSTDEC2 equ 0FDDh ;# ">
 "6738
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6738: __asm("POSTINC2 equ 0FDEh");
 [; <" POSTINC2 equ 0FDEh ;# ">
 "6745
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6745: __asm("INDF2 equ 0FDFh");
 [; <" INDF2 equ 0FDFh ;# ">
 "6752
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6752: __asm("BSR equ 0FE0h");
 [; <" BSR equ 0FE0h ;# ">
 "6759
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6759: __asm("FSR1 equ 0FE1h");
 [; <" FSR1 equ 0FE1h ;# ">
 "6766
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6766: __asm("FSR1L equ 0FE1h");
 [; <" FSR1L equ 0FE1h ;# ">
 "6773
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6773: __asm("FSR1H equ 0FE2h");
 [; <" FSR1H equ 0FE2h ;# ">
 "6780
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6780: __asm("PLUSW1 equ 0FE3h");
 [; <" PLUSW1 equ 0FE3h ;# ">
 "6787
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6787: __asm("PREINC1 equ 0FE4h");
 [; <" PREINC1 equ 0FE4h ;# ">
 "6794
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6794: __asm("POSTDEC1 equ 0FE5h");
 [; <" POSTDEC1 equ 0FE5h ;# ">
 "6801
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6801: __asm("POSTINC1 equ 0FE6h");
 [; <" POSTINC1 equ 0FE6h ;# ">
 "6808
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6808: __asm("INDF1 equ 0FE7h");
 [; <" INDF1 equ 0FE7h ;# ">
 "6815
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6815: __asm("WREG equ 0FE8h");
 [; <" WREG equ 0FE8h ;# ">
 "6827
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6827: __asm("FSR0 equ 0FE9h");
 [; <" FSR0 equ 0FE9h ;# ">
 "6834
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6834: __asm("FSR0L equ 0FE9h");
 [; <" FSR0L equ 0FE9h ;# ">
 "6841
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6841: __asm("FSR0H equ 0FEAh");
 [; <" FSR0H equ 0FEAh ;# ">
 "6848
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6848: __asm("PLUSW0 equ 0FEBh");
 [; <" PLUSW0 equ 0FEBh ;# ">
 "6855
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6855: __asm("PREINC0 equ 0FECh");
 [; <" PREINC0 equ 0FECh ;# ">
 "6862
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6862: __asm("POSTDEC0 equ 0FEDh");
 [; <" POSTDEC0 equ 0FEDh ;# ">
 "6869
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6869: __asm("POSTINC0 equ 0FEEh");
 [; <" POSTINC0 equ 0FEEh ;# ">
 "6876
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6876: __asm("INDF0 equ 0FEFh");
 [; <" INDF0 equ 0FEFh ;# ">
 "6883
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6883: __asm("INTCON3 equ 0FF0h");
 [; <" INTCON3 equ 0FF0h ;# ">
 "6975
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 6975: __asm("INTCON2 equ 0FF1h");
 [; <" INTCON2 equ 0FF1h ;# ">
 "7045
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7045: __asm("INTCON equ 0FF2h");
 [; <" INTCON equ 0FF2h ;# ">
 "7162
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7162: __asm("PROD equ 0FF3h");
 [; <" PROD equ 0FF3h ;# ">
 "7169
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7169: __asm("PRODL equ 0FF3h");
 [; <" PRODL equ 0FF3h ;# ">
 "7176
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7176: __asm("PRODH equ 0FF4h");
 [; <" PRODH equ 0FF4h ;# ">
 "7183
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7183: __asm("TABLAT equ 0FF5h");
 [; <" TABLAT equ 0FF5h ;# ">
 "7192
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7192: __asm("TBLPTR equ 0FF6h");
 [; <" TBLPTR equ 0FF6h ;# ">
 "7199
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7199: __asm("TBLPTRL equ 0FF6h");
 [; <" TBLPTRL equ 0FF6h ;# ">
 "7206
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7206: __asm("TBLPTRH equ 0FF7h");
 [; <" TBLPTRH equ 0FF7h ;# ">
 "7213
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7213: __asm("TBLPTRU equ 0FF8h");
 [; <" TBLPTRU equ 0FF8h ;# ">
 "7222
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7222: __asm("PCLAT equ 0FF9h");
 [; <" PCLAT equ 0FF9h ;# ">
 "7229
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7229: __asm("PC equ 0FF9h");
 [; <" PC equ 0FF9h ;# ">
 "7236
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7236: __asm("PCL equ 0FF9h");
 [; <" PCL equ 0FF9h ;# ">
 "7243
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7243: __asm("PCLATH equ 0FFAh");
 [; <" PCLATH equ 0FFAh ;# ">
 "7250
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7250: __asm("PCLATU equ 0FFBh");
 [; <" PCLATU equ 0FFBh ;# ">
 "7257
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7257: __asm("STKPTR equ 0FFCh");
 [; <" STKPTR equ 0FFCh ;# ">
 "7331
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7331: __asm("TOS equ 0FFDh");
 [; <" TOS equ 0FFDh ;# ">
 "7338
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7338: __asm("TOSL equ 0FFDh");
 [; <" TOSL equ 0FFDh ;# ">
 "7345
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7345: __asm("TOSH equ 0FFEh");
 [; <" TOSH equ 0FFEh ;# ">
 "7352
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h: 7352: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "11 mcal/gpio/mcal_gpio.c
 [; ;mcal/gpio/mcal_gpio.c: 11: static volatile uint8_t *tris_register[] = {&TRISA, &TRISB, &TRISC, &TRISD, &TRISE};
@@ -539,15 +377,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "23
 [; ;mcal/gpio/mcal_gpio.c: 23: ret_status gpio_port_default_init(uint8_t port_numbers){
-[v _gpio_port_default_init `(E2515 ~T0 @X0 1 ef1`uc ]
+[v _gpio_port_default_init `(E2687 ~T0 @X0 1 ef1`uc ]
 {
 [e :U _gpio_port_default_init ]
 [v _port_numbers `uc ~T0 @X0 1 r1 ]
 [f ]
 "24
-[; ;mcal/gpio/mcal_gpio.c: 24:     ret_status ret = R_OK;
-[v _ret `E2515 ~T0 @X0 1 a ]
-[e = _ret . `E2515 1 ]
+[; ;mcal/gpio/mcal_gpio.c: 24:     ret_status ret = R_NOK;
+[v _ret `E2687 ~T0 @X0 1 a ]
+[e = _ret . `E2687 0 ]
 "25
 [; ;mcal/gpio/mcal_gpio.c: 25:     uint8_t l_counter = 0;
 [v _l_counter `uc ~T0 @X0 1 a ]
@@ -556,9 +394,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcal/gpio/mcal_gpio.c: 26:     for(l_counter=0; l_counter<5U -1; l_counter++){
 {
 [e = _l_counter -> -> 0 `i `uc ]
-[e $ < -> _l_counter `ui - -> 5 `ui -> -> 1 `i `ui 299  ]
-[e $U 300  ]
-[e :U 299 ]
+[e $ < -> _l_counter `ui - -> 5 `ui -> -> 1 `i `ui 304  ]
+[e $U 305  ]
+[e :U 304 ]
 {
 "28
 [; ;mcal/gpio/mcal_gpio.c: 28:         *tris_register[l_counter] = 0xFFU;
@@ -567,338 +405,401 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcal/gpio/mcal_gpio.c: 29:     }
 }
 [e ++ _l_counter -> -> 1 `i `uc ]
-[e $ < -> _l_counter `ui - -> 5 `ui -> -> 1 `i `ui 299  ]
-[e :U 300 ]
+[e $ < -> _l_counter `ui - -> 5 `ui -> -> 1 `i `ui 304  ]
+[e :U 305 ]
 }
 "30
-[; ;mcal/gpio/mcal_gpio.c: 30:     return ret;
-[e ) _ret ]
-[e $UE 298  ]
+[; ;mcal/gpio/mcal_gpio.c: 30:     ret = R_OK;
+[e = _ret . `E2687 1 ]
 "31
-[; ;mcal/gpio/mcal_gpio.c: 31: }
-[e :UE 298 ]
+[; ;mcal/gpio/mcal_gpio.c: 31:     return ret;
+[e ) _ret ]
+[e $UE 303  ]
+"32
+[; ;mcal/gpio/mcal_gpio.c: 32: }
+[e :UE 303 ]
 }
-"41
-[; ;mcal/gpio/mcal_gpio.c: 41: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction){
-[v _gpio_pin_direction_intialize `(E2515 ~T0 @X0 1 ef3`E2537`E2527`E2523 ]
+"42
+[; ;mcal/gpio/mcal_gpio.c: 42: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction){
+[v _gpio_pin_direction_intialize `(E2687 ~T0 @X0 1 ef3`E2709`E2699`E2695 ]
 {
 [e :U _gpio_pin_direction_intialize ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
-[v _pin `E2527 ~T0 @X0 1 r2 ]
-[v _direction `E2523 ~T0 @X0 1 r3 ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _pin `E2699 ~T0 @X0 1 r2 ]
+[v _direction `E2695 ~T0 @X0 1 r3 ]
 [f ]
-"42
-[; ;mcal/gpio/mcal_gpio.c: 42:     ret_status ret = R_NOK;
-[v _ret `E2515 ~T0 @X0 1 a ]
-[e = _ret . `E2515 0 ]
-"44
-[; ;mcal/gpio/mcal_gpio.c: 44:     if(pin > 8U -1 || pin < 0){
-[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 303  ]
-{
+"43
+[; ;mcal/gpio/mcal_gpio.c: 43:     ret_status ret = R_NOK;
+[v _ret `E2687 ~T0 @X0 1 a ]
+[e = _ret . `E2687 0 ]
 "45
-[; ;mcal/gpio/mcal_gpio.c: 45:         return ret;
-[e ) _ret ]
-[e $UE 302  ]
-"46
-[; ;mcal/gpio/mcal_gpio.c: 46:     }
-}
-[e $U 304  ]
-"47
-[; ;mcal/gpio/mcal_gpio.c: 47:     else{
-[e :U 303 ]
+[; ;mcal/gpio/mcal_gpio.c: 45:     if(pin > 8U -1 || pin < 0){
+[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 308  ]
 {
+"46
+[; ;mcal/gpio/mcal_gpio.c: 46:         return ret;
+[e ) _ret ]
+[e $UE 307  ]
+"47
+[; ;mcal/gpio/mcal_gpio.c: 47:     }
+}
+[e $U 309  ]
 "48
-[; ;mcal/gpio/mcal_gpio.c: 48:         switch(direction){
-[e $U 306  ]
+[; ;mcal/gpio/mcal_gpio.c: 48:     else{
+[e :U 308 ]
 {
 "49
-[; ;mcal/gpio/mcal_gpio.c: 49:             case DIRECTION_OUTPUT :
-[e :U 307 ]
-"51
-[; ;mcal/gpio/mcal_gpio.c: 51:                 (*tris_register[port] &= ~(1U << pin)); break;
-[e =& *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux -> ~ << -> 1 `ui -> _pin `ui `uc ]
-[e $U 305  ]
+[; ;mcal/gpio/mcal_gpio.c: 49:         switch(direction){
+[e $U 311  ]
+{
+"50
+[; ;mcal/gpio/mcal_gpio.c: 50:             case DIRECTION_OUTPUT :
+[e :U 312 ]
 "52
-[; ;mcal/gpio/mcal_gpio.c: 52:             case DIRECTION_INPUT :
-[e :U 308 ]
-"54
-[; ;mcal/gpio/mcal_gpio.c: 54:                 (*tris_register[port] |= (1U << pin)); break;
-[e =| *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux -> << -> 1 `ui -> _pin `ui `uc ]
-[e $U 305  ]
+[; ;mcal/gpio/mcal_gpio.c: 52:                 (*tris_register[port] &= ~(1U << pin)); break;
+[e =& *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux -> ~ << -> 1 `ui -> _pin `ui `uc ]
+[e $U 310  ]
+"53
+[; ;mcal/gpio/mcal_gpio.c: 53:             case DIRECTION_INPUT :
+[e :U 313 ]
 "55
-[; ;mcal/gpio/mcal_gpio.c: 55:             default : return R_NOK;
-[e :U 309 ]
-[e ) . `E2515 0 ]
-[e $UE 302  ]
+[; ;mcal/gpio/mcal_gpio.c: 55:                 (*tris_register[port] |= (1U << pin)); break;
+[e =| *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux -> << -> 1 `ui -> _pin `ui `uc ]
+[e $U 310  ]
 "56
-[; ;mcal/gpio/mcal_gpio.c: 56:         }
-}
-[e $U 305  ]
-[e :U 306 ]
-[e [\ -> _direction `ui , $ -> . `E2523 0 `ui 307
- , $ -> . `E2523 1 `ui 308
- 309 ]
-[e :U 305 ]
+[; ;mcal/gpio/mcal_gpio.c: 56:             default : return R_NOK;
+[e :U 314 ]
+[e ) . `E2687 0 ]
+[e $UE 307  ]
 "57
-[; ;mcal/gpio/mcal_gpio.c: 57:         ret = R_OK;
-[e = _ret . `E2515 1 ]
+[; ;mcal/gpio/mcal_gpio.c: 57:         }
+}
+[e $U 310  ]
+[e :U 311 ]
+[e [\ -> _direction `ui , $ -> . `E2695 0 `ui 312
+ , $ -> . `E2695 1 `ui 313
+ 314 ]
+[e :U 310 ]
 "58
-[; ;mcal/gpio/mcal_gpio.c: 58:     }
-}
-[e :U 304 ]
+[; ;mcal/gpio/mcal_gpio.c: 58:         ret = R_OK;
+[e = _ret . `E2687 1 ]
 "59
-[; ;mcal/gpio/mcal_gpio.c: 59:     return ret;
-[e ) _ret ]
-[e $UE 302  ]
-"60
-[; ;mcal/gpio/mcal_gpio.c: 60: }
-[e :UE 302 ]
+[; ;mcal/gpio/mcal_gpio.c: 59:     }
 }
-"69
-[; ;mcal/gpio/mcal_gpio.c: 69: ret_status gpio_pin_get_direction_status(port_index port, pin_index pin, direction_t *direction){
-[v _gpio_pin_get_direction_status `(E2515 ~T0 @X0 1 ef3`E2537`E2527`*E2523 ]
+[e :U 309 ]
+"60
+[; ;mcal/gpio/mcal_gpio.c: 60:     return ret;
+[e ) _ret ]
+[e $UE 307  ]
+"61
+[; ;mcal/gpio/mcal_gpio.c: 61: }
+[e :UE 307 ]
+}
+"71
+[; ;mcal/gpio/mcal_gpio.c: 71: ret_status gpio_pin_get_direction_status(port_index port, pin_index pin, direction_t *direction){
+[v _gpio_pin_get_direction_status `(E2687 ~T0 @X0 1 ef3`E2709`E2699`*E2695 ]
 {
 [e :U _gpio_pin_get_direction_status ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
-[v _pin `E2527 ~T0 @X0 1 r2 ]
-[v _direction `*E2523 ~T0 @X0 1 r3 ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _pin `E2699 ~T0 @X0 1 r2 ]
+[v _direction `*E2695 ~T0 @X0 1 r3 ]
 [f ]
-"70
-[; ;mcal/gpio/mcal_gpio.c: 70:     ret_status ret = R_NOK;
-[v _ret `E2515 ~T0 @X0 1 a ]
-[e = _ret . `E2515 0 ]
-"71
-[; ;mcal/gpio/mcal_gpio.c: 71:     if(pin > 8U -1 || pin < 0){
-[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 311  ]
-{
 "72
-[; ;mcal/gpio/mcal_gpio.c: 72:         return ret;
-[e ) _ret ]
-[e $UE 310  ]
+[; ;mcal/gpio/mcal_gpio.c: 72:     ret_status ret = R_NOK;
+[v _ret `E2687 ~T0 @X0 1 a ]
+[e = _ret . `E2687 0 ]
 "73
-[; ;mcal/gpio/mcal_gpio.c: 73:     }
-}
-[e $U 312  ]
-"74
-[; ;mcal/gpio/mcal_gpio.c: 74:     else{
-[e :U 311 ]
+[; ;mcal/gpio/mcal_gpio.c: 73:     if(pin > 8U -1 || pin < 0){
+[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 316  ]
 {
-"75
-[; ;mcal/gpio/mcal_gpio.c: 75:         *direction = ((*tris_register[port] >> pin) & 1U);
-[e = *U _direction -> & -> >> -> *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux `i -> _pin `ui `ui -> 1 `ui `E2523 ]
-"76
-[; ;mcal/gpio/mcal_gpio.c: 76:         ret = R_OK;
-[e = _ret . `E2515 1 ]
-"77
-[; ;mcal/gpio/mcal_gpio.c: 77:     }
-}
-[e :U 312 ]
-"78
-[; ;mcal/gpio/mcal_gpio.c: 78:     return ret;
+"74
+[; ;mcal/gpio/mcal_gpio.c: 74:         return ret;
 [e ) _ret ]
-[e $UE 310  ]
-"79
-[; ;mcal/gpio/mcal_gpio.c: 79: }
-[e :UE 310 ]
+[e $UE 315  ]
+"75
+[; ;mcal/gpio/mcal_gpio.c: 75:     }
 }
-"88
-[; ;mcal/gpio/mcal_gpio.c: 88: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic){
-[v _gpio_pin_write_value `(E2515 ~T0 @X0 1 ef3`E2537`E2527`E2519 ]
+[e $U 317  ]
+"76
+[; ;mcal/gpio/mcal_gpio.c: 76:     else{
+[e :U 316 ]
+{
+"78
+[; ;mcal/gpio/mcal_gpio.c: 78:         *direction = ((*tris_register[port] >> pin) & 1U);
+[e = *U _direction -> & -> >> -> *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux `i -> _pin `ui `ui -> 1 `ui `E2695 ]
+"79
+[; ;mcal/gpio/mcal_gpio.c: 79:         ret = R_OK;
+[e = _ret . `E2687 1 ]
+"80
+[; ;mcal/gpio/mcal_gpio.c: 80:     }
+}
+[e :U 317 ]
+"81
+[; ;mcal/gpio/mcal_gpio.c: 81:     return ret;
+[e ) _ret ]
+[e $UE 315  ]
+"82
+[; ;mcal/gpio/mcal_gpio.c: 82: }
+[e :UE 315 ]
+}
+"92
+[; ;mcal/gpio/mcal_gpio.c: 92: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic){
+[v _gpio_pin_write_value `(E2687 ~T0 @X0 1 ef3`E2709`E2699`E2691 ]
 {
 [e :U _gpio_pin_write_value ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
-[v _pin `E2527 ~T0 @X0 1 r2 ]
-[v _logic `E2519 ~T0 @X0 1 r3 ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _pin `E2699 ~T0 @X0 1 r2 ]
+[v _logic `E2691 ~T0 @X0 1 r3 ]
 [f ]
-"89
-[; ;mcal/gpio/mcal_gpio.c: 89:     ret_status ret = R_NOK;
-[v _ret `E2515 ~T0 @X0 1 a ]
-[e = _ret . `E2515 0 ]
-"90
-[; ;mcal/gpio/mcal_gpio.c: 90:     if(pin > 8U -1 || pin < 0){
-[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 314  ]
-{
-"91
-[; ;mcal/gpio/mcal_gpio.c: 91:         return ret;
-[e ) _ret ]
-[e $UE 313  ]
-"92
-[; ;mcal/gpio/mcal_gpio.c: 92:     }
-}
-[e $U 315  ]
 "93
-[; ;mcal/gpio/mcal_gpio.c: 93:     else{
-[e :U 314 ]
-{
+[; ;mcal/gpio/mcal_gpio.c: 93:     ret_status ret = R_NOK;
+[v _ret `E2687 ~T0 @X0 1 a ]
+[e = _ret . `E2687 0 ]
 "94
-[; ;mcal/gpio/mcal_gpio.c: 94:         switch(logic){
-[e $U 317  ]
+[; ;mcal/gpio/mcal_gpio.c: 94:     if(pin > 8U -1 || pin < 0){
+[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 319  ]
 {
 "95
-[; ;mcal/gpio/mcal_gpio.c: 95:             case PIN_LOW :
-[e :U 318 ]
-"96
-[; ;mcal/gpio/mcal_gpio.c: 96:                 *lat_register[port] &= ~(1U << pin);
-[e =& *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> ~ << -> 1 `ui -> _pin `ui `uc ]
-"97
-[; ;mcal/gpio/mcal_gpio.c: 97:                 ret = R_OK;
-[e = _ret . `E2515 1 ]
-"98
-[; ;mcal/gpio/mcal_gpio.c: 98:                 break;
-[e $U 316  ]
-"99
-[; ;mcal/gpio/mcal_gpio.c: 99:             case PIN_HIGH :
-[e :U 319 ]
-"100
-[; ;mcal/gpio/mcal_gpio.c: 100:                 *lat_register[port] |= (1U << pin);
-[e =| *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> << -> 1 `ui -> _pin `ui `uc ]
-"101
-[; ;mcal/gpio/mcal_gpio.c: 101:                 ret = R_OK;
-[e = _ret . `E2515 1 ]
-"102
-[; ;mcal/gpio/mcal_gpio.c: 102:                 break;
-[e $U 316  ]
-"103
-[; ;mcal/gpio/mcal_gpio.c: 103:             default : return R_NOK;
-[e :U 320 ]
-[e ) . `E2515 0 ]
-[e $UE 313  ]
-"104
-[; ;mcal/gpio/mcal_gpio.c: 104:         }
-}
-[e $U 316  ]
-[e :U 317 ]
-[e [\ -> _logic `ui , $ -> . `E2519 0 `ui 318
- , $ -> . `E2519 1 `ui 319
- 320 ]
-[e :U 316 ]
-"105
-[; ;mcal/gpio/mcal_gpio.c: 105:     }
-}
-[e :U 315 ]
-"106
-[; ;mcal/gpio/mcal_gpio.c: 106:     return ret;
+[; ;mcal/gpio/mcal_gpio.c: 95:         return ret;
 [e ) _ret ]
-[e $UE 313  ]
-"107
-[; ;mcal/gpio/mcal_gpio.c: 107: }
-[e :UE 313 ]
+[e $UE 318  ]
+"96
+[; ;mcal/gpio/mcal_gpio.c: 96:     }
 }
-"116
-[; ;mcal/gpio/mcal_gpio.c: 116: ret_status gpio_pin_read_value(port_index port, pin_index pin, pin_logic_t *logic){
-[v _gpio_pin_read_value `(E2515 ~T0 @X0 1 ef3`E2537`E2527`*E2519 ]
+[e $U 320  ]
+"97
+[; ;mcal/gpio/mcal_gpio.c: 97:     else{
+[e :U 319 ]
+{
+"98
+[; ;mcal/gpio/mcal_gpio.c: 98:         switch(logic){
+[e $U 322  ]
+{
+"99
+[; ;mcal/gpio/mcal_gpio.c: 99:             case PIN_LOW :
+[e :U 323 ]
+"101
+[; ;mcal/gpio/mcal_gpio.c: 101:                 (*lat_register[port] &= ~(1U << pin)); break;
+[e =& *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> ~ << -> 1 `ui -> _pin `ui `uc ]
+[e $U 321  ]
+"102
+[; ;mcal/gpio/mcal_gpio.c: 102:             case PIN_HIGH :
+[e :U 324 ]
+"104
+[; ;mcal/gpio/mcal_gpio.c: 104:                 (*lat_register[port] |= (1U << pin)); break;
+[e =| *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> << -> 1 `ui -> _pin `ui `uc ]
+[e $U 321  ]
+"105
+[; ;mcal/gpio/mcal_gpio.c: 105:             default : return R_NOK;
+[e :U 325 ]
+[e ) . `E2687 0 ]
+[e $UE 318  ]
+"106
+[; ;mcal/gpio/mcal_gpio.c: 106:         }
+}
+[e $U 321  ]
+[e :U 322 ]
+[e [\ -> _logic `ui , $ -> . `E2691 0 `ui 323
+ , $ -> . `E2691 1 `ui 324
+ 325 ]
+[e :U 321 ]
+"107
+[; ;mcal/gpio/mcal_gpio.c: 107:         ret = R_OK;
+[e = _ret . `E2687 1 ]
+"108
+[; ;mcal/gpio/mcal_gpio.c: 108:     }
+}
+[e :U 320 ]
+"109
+[; ;mcal/gpio/mcal_gpio.c: 109:     return ret;
+[e ) _ret ]
+[e $UE 318  ]
+"110
+[; ;mcal/gpio/mcal_gpio.c: 110: }
+[e :UE 318 ]
+}
+"120
+[; ;mcal/gpio/mcal_gpio.c: 120: ret_status gpio_pin_read_value(port_index port, pin_index pin, pin_logic_t *logic){
+[v _gpio_pin_read_value `(E2687 ~T0 @X0 1 ef3`E2709`E2699`*E2691 ]
 {
 [e :U _gpio_pin_read_value ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
-[v _pin `E2527 ~T0 @X0 1 r2 ]
-[v _logic `*E2519 ~T0 @X0 1 r3 ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _pin `E2699 ~T0 @X0 1 r2 ]
+[v _logic `*E2691 ~T0 @X0 1 r3 ]
 [f ]
-"118
-[; ;mcal/gpio/mcal_gpio.c: 118: }
-[e :UE 321 ]
-}
-"126
-[; ;mcal/gpio/mcal_gpio.c: 126: ret_status gpio_pin_toggle_value(port_index port, pin_index pin){
-[v _gpio_pin_toggle_value `(E2515 ~T0 @X0 1 ef2`E2537`E2527 ]
+"121
+[; ;mcal/gpio/mcal_gpio.c: 121:     ret_status ret;
+[v _ret `E2687 ~T0 @X0 1 a ]
+"122
+[; ;mcal/gpio/mcal_gpio.c: 122:     if(pin > 8U -1){
+[e $ ! > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui 327  ]
 {
-[e :U _gpio_pin_toggle_value ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
-[v _pin `E2527 ~T0 @X0 1 r2 ]
-[f ]
+"123
+[; ;mcal/gpio/mcal_gpio.c: 123:         return R_NOK;
+[e ) . `E2687 0 ]
+[e $UE 326  ]
+"124
+[; ;mcal/gpio/mcal_gpio.c: 124:     }
+}
+[e $U 328  ]
+"125
+[; ;mcal/gpio/mcal_gpio.c: 125:     else{
+[e :U 327 ]
+{
 "127
-[; ;mcal/gpio/mcal_gpio.c: 127:     ret_status ret = R_NOK;
-[v _ret `E2515 ~T0 @X0 1 a ]
-[e = _ret . `E2515 0 ]
+[; ;mcal/gpio/mcal_gpio.c: 127:         *logic = ((*port_register[port] >> pin) & 1U);
+[e = *U _logic -> & -> >> -> *U *U + &U _port_register * -> _port `ux -> -> # *U &U _port_register `ui `ux `i -> _pin `ui `ui -> 1 `ui `E2691 ]
 "128
-[; ;mcal/gpio/mcal_gpio.c: 128:     if(pin > 8U -1 || pin < 0){
-[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 323  ]
-{
+[; ;mcal/gpio/mcal_gpio.c: 128:         ret = R_OK;
+[e = _ret . `E2687 1 ]
 "129
-[; ;mcal/gpio/mcal_gpio.c: 129:         return ret;
-[e ) _ret ]
-[e $UE 322  ]
+[; ;mcal/gpio/mcal_gpio.c: 129:     }
+}
+[e :U 328 ]
 "130
-[; ;mcal/gpio/mcal_gpio.c: 130:     }
-}
-[e $U 324  ]
-"131
-[; ;mcal/gpio/mcal_gpio.c: 131:     else{
-[e :U 323 ]
-{
-"132
-[; ;mcal/gpio/mcal_gpio.c: 132:         *lat_register[port] ^= (1U << pin);
-[e =^ *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> << -> 1 `ui -> _pin `ui `uc ]
-"133
-[; ;mcal/gpio/mcal_gpio.c: 133:         ret = R_OK;
-[e = _ret . `E2515 1 ]
-"134
-[; ;mcal/gpio/mcal_gpio.c: 134:     }
-}
-[e :U 324 ]
-"135
-[; ;mcal/gpio/mcal_gpio.c: 135:     return ret;
+[; ;mcal/gpio/mcal_gpio.c: 130:     return ret;
 [e ) _ret ]
-[e $UE 322  ]
-"136
-[; ;mcal/gpio/mcal_gpio.c: 136: }
-[e :UE 322 ]
-}
-"144
-[; ;mcal/gpio/mcal_gpio.c: 144: ret_status gpio_port_direction_intialize(port_index port, direction_t direction){
-[v _gpio_port_direction_intialize `(E2515 ~T0 @X0 1 ef2`E2537`E2523 ]
-{
-[e :U _gpio_port_direction_intialize ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
-[v _direction `E2523 ~T0 @X0 1 r2 ]
-[f ]
-"146
-[; ;mcal/gpio/mcal_gpio.c: 146: }
-[e :UE 325 ]
-}
-"154
-[; ;mcal/gpio/mcal_gpio.c: 154: ret_status gpio_port_get_direction_status(port_index port, direction_t *direction){
-[v _gpio_port_get_direction_status `(E2515 ~T0 @X0 1 ef2`E2537`*E2523 ]
-{
-[e :U _gpio_port_get_direction_status ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
-[v _direction `*E2523 ~T0 @X0 1 r2 ]
-[f ]
-"156
-[; ;mcal/gpio/mcal_gpio.c: 156: }
+[e $UE 326  ]
+"131
+[; ;mcal/gpio/mcal_gpio.c: 131: }
 [e :UE 326 ]
 }
-"164
-[; ;mcal/gpio/mcal_gpio.c: 164: ret_status gpio_port_write_value(port_index port, uint8_t value){
-[v _gpio_port_write_value `(E2515 ~T0 @X0 1 ef2`E2537`uc ]
+"140
+[; ;mcal/gpio/mcal_gpio.c: 140: ret_status gpio_pin_toggle_value(port_index port, pin_index pin){
+[v _gpio_pin_toggle_value `(E2687 ~T0 @X0 1 ef2`E2709`E2699 ]
+{
+[e :U _gpio_pin_toggle_value ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _pin `E2699 ~T0 @X0 1 r2 ]
+[f ]
+"141
+[; ;mcal/gpio/mcal_gpio.c: 141:     ret_status ret = R_NOK;
+[v _ret `E2687 ~T0 @X0 1 a ]
+[e = _ret . `E2687 0 ]
+"142
+[; ;mcal/gpio/mcal_gpio.c: 142:     if(pin > 8U -1 || pin < 0){
+[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 330  ]
+{
+"143
+[; ;mcal/gpio/mcal_gpio.c: 143:         return ret;
+[e ) _ret ]
+[e $UE 329  ]
+"144
+[; ;mcal/gpio/mcal_gpio.c: 144:     }
+}
+[e $U 331  ]
+"145
+[; ;mcal/gpio/mcal_gpio.c: 145:     else{
+[e :U 330 ]
+{
+"146
+[; ;mcal/gpio/mcal_gpio.c: 146:         *lat_register[port] ^= (1U << pin);
+[e =^ *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> << -> 1 `ui -> _pin `ui `uc ]
+"147
+[; ;mcal/gpio/mcal_gpio.c: 147:         ret = R_OK;
+[e = _ret . `E2687 1 ]
+"148
+[; ;mcal/gpio/mcal_gpio.c: 148:     }
+}
+[e :U 331 ]
+"149
+[; ;mcal/gpio/mcal_gpio.c: 149:     return ret;
+[e ) _ret ]
+[e $UE 329  ]
+"150
+[; ;mcal/gpio/mcal_gpio.c: 150: }
+[e :UE 329 ]
+}
+"159
+[; ;mcal/gpio/mcal_gpio.c: 159: ret_status gpio_port_direction_intialize(port_index port, direction_t direction){
+[v _gpio_port_direction_intialize `(E2687 ~T0 @X0 1 ef2`E2709`E2695 ]
+{
+[e :U _gpio_port_direction_intialize ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _direction `E2695 ~T0 @X0 1 r2 ]
+[f ]
+"161
+[; ;mcal/gpio/mcal_gpio.c: 161: }
+[e :UE 332 ]
+}
+"170
+[; ;mcal/gpio/mcal_gpio.c: 170: ret_status gpio_port_get_direction_status(port_index port, direction_t *direction){
+[v _gpio_port_get_direction_status `(E2687 ~T0 @X0 1 ef2`E2709`*E2695 ]
+{
+[e :U _gpio_port_get_direction_status ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _direction `*E2695 ~T0 @X0 1 r2 ]
+[f ]
+"172
+[; ;mcal/gpio/mcal_gpio.c: 172: }
+[e :UE 333 ]
+}
+"181
+[; ;mcal/gpio/mcal_gpio.c: 181: ret_status gpio_port_write_value(port_index port, uint8_t value){
+[v _gpio_port_write_value `(E2687 ~T0 @X0 1 ef2`E2709`uc ]
 {
 [e :U _gpio_port_write_value ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
 [f ]
-"166
-[; ;mcal/gpio/mcal_gpio.c: 166: }
-[e :UE 327 ]
+"183
+[; ;mcal/gpio/mcal_gpio.c: 183: }
+[e :UE 334 ]
 }
-"174
-[; ;mcal/gpio/mcal_gpio.c: 174: ret_status gpio_port_read_value(port_index port, uint8_t *value){
-[v _gpio_port_read_value `(E2515 ~T0 @X0 1 ef2`E2537`*uc ]
+"192
+[; ;mcal/gpio/mcal_gpio.c: 192: ret_status gpio_port_read_value(port_index port, uint8_t *value){
+[v _gpio_port_read_value `(E2687 ~T0 @X0 1 ef2`E2709`*uc ]
 {
 [e :U _gpio_port_read_value ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
 [v _value `*uc ~T0 @X0 1 r2 ]
 [f ]
-"176
-[; ;mcal/gpio/mcal_gpio.c: 176: }
-[e :UE 328 ]
+"193
+[; ;mcal/gpio/mcal_gpio.c: 193:     ret_status ret = R_NOK;
+[v _ret `E2687 ~T0 @X0 1 a ]
+[e = _ret . `E2687 0 ]
+"194
+[; ;mcal/gpio/mcal_gpio.c: 194:     if(((void*)0) == value){
+[e $ ! == -> -> -> 0 `i `*v `*uc _value 336  ]
+{
+"195
+[; ;mcal/gpio/mcal_gpio.c: 195:         return ret;
+[e ) _ret ]
+[e $UE 335  ]
+"196
+[; ;mcal/gpio/mcal_gpio.c: 196:     }
 }
-"183
-[; ;mcal/gpio/mcal_gpio.c: 183: ret_status gpio_port_toggle_value(port_index port){
-[v _gpio_port_toggle_value `(E2515 ~T0 @X0 1 ef1`E2537 ]
+[e $U 337  ]
+"197
+[; ;mcal/gpio/mcal_gpio.c: 197:     else{
+[e :U 336 ]
+{
+"199
+[; ;mcal/gpio/mcal_gpio.c: 199:         *value = *port_register[port];
+[e = *U _value *U *U + &U _port_register * -> _port `ux -> -> # *U &U _port_register `ui `ux ]
+"200
+[; ;mcal/gpio/mcal_gpio.c: 200:         ret = R_OK;
+[e = _ret . `E2687 1 ]
+"201
+[; ;mcal/gpio/mcal_gpio.c: 201:     }
+}
+[e :U 337 ]
+"202
+[; ;mcal/gpio/mcal_gpio.c: 202:     return ret;
+[e ) _ret ]
+[e $UE 335  ]
+"203
+[; ;mcal/gpio/mcal_gpio.c: 203: }
+[e :UE 335 ]
+}
+"211
+[; ;mcal/gpio/mcal_gpio.c: 211: ret_status gpio_port_toggle_value(port_index port){
+[v _gpio_port_toggle_value `(E2687 ~T0 @X0 1 ef1`E2709 ]
 {
 [e :U _gpio_port_toggle_value ]
-[v _port `E2537 ~T0 @X0 1 r1 ]
+[v _port `E2709 ~T0 @X0 1 r1 ]
 [f ]
-"185
-[; ;mcal/gpio/mcal_gpio.c: 185: }
-[e :UE 329 ]
+"213
+[; ;mcal/gpio/mcal_gpio.c: 213: }
+[e :UE 338 ]
 }

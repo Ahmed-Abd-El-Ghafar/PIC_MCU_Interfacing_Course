@@ -15,23 +15,24 @@ static volatile uint8_t *lat_register[] = {&LATA, &LATB, &LATC, &LATD, &LATE};
 static volatile uint8_t *port_register[] = {&PORTA, &PORTB, &PORTC, &PORTD, &PORTE};
 
 /**
- * Initialize all the ports to the default states (DIRECTION_INPUT). 
+ * @brief Initialize all the ports to the default states (DIRECTION_INPUT). 
  * @param port_numbers : The available Physical port numbers at the MCU -> PORT_MAX_NUMBERS
  * @return Status of the function 
  *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_default_init(uint8_t port_numbers){
-    ret_status ret = R_OK;
+    ret_status ret = R_NOK;
     uint8_t l_counter = ZERO_INIT;
     for(l_counter=ZERO_INIT; l_counter<PORT_MAX_NUMBERS-1; l_counter++){
         /* Write to all (Data Direction Control Registers) -> DIRECTION_INPUT */
         *tris_register[l_counter] = PORT_DIRECTION_INPUT;
     }
+    ret = R_OK;
     return ret;
 }
 
 /**
- * Initialize the direction of a specific pin to be (DIRECTION_INPUT) or (DIRECTION_OUTPUT)
+ * @brief Initialize the direction of a specific pin to be (DIRECTION_INPUT) or (DIRECTION_OUTPUT)
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param pin   : The pin number -> PIN0, PIN1, PIN2, ....
  * @param direction : The desired pin direction -> DIRECTION_OUTPUT, DIRECTION_INPUT
@@ -60,11 +61,12 @@ ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, directio
 }
 
 /**
- * 
- * @param port
- * @param pin
- * @param direction
- * @return 
+ * @brief Get the direction of a specific pin -> (DIRECTION_INPUT) or (DIRECTION_OUTPUT)
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
+ * @param pin   : The pin number -> PIN0, PIN1, PIN2, ....
+ * @param direction : The pin direction status -> DIRECTION_OUTPUT, DIRECTION_INPUT
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_pin_get_direction_status(port_index port, pin_index pin, direction_t *direction){
     ret_status ret = R_NOK;
@@ -72,18 +74,20 @@ ret_status gpio_pin_get_direction_status(port_index port, pin_index pin, directi
         return ret;
     }
     else{
-        *direction = ((*tris_register[port] >> pin) & PIN_MASK_VALUE);
+        /* Read the direction status of the (pin) -> (DIRECTION_INPUT) or (DIRECTION_OUTPUT) */
+        *direction = READ_BIT(*tris_register[port], pin);
         ret = R_OK;
     }
     return ret;
 }
 
 /**
- * 
- * @param port
- * @param pin
+ * @brief  
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
+ * @param pin   : The pin number -> PIN0, PIN1, PIN2, ....
  * @param logic
- * @return 
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic){
     ret_status ret = R_NOK;
@@ -93,35 +97,45 @@ ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logi
     else{
         switch(logic){
             case PIN_LOW :
-                *lat_register[port] &= ~(PIN_MASK_VALUE << pin);
-                ret = R_OK;
-                break;
+                /*  */
+                CLEAR_BIT(*lat_register[port], pin); break;
             case PIN_HIGH :
-                *lat_register[port] |= (PIN_MASK_VALUE << pin);
-                ret = R_OK;
-                break;
+                /*  */
+                SET_BIT(*lat_register[port], pin); break;
             default : return R_NOK;
         }
+        ret = R_OK;
     }
     return ret;
 }
 
 /**
- * 
- * @param port
- * @param pin
+ * @brief 
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
+ * @param pin   : The pin number -> PIN0, PIN1, PIN2, ....
  * @param logic
- * @return 
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_pin_read_value(port_index port, pin_index pin, pin_logic_t *logic){
-    
+    ret_status ret;
+    if(pin > PORT_PIN_MAX_NUMBERS-1){
+        return R_NOK;
+    }
+    else{
+        /* Read the logic status of the (pin) -> (PIN_LOW) or (PIN_HIGH) */
+        *logic = READ_BIT(*port_register[port], pin);
+        ret = R_OK;
+    }
+    return ret;
 }
 
 /**
- * 
- * @param port
- * @param pin
- * @return 
+ * @brief 
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
+ * @param pin   : The pin number -> PIN0, PIN1, PIN2, ....
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_pin_toggle_value(port_index port, pin_index pin){
     ret_status ret = R_NOK;
@@ -136,49 +150,63 @@ ret_status gpio_pin_toggle_value(port_index port, pin_index pin){
 }
 
 /**
- * 
- * @param port
+ * @brief 
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param direction
- * @return 
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_direction_intialize(port_index port, direction_t direction){
     
 }
 
 /**
- * 
- * @param port
+ * @brief 
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param direction
- * @return 
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_get_direction_status(port_index port, direction_t *direction){
     
 }
 
 /**
- * 
- * @param port
+ * @brief 
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param value
- * @return 
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_write_value(port_index port, uint8_t value){
     
 }
 
 /**
- * 
- * @param port
- * @param value
- * @return 
+ * @brief 
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
+ * @param value : 
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_read_value(port_index port, uint8_t *value){
-    
+    ret_status ret = R_NOK;
+    if(NULL == value){
+        return ret;
+    }
+    else{
+        /*  */
+        *value = *port_register[port];
+        ret = R_OK;
+    }
+    return ret;
 }
 
 /**
- * 
- * @param port
- * @return 
+ * @brief
+ * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_toggle_value(port_index port){
     
