@@ -5,6 +5,9 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="ecu" displayName="ecu" projectFiles="true">
+        <logicalFolder name="button" displayName="button" projectFiles="true">
+          <itemPath>ecu/button/ecu_button.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="led" displayName="led" projectFiles="true">
           <itemPath>ecu/led/ecu_led.h</itemPath>
         </logicalFolder>
@@ -26,6 +29,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="ecu" displayName="ecu" projectFiles="true">
+        <logicalFolder name="button" displayName="button" projectFiles="true">
+          <itemPath>ecu/button/ecu_button.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="led" displayName="led" projectFiles="true">
           <itemPath>ecu/led/ecu_led.c</itemPath>
         </logicalFolder>
@@ -55,7 +61,7 @@
         <targetDevice>PIC18F46K20</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool></platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.10</languageToolchainVersion>
         <platform>3</platform>

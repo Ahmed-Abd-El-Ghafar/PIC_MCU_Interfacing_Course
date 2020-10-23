@@ -4976,7 +4976,20 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./ecu/led/../../mcal/gpio/mcal_gpio.h" 1
 # 13 "./ecu/led/../../mcal/gpio/mcal_gpio.h"
 # 1 "./ecu/led/../../mcal/gpio/../../std_types.h" 1
-# 13 "./ecu/led/../../mcal/gpio/../../std_types.h"
+# 12 "./ecu/led/../../mcal/gpio/../../std_types.h"
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 1 3
+# 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/assert.h" 1 3
+# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/assert.h" 3
+          void __assert_fail (const char *, const char *, int, const char *);
+# 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 2 3
+
+
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 12 "./ecu/led/../../mcal/gpio/../../std_types.h" 2
+
+
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned int uint32_t;
@@ -4993,7 +5006,7 @@ typedef enum{
     R_OK
 }ret_status;
 # 13 "./ecu/led/../../mcal/gpio/mcal_gpio.h" 2
-# 29 "./ecu/led/../../mcal/gpio/mcal_gpio.h"
+# 34 "./ecu/led/../../mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH
@@ -5034,29 +5047,129 @@ ret_status gpio_pin_toggle_value(port_index port, pin_index pin);
 
 ret_status gpio_port_default_init(uint8_t port_numbers);
 ret_status gpio_port_direction_intialize(port_index port, direction_t direction);
-ret_status gpio_port_get_direction_status(port_index port, direction_t *direction);
+ret_status gpio_port_get_direction_status(port_index port, uint8_t *direction);
 ret_status gpio_port_write_value(port_index port, uint8_t value);
 ret_status gpio_port_read_value(port_index port, uint8_t *value);
 ret_status gpio_port_toggle_value(port_index port);
 # 11 "./ecu/led/ecu_led.h" 2
+
+
+
+
+
+typedef enum{
+    LED_OFF,
+    LED_ON
+}led_status;
+
+typedef struct{
+    struct{
+        uint8_t port_name : 4;
+        uint8_t pin : 4;
+    }port_info;
+    led_status led_status;
+}led_t;
+# 37 "./ecu/led/ecu_led.h"
+ret_status led_initialize(led_t *led);
+
+
+
+
+
+
+
+ret_status led_turn_on(led_t *led);
+
+
+
+
+
+
+
+ret_status led_turn_off(led_t *led);
+
+
+
+
+
+
+
+ret_status led_turn_toggle(led_t *led);
 # 15 "./application.h" 2
+
+# 1 "./ecu/button/ecu_button.h" 1
+# 16 "./ecu/button/ecu_button.h"
+typedef enum{
+    BUTTON_NOT_PRESSED,
+    BUTTON_PRESSED
+}button_status;
+
+typedef struct{
+    uint8_t port_name : 4;
+    uint8_t pin : 3;
+    uint8_t button_status : 1;
+}button_t;
+
+
+ret_status button_initialize(button_t *btn);
+ret_status button_get_status(button_t *btn, button_status *btn_status);
+# 16 "./application.h" 2
 # 8 "application.c" 2
 
 
-uint8_t var = 0;
+led_t led1 = {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN0, .led_status = LED_OFF};
+button_t btn1 = {.port_name = PORTD_INDEX, .pin = PIN0, .button_status = BUTTON_NOT_PRESSED};
+uint8_t btn1_status = 0;
+
+led_t led_array[8] = {
+    {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN0, .led_status = LED_OFF},
+    {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN1, .led_status = LED_OFF},
+    {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN2, .led_status = LED_OFF},
+    {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN3, .led_status = LED_OFF},
+    {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN4, .led_status = LED_OFF},
+    {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN5, .led_status = LED_OFF},
+    {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN6, .led_status = LED_OFF},
+    {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN7, .led_status = LED_OFF}
+};
+
+uint8_t led_seq[][8] = {{1, 0, 0, 0, 0, 0, 0, 1},
+                                     {1, 1, 0, 0, 0, 0, 1, 1},
+                                     {1, 1, 1, 0, 0, 1, 1, 1},
+                                     {1, 1, 1, 1, 1, 1, 1, 1}
+                                    };
+
+void perform_led_seq(led_t led_Arr[], uint8_t led_pat[][8], uint8_t seq_len);
 
 int main() {
-    gpio_pin_direction_intialize(PORTC_INDEX, PIN0, DIRECTION_OUTPUT);
-    gpio_pin_direction_intialize(PORTC_INDEX, PIN1, DIRECTION_OUTPUT);
-    gpio_pin_write_value(PORTC_INDEX, PIN0, PIN_LOW);
-    gpio_pin_write_value(PORTC_INDEX, PIN1, PIN_LOW);
+    led_initialize(&led1);
+    button_initialize(&btn1);
     while(1){
-        gpio_pin_write_value(PORTC_INDEX, PIN0, PIN_HIGH);
-        gpio_pin_write_value(PORTC_INDEX, PIN1, PIN_LOW);
-        _delay((unsigned long)((250)*(8000000UL/4000.0)));
-        gpio_pin_write_value(PORTC_INDEX, PIN0, PIN_LOW);
-        gpio_pin_write_value(PORTC_INDEX, PIN1, PIN_HIGH);
-        _delay((unsigned long)((250)*(8000000UL/4000.0)));
+
+        button_get_status(&btn1, &btn1_status);
+        if(btn1_status == BUTTON_PRESSED){
+            led_turn_on(&led1);
+        }
+        else{
+            led_turn_off((&led1));
+        }
     }
     return (0);
+}
+
+void perform_led_seq(led_t led_Arr[], uint8_t led_pat[][8], uint8_t seq_len){
+    uint8_t l_led_counter = 0, l_led_pos = 0;
+    for(l_led_counter = 0; l_led_counter<seq_len; l_led_counter++){
+        led_initialize(&led_Arr[l_led_counter]);
+    }
+    for(l_led_counter = 0; l_led_counter<seq_len; l_led_counter++){
+        for(l_led_pos = 0; l_led_pos<8; l_led_pos++){
+            if(led_pat[l_led_counter][l_led_pos] == LED_ON){
+                led_turn_on(&led_Arr[l_led_pos]);
+            }
+            else{
+                led_turn_off(&led_Arr[l_led_pos]);
+            }
+        }
+        _delay((unsigned long)((250)*(8000000UL/4000.0)));
+    }
 }

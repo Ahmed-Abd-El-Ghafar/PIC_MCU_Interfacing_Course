@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Spark_Application
+PROJECTNAME=01_Application
 
 # Active Configuration
 DEFAULTCONF=default

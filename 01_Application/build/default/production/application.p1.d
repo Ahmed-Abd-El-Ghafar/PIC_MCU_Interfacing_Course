@@ -4,4 +4,5 @@ application.h  \
 device_config.h  \
 ecu/led/ecu_led.h  \
 ecu/led/../../mcal/gpio/mcal_gpio.h  \
-ecu/led/../../mcal/gpio/../../std_types.h 
+ecu/led/../../mcal/gpio/../../std_types.h  \
+ecu/button/ecu_button.h 

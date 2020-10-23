@@ -10,5 +10,55 @@
 
 #include "../../mcal/gpio/mcal_gpio.h"
 
+/* Section: Macro Declarations */
+
+/* Section: Data Type Definitions */
+typedef enum{
+    LED_OFF,
+    LED_ON
+}led_status;
+
+typedef struct{
+    struct{
+        uint8_t port_name : 4;
+        uint8_t pin : 4; 
+    }port_info;
+    led_status led_status;
+}led_t;
+
+/* Section: Function declarations */
+
+/**
+ * @brief Initialize the assigned pin to be OUTPUT and turn the led off.
+ * @param led pointer to the led module
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
+ */
+ret_status led_initialize(led_t *led);
+
+/**
+ * @brief Turn the led on
+ * @param led pointer to the led module
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
+ */
+ret_status led_turn_on(led_t *led);
+
+/**
+ * @brief Turn the led off
+ * @param led pointer to the led module
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
+ */
+ret_status led_turn_off(led_t *led);
+
+/**
+ * @brief Toggle the led
+ * @param led pointer to the led module
+ * @return Status of the function 
+ *         (R_OK) : The function done successfully
+ */
+ret_status led_turn_toggle(led_t *led);
+
 #endif	/* ECU_LED_H */
 

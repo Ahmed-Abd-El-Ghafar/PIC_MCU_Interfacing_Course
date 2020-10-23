@@ -31,20 +31,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
 "23 mcal/gpio/mcal_gpio.c
 [; ;mcal/gpio/mcal_gpio.c: 23: ret_status gpio_port_default_init(uint8_t port_numbers){
-[c E2687 0 1 .. ]
-[n E2687 . R_NOK R_OK  ]
+[c E2693 0 1 .. ]
+[n E2693 . R_NOK R_OK  ]
 "42
 [; ;mcal/gpio/mcal_gpio.c: 42: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction){
-[c E2709 0 1 2 3 4 .. ]
-[n E2709 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E2699 0 1 2 3 4 5 6 7 .. ]
-[n E2699 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
-[c E2695 0 1 .. ]
-[n E2695 . DIRECTION_OUTPUT DIRECTION_INPUT  ]
+[c E2715 0 1 2 3 4 .. ]
+[n E2715 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E2705 0 1 2 3 4 5 6 7 .. ]
+[n E2705 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+[c E2701 0 1 .. ]
+[n E2701 . DIRECTION_OUTPUT DIRECTION_INPUT  ]
 "92
 [; ;mcal/gpio/mcal_gpio.c: 92: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic){
-[c E2691 0 1 .. ]
-[n E2691 . PIN_LOW PIN_HIGH  ]
+[c E2697 0 1 .. ]
+[n E2697 . PIN_LOW PIN_HIGH  ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f46k20.h
 [; <" SSPMSK equ 0F77h ;# ">
 "124
@@ -377,15 +377,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "23
 [; ;mcal/gpio/mcal_gpio.c: 23: ret_status gpio_port_default_init(uint8_t port_numbers){
-[v _gpio_port_default_init `(E2687 ~T0 @X0 1 ef1`uc ]
+[v _gpio_port_default_init `(E2693 ~T0 @X0 1 ef1`uc ]
 {
 [e :U _gpio_port_default_init ]
 [v _port_numbers `uc ~T0 @X0 1 r1 ]
 [f ]
 "24
 [; ;mcal/gpio/mcal_gpio.c: 24:     ret_status ret = R_NOK;
-[v _ret `E2687 ~T0 @X0 1 a ]
-[e = _ret . `E2687 0 ]
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
 "25
 [; ;mcal/gpio/mcal_gpio.c: 25:     uint8_t l_counter = 0;
 [v _l_counter `uc ~T0 @X0 1 a ]
@@ -410,7 +410,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "30
 [; ;mcal/gpio/mcal_gpio.c: 30:     ret = R_OK;
-[e = _ret . `E2687 1 ]
+[e = _ret . `E2693 1 ]
 "31
 [; ;mcal/gpio/mcal_gpio.c: 31:     return ret;
 [e ) _ret ]
@@ -421,17 +421,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "42
 [; ;mcal/gpio/mcal_gpio.c: 42: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction){
-[v _gpio_pin_direction_intialize `(E2687 ~T0 @X0 1 ef3`E2709`E2699`E2695 ]
+[v _gpio_pin_direction_intialize `(E2693 ~T0 @X0 1 ef3`E2715`E2705`E2701 ]
 {
 [e :U _gpio_pin_direction_intialize ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
-[v _pin `E2699 ~T0 @X0 1 r2 ]
-[v _direction `E2695 ~T0 @X0 1 r3 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
+[v _pin `E2705 ~T0 @X0 1 r2 ]
+[v _direction `E2701 ~T0 @X0 1 r3 ]
 [f ]
 "43
 [; ;mcal/gpio/mcal_gpio.c: 43:     ret_status ret = R_NOK;
-[v _ret `E2687 ~T0 @X0 1 a ]
-[e = _ret . `E2687 0 ]
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
 "45
 [; ;mcal/gpio/mcal_gpio.c: 45:     if(pin > 8U -1 || pin < 0){
 [e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 308  ]
@@ -469,20 +469,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [; ;mcal/gpio/mcal_gpio.c: 56:             default : return R_NOK;
 [e :U 314 ]
-[e ) . `E2687 0 ]
+[e ) . `E2693 0 ]
 [e $UE 307  ]
 "57
 [; ;mcal/gpio/mcal_gpio.c: 57:         }
 }
 [e $U 310  ]
 [e :U 311 ]
-[e [\ -> _direction `ui , $ -> . `E2695 0 `ui 312
- , $ -> . `E2695 1 `ui 313
+[e [\ -> _direction `ui , $ -> . `E2701 0 `ui 312
+ , $ -> . `E2701 1 `ui 313
  314 ]
 [e :U 310 ]
 "58
 [; ;mcal/gpio/mcal_gpio.c: 58:         ret = R_OK;
-[e = _ret . `E2687 1 ]
+[e = _ret . `E2693 1 ]
 "59
 [; ;mcal/gpio/mcal_gpio.c: 59:     }
 }
@@ -497,20 +497,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "71
 [; ;mcal/gpio/mcal_gpio.c: 71: ret_status gpio_pin_get_direction_status(port_index port, pin_index pin, direction_t *direction){
-[v _gpio_pin_get_direction_status `(E2687 ~T0 @X0 1 ef3`E2709`E2699`*E2695 ]
+[v _gpio_pin_get_direction_status `(E2693 ~T0 @X0 1 ef3`E2715`E2705`*E2701 ]
 {
 [e :U _gpio_pin_get_direction_status ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
-[v _pin `E2699 ~T0 @X0 1 r2 ]
-[v _direction `*E2695 ~T0 @X0 1 r3 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
+[v _pin `E2705 ~T0 @X0 1 r2 ]
+[v _direction `*E2701 ~T0 @X0 1 r3 ]
 [f ]
 "72
 [; ;mcal/gpio/mcal_gpio.c: 72:     ret_status ret = R_NOK;
-[v _ret `E2687 ~T0 @X0 1 a ]
-[e = _ret . `E2687 0 ]
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
 "73
 [; ;mcal/gpio/mcal_gpio.c: 73:     if(pin > 8U -1 || pin < 0 || ((void*)0) == direction){
-[e $ ! || || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui == -> -> -> 0 `i `*v `*E2695 _direction 316  ]
+[e $ ! || || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui == -> -> -> 0 `i `*v `*E2701 _direction 316  ]
 {
 "74
 [; ;mcal/gpio/mcal_gpio.c: 74:         return ret;
@@ -526,10 +526,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "78
 [; ;mcal/gpio/mcal_gpio.c: 78:         *direction = ((*tris_register[port] >> pin) & 1U);
-[e = *U _direction -> & -> >> -> *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux `i -> _pin `ui `ui -> 1 `ui `E2695 ]
+[e = *U _direction -> & -> >> -> *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux `i -> _pin `ui `ui -> 1 `ui `E2701 ]
 "79
 [; ;mcal/gpio/mcal_gpio.c: 79:         ret = R_OK;
-[e = _ret . `E2687 1 ]
+[e = _ret . `E2693 1 ]
 "80
 [; ;mcal/gpio/mcal_gpio.c: 80:     }
 }
@@ -544,17 +544,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "92
 [; ;mcal/gpio/mcal_gpio.c: 92: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic){
-[v _gpio_pin_write_value `(E2687 ~T0 @X0 1 ef3`E2709`E2699`E2691 ]
+[v _gpio_pin_write_value `(E2693 ~T0 @X0 1 ef3`E2715`E2705`E2697 ]
 {
 [e :U _gpio_pin_write_value ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
-[v _pin `E2699 ~T0 @X0 1 r2 ]
-[v _logic `E2691 ~T0 @X0 1 r3 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
+[v _pin `E2705 ~T0 @X0 1 r2 ]
+[v _logic `E2697 ~T0 @X0 1 r3 ]
 [f ]
 "93
 [; ;mcal/gpio/mcal_gpio.c: 93:     ret_status ret = R_NOK;
-[v _ret `E2687 ~T0 @X0 1 a ]
-[e = _ret . `E2687 0 ]
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
 "94
 [; ;mcal/gpio/mcal_gpio.c: 94:     if(pin > 8U -1 || pin < 0){
 [e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 319  ]
@@ -592,20 +592,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "105
 [; ;mcal/gpio/mcal_gpio.c: 105:             default : return R_NOK;
 [e :U 325 ]
-[e ) . `E2687 0 ]
+[e ) . `E2693 0 ]
 [e $UE 318  ]
 "106
 [; ;mcal/gpio/mcal_gpio.c: 106:         }
 }
 [e $U 321  ]
 [e :U 322 ]
-[e [\ -> _logic `ui , $ -> . `E2691 0 `ui 323
- , $ -> . `E2691 1 `ui 324
+[e [\ -> _logic `ui , $ -> . `E2697 0 `ui 323
+ , $ -> . `E2697 1 `ui 324
  325 ]
 [e :U 321 ]
 "107
 [; ;mcal/gpio/mcal_gpio.c: 107:         ret = R_OK;
-[e = _ret . `E2687 1 ]
+[e = _ret . `E2693 1 ]
 "108
 [; ;mcal/gpio/mcal_gpio.c: 108:     }
 }
@@ -620,23 +620,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "120
 [; ;mcal/gpio/mcal_gpio.c: 120: ret_status gpio_pin_read_value(port_index port, pin_index pin, pin_logic_t *logic){
-[v _gpio_pin_read_value `(E2687 ~T0 @X0 1 ef3`E2709`E2699`*E2691 ]
+[v _gpio_pin_read_value `(E2693 ~T0 @X0 1 ef3`E2715`E2705`*E2697 ]
 {
 [e :U _gpio_pin_read_value ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
-[v _pin `E2699 ~T0 @X0 1 r2 ]
-[v _logic `*E2691 ~T0 @X0 1 r3 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
+[v _pin `E2705 ~T0 @X0 1 r2 ]
+[v _logic `*E2697 ~T0 @X0 1 r3 ]
 [f ]
 "121
 [; ;mcal/gpio/mcal_gpio.c: 121:     ret_status ret;
-[v _ret `E2687 ~T0 @X0 1 a ]
+[v _ret `E2693 ~T0 @X0 1 a ]
 "122
 [; ;mcal/gpio/mcal_gpio.c: 122:     if(pin > 8U -1 || ((void*)0) == logic){
-[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui == -> -> -> 0 `i `*v `*E2691 _logic 327  ]
+[e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui == -> -> -> 0 `i `*v `*E2697 _logic 327  ]
 {
 "123
 [; ;mcal/gpio/mcal_gpio.c: 123:         return R_NOK;
-[e ) . `E2687 0 ]
+[e ) . `E2693 0 ]
 [e $UE 326  ]
 "124
 [; ;mcal/gpio/mcal_gpio.c: 124:     }
@@ -648,10 +648,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "127
 [; ;mcal/gpio/mcal_gpio.c: 127:         *logic = ((*port_register[port] >> pin) & 1U);
-[e = *U _logic -> & -> >> -> *U *U + &U _port_register * -> _port `ux -> -> # *U &U _port_register `ui `ux `i -> _pin `ui `ui -> 1 `ui `E2691 ]
+[e = *U _logic -> & -> >> -> *U *U + &U _port_register * -> _port `ux -> -> # *U &U _port_register `ui `ux `i -> _pin `ui `ui -> 1 `ui `E2697 ]
 "128
 [; ;mcal/gpio/mcal_gpio.c: 128:         ret = R_OK;
-[e = _ret . `E2687 1 ]
+[e = _ret . `E2693 1 ]
 "129
 [; ;mcal/gpio/mcal_gpio.c: 129:     }
 }
@@ -666,16 +666,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "140
 [; ;mcal/gpio/mcal_gpio.c: 140: ret_status gpio_pin_toggle_value(port_index port, pin_index pin){
-[v _gpio_pin_toggle_value `(E2687 ~T0 @X0 1 ef2`E2709`E2699 ]
+[v _gpio_pin_toggle_value `(E2693 ~T0 @X0 1 ef2`E2715`E2705 ]
 {
 [e :U _gpio_pin_toggle_value ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
-[v _pin `E2699 ~T0 @X0 1 r2 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
+[v _pin `E2705 ~T0 @X0 1 r2 ]
 [f ]
 "141
 [; ;mcal/gpio/mcal_gpio.c: 141:     ret_status ret = R_NOK;
-[v _ret `E2687 ~T0 @X0 1 a ]
-[e = _ret . `E2687 0 ]
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
 "142
 [; ;mcal/gpio/mcal_gpio.c: 142:     if(pin > 8U -1 || pin < 0){
 [e $ ! || > -> _pin `ui - -> 8 `ui -> -> 1 `i `ui < -> _pin `ui -> -> 0 `i `ui 330  ]
@@ -692,114 +692,283 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcal/gpio/mcal_gpio.c: 145:     else{
 [e :U 330 ]
 {
-"146
-[; ;mcal/gpio/mcal_gpio.c: 146:         *lat_register[port] ^= (1U << pin);
-[e =^ *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> << -> 1 `ui -> _pin `ui `uc ]
 "147
-[; ;mcal/gpio/mcal_gpio.c: 147:         ret = R_OK;
-[e = _ret . `E2687 1 ]
+[; ;mcal/gpio/mcal_gpio.c: 147:         (*lat_register[port] ^= (1U << pin));
+[e =^ *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> << -> 1 `ui -> _pin `ui `uc ]
 "148
-[; ;mcal/gpio/mcal_gpio.c: 148:     }
+[; ;mcal/gpio/mcal_gpio.c: 148:         ret = R_OK;
+[e = _ret . `E2693 1 ]
+"149
+[; ;mcal/gpio/mcal_gpio.c: 149:     }
 }
 [e :U 331 ]
-"149
-[; ;mcal/gpio/mcal_gpio.c: 149:     return ret;
+"150
+[; ;mcal/gpio/mcal_gpio.c: 150:     return ret;
 [e ) _ret ]
 [e $UE 329  ]
-"150
-[; ;mcal/gpio/mcal_gpio.c: 150: }
+"151
+[; ;mcal/gpio/mcal_gpio.c: 151: }
 [e :UE 329 ]
 }
-"159
-[; ;mcal/gpio/mcal_gpio.c: 159: ret_status gpio_port_direction_intialize(port_index port, direction_t direction){
-[v _gpio_port_direction_intialize `(E2687 ~T0 @X0 1 ef2`E2709`E2695 ]
+"160
+[; ;mcal/gpio/mcal_gpio.c: 160: ret_status gpio_port_direction_intialize(port_index port, direction_t direction){
+[v _gpio_port_direction_intialize `(E2693 ~T0 @X0 1 ef2`E2715`E2701 ]
 {
 [e :U _gpio_port_direction_intialize ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
-[v _direction `E2695 ~T0 @X0 1 r2 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
+[v _direction `E2701 ~T0 @X0 1 r2 ]
 [f ]
 "161
-[; ;mcal/gpio/mcal_gpio.c: 161: }
+[; ;mcal/gpio/mcal_gpio.c: 161:     ret_status ret = R_NOK;
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
+"162
+[; ;mcal/gpio/mcal_gpio.c: 162:     if(port > 5U -1){
+[e $ ! > -> _port `ui - -> 5 `ui -> -> 1 `i `ui 333  ]
+{
+"163
+[; ;mcal/gpio/mcal_gpio.c: 163:         return ret;
+[e ) _ret ]
+[e $UE 332  ]
+"164
+[; ;mcal/gpio/mcal_gpio.c: 164:     }
+}
+[e $U 334  ]
+"165
+[; ;mcal/gpio/mcal_gpio.c: 165:     else{
+[e :U 333 ]
+{
+"166
+[; ;mcal/gpio/mcal_gpio.c: 166:         switch(direction){
+[e $U 336  ]
+{
+"167
+[; ;mcal/gpio/mcal_gpio.c: 167:             case DIRECTION_OUTPUT :
+[e :U 337 ]
+"168
+[; ;mcal/gpio/mcal_gpio.c: 168:                 *tris_register[port] = 0x00U;
+[e = *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux -> -> 0 `ui `uc ]
+"169
+[; ;mcal/gpio/mcal_gpio.c: 169:                 break;
+[e $U 335  ]
+"170
+[; ;mcal/gpio/mcal_gpio.c: 170:             case DIRECTION_INPUT :
+[e :U 338 ]
+"171
+[; ;mcal/gpio/mcal_gpio.c: 171:                 *tris_register[port] = 0xFFU;
+[e = *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux -> -> 255 `ui `uc ]
+"172
+[; ;mcal/gpio/mcal_gpio.c: 172:                 break;
+[e $U 335  ]
+"173
+[; ;mcal/gpio/mcal_gpio.c: 173:             default : return ret;
+[e :U 339 ]
+[e ) _ret ]
+[e $UE 332  ]
+"174
+[; ;mcal/gpio/mcal_gpio.c: 174:         }
+}
+[e $U 335  ]
+[e :U 336 ]
+[e [\ -> _direction `ui , $ -> . `E2701 0 `ui 337
+ , $ -> . `E2701 1 `ui 338
+ 339 ]
+[e :U 335 ]
+"175
+[; ;mcal/gpio/mcal_gpio.c: 175:         ret = R_OK;
+[e = _ret . `E2693 1 ]
+"176
+[; ;mcal/gpio/mcal_gpio.c: 176:     }
+}
+[e :U 334 ]
+"177
+[; ;mcal/gpio/mcal_gpio.c: 177:     return ret;
+[e ) _ret ]
+[e $UE 332  ]
+"178
+[; ;mcal/gpio/mcal_gpio.c: 178: }
 [e :UE 332 ]
 }
-"170
-[; ;mcal/gpio/mcal_gpio.c: 170: ret_status gpio_port_get_direction_status(port_index port, direction_t *direction){
-[v _gpio_port_get_direction_status `(E2687 ~T0 @X0 1 ef2`E2709`*E2695 ]
+"187
+[; ;mcal/gpio/mcal_gpio.c: 187: ret_status gpio_port_get_direction_status(port_index port, uint8_t *direction){
+[v _gpio_port_get_direction_status `(E2693 ~T0 @X0 1 ef2`E2715`*uc ]
 {
 [e :U _gpio_port_get_direction_status ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
-[v _direction `*E2695 ~T0 @X0 1 r2 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
+[v _direction `*uc ~T0 @X0 1 r2 ]
 [f ]
-"172
-[; ;mcal/gpio/mcal_gpio.c: 172: }
-[e :UE 333 ]
+"188
+[; ;mcal/gpio/mcal_gpio.c: 188:     ret_status ret = R_NOK;
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
+"189
+[; ;mcal/gpio/mcal_gpio.c: 189:     if((port > 5U -1) || (((void*)0) == direction)){
+[e $ ! || > -> _port `ui - -> 5 `ui -> -> 1 `i `ui == -> -> -> 0 `i `*v `*uc _direction 341  ]
+{
+"190
+[; ;mcal/gpio/mcal_gpio.c: 190:         return R_NOK;
+[e ) . `E2693 0 ]
+[e $UE 340  ]
+"191
+[; ;mcal/gpio/mcal_gpio.c: 191:     }
 }
-"181
-[; ;mcal/gpio/mcal_gpio.c: 181: ret_status gpio_port_write_value(port_index port, uint8_t value){
-[v _gpio_port_write_value `(E2687 ~T0 @X0 1 ef2`E2709`uc ]
+[e $U 342  ]
+"192
+[; ;mcal/gpio/mcal_gpio.c: 192:     else{
+[e :U 341 ]
+{
+"193
+[; ;mcal/gpio/mcal_gpio.c: 193:         *direction = *tris_register[port];
+[e = *U _direction *U *U + &U _tris_register * -> _port `ux -> -> # *U &U _tris_register `ui `ux ]
+"194
+[; ;mcal/gpio/mcal_gpio.c: 194:         ret = R_OK;
+[e = _ret . `E2693 1 ]
+"195
+[; ;mcal/gpio/mcal_gpio.c: 195:     }
+}
+[e :U 342 ]
+"196
+[; ;mcal/gpio/mcal_gpio.c: 196:     return ret;
+[e ) _ret ]
+[e $UE 340  ]
+"197
+[; ;mcal/gpio/mcal_gpio.c: 197: }
+[e :UE 340 ]
+}
+"206
+[; ;mcal/gpio/mcal_gpio.c: 206: ret_status gpio_port_write_value(port_index port, uint8_t value){
+[v _gpio_port_write_value `(E2693 ~T0 @X0 1 ef2`E2715`uc ]
 {
 [e :U _gpio_port_write_value ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
 [f ]
-"183
-[; ;mcal/gpio/mcal_gpio.c: 183: }
-[e :UE 334 ]
+"207
+[; ;mcal/gpio/mcal_gpio.c: 207:     ret_status ret = R_NOK;
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
+"208
+[; ;mcal/gpio/mcal_gpio.c: 208:     if(port > 5U -1){
+[e $ ! > -> _port `ui - -> 5 `ui -> -> 1 `i `ui 344  ]
+{
+"209
+[; ;mcal/gpio/mcal_gpio.c: 209:         return R_NOK;
+[e ) . `E2693 0 ]
+[e $UE 343  ]
+"210
+[; ;mcal/gpio/mcal_gpio.c: 210:     }
 }
-"192
-[; ;mcal/gpio/mcal_gpio.c: 192: ret_status gpio_port_read_value(port_index port, uint8_t *value){
-[v _gpio_port_read_value `(E2687 ~T0 @X0 1 ef2`E2709`*uc ]
+[e $U 345  ]
+"211
+[; ;mcal/gpio/mcal_gpio.c: 211:     else{
+[e :U 344 ]
+{
+"212
+[; ;mcal/gpio/mcal_gpio.c: 212:         *lat_register[port] = value;
+[e = *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux _value ]
+"213
+[; ;mcal/gpio/mcal_gpio.c: 213:         ret = R_OK;
+[e = _ret . `E2693 1 ]
+"214
+[; ;mcal/gpio/mcal_gpio.c: 214:     }
+}
+[e :U 345 ]
+"215
+[; ;mcal/gpio/mcal_gpio.c: 215:     return ret;
+[e ) _ret ]
+[e $UE 343  ]
+"216
+[; ;mcal/gpio/mcal_gpio.c: 216: }
+[e :UE 343 ]
+}
+"225
+[; ;mcal/gpio/mcal_gpio.c: 225: ret_status gpio_port_read_value(port_index port, uint8_t *value){
+[v _gpio_port_read_value `(E2693 ~T0 @X0 1 ef2`E2715`*uc ]
 {
 [e :U _gpio_port_read_value ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
 [v _value `*uc ~T0 @X0 1 r2 ]
 [f ]
-"193
-[; ;mcal/gpio/mcal_gpio.c: 193:     ret_status ret = R_NOK;
-[v _ret `E2687 ~T0 @X0 1 a ]
-[e = _ret . `E2687 0 ]
-"194
-[; ;mcal/gpio/mcal_gpio.c: 194:     if(((void*)0) == value){
-[e $ ! == -> -> -> 0 `i `*v `*uc _value 336  ]
+"226
+[; ;mcal/gpio/mcal_gpio.c: 226:     ret_status ret = R_NOK;
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
+"227
+[; ;mcal/gpio/mcal_gpio.c: 227:     if((port > 5U -1) || (((void*)0) == value)){
+[e $ ! || > -> _port `ui - -> 5 `ui -> -> 1 `i `ui == -> -> -> 0 `i `*v `*uc _value 347  ]
 {
-"195
-[; ;mcal/gpio/mcal_gpio.c: 195:         return ret;
+"228
+[; ;mcal/gpio/mcal_gpio.c: 228:         return ret;
 [e ) _ret ]
-[e $UE 335  ]
-"196
-[; ;mcal/gpio/mcal_gpio.c: 196:     }
+[e $UE 346  ]
+"229
+[; ;mcal/gpio/mcal_gpio.c: 229:     }
 }
-[e $U 337  ]
-"197
-[; ;mcal/gpio/mcal_gpio.c: 197:     else{
-[e :U 336 ]
+[e $U 348  ]
+"230
+[; ;mcal/gpio/mcal_gpio.c: 230:     else{
+[e :U 347 ]
 {
-"199
-[; ;mcal/gpio/mcal_gpio.c: 199:         *value = *port_register[port];
+"231
+[; ;mcal/gpio/mcal_gpio.c: 231:         *value = *port_register[port];
 [e = *U _value *U *U + &U _port_register * -> _port `ux -> -> # *U &U _port_register `ui `ux ]
-"200
-[; ;mcal/gpio/mcal_gpio.c: 200:         ret = R_OK;
-[e = _ret . `E2687 1 ]
-"201
-[; ;mcal/gpio/mcal_gpio.c: 201:     }
+"232
+[; ;mcal/gpio/mcal_gpio.c: 232:         ret = R_OK;
+[e = _ret . `E2693 1 ]
+"233
+[; ;mcal/gpio/mcal_gpio.c: 233:     }
 }
-[e :U 337 ]
-"202
-[; ;mcal/gpio/mcal_gpio.c: 202:     return ret;
+[e :U 348 ]
+"234
+[; ;mcal/gpio/mcal_gpio.c: 234:     return ret;
 [e ) _ret ]
-[e $UE 335  ]
-"203
-[; ;mcal/gpio/mcal_gpio.c: 203: }
-[e :UE 335 ]
+[e $UE 346  ]
+"235
+[; ;mcal/gpio/mcal_gpio.c: 235: }
+[e :UE 346 ]
 }
-"211
-[; ;mcal/gpio/mcal_gpio.c: 211: ret_status gpio_port_toggle_value(port_index port){
-[v _gpio_port_toggle_value `(E2687 ~T0 @X0 1 ef1`E2709 ]
+"243
+[; ;mcal/gpio/mcal_gpio.c: 243: ret_status gpio_port_toggle_value(port_index port){
+[v _gpio_port_toggle_value `(E2693 ~T0 @X0 1 ef1`E2715 ]
 {
 [e :U _gpio_port_toggle_value ]
-[v _port `E2709 ~T0 @X0 1 r1 ]
+[v _port `E2715 ~T0 @X0 1 r1 ]
 [f ]
-"213
-[; ;mcal/gpio/mcal_gpio.c: 213: }
-[e :UE 338 ]
+"244
+[; ;mcal/gpio/mcal_gpio.c: 244:     ret_status ret = R_NOK;
+[v _ret `E2693 ~T0 @X0 1 a ]
+[e = _ret . `E2693 0 ]
+"245
+[; ;mcal/gpio/mcal_gpio.c: 245:     if(port > 5U -1){
+[e $ ! > -> _port `ui - -> 5 `ui -> -> 1 `i `ui 350  ]
+{
+"246
+[; ;mcal/gpio/mcal_gpio.c: 246:         return ret;
+[e ) _ret ]
+[e $UE 349  ]
+"247
+[; ;mcal/gpio/mcal_gpio.c: 247:     }
+}
+[e $U 351  ]
+"248
+[; ;mcal/gpio/mcal_gpio.c: 248:     else{
+[e :U 350 ]
+{
+"249
+[; ;mcal/gpio/mcal_gpio.c: 249:         (*lat_register[port] ^= 0XFF);
+[e =^ *U *U + &U _lat_register * -> _port `ux -> -> # *U &U _lat_register `ui `ux -> -> 255 `i `uc ]
+"250
+[; ;mcal/gpio/mcal_gpio.c: 250:         ret = R_OK;
+[e = _ret . `E2693 1 ]
+"251
+[; ;mcal/gpio/mcal_gpio.c: 251:     }
+}
+[e :U 351 ]
+"252
+[; ;mcal/gpio/mcal_gpio.c: 252:     return ret;
+[e ) _ret ]
+[e $UE 349  ]
+"253
+[; ;mcal/gpio/mcal_gpio.c: 253: }
+[e :UE 349 ]
 }

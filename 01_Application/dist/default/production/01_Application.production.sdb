@@ -3,65 +3,6 @@
 [d edition pro ]
 [d chip 18F46K20 ]
 [d frameptr 4065 ]
-"11 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-[e E3075 . `uc
-LED_OFF 0
-LED_ON 1
-]
-[e E3033 . `uc
-PORTA_INDEX 0
-PORTB_INDEX 1
-PORTC_INDEX 2
-PORTD_INDEX 3
-PORTE_INDEX 4
-]
-[e E3023 . `uc
-PIN0 0
-PIN1 1
-PIN2 2
-PIN3 3
-PIN4 4
-PIN5 5
-PIN6 6
-PIN7 7
-]
-"41
-[e E3011 . `uc
-R_NOK 0
-R_OK 1
-]
-"23 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-[e E2693 . `uc
-R_NOK 0
-R_OK 1
-]
-"42
-[e E2715 . `uc
-PORTA_INDEX 0
-PORTB_INDEX 1
-PORTC_INDEX 2
-PORTD_INDEX 3
-PORTE_INDEX 4
-]
-[e E2705 . `uc
-PIN0 0
-PIN1 1
-PIN2 2
-PIN3 3
-PIN4 4
-PIN5 5
-PIN6 6
-PIN7 7
-]
-[e E2701 . `uc
-DIRECTION_OUTPUT 0
-DIRECTION_INPUT 1
-]
-"92
-[e E2697 . `uc
-PIN_LOW 0
-PIN_HIGH 1
-]
 "16 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
 [e E2757 . `uc
 LED_OFF 0
@@ -98,10 +39,109 @@ DIRECTION_INPUT 1
 PIN_LOW 0
 PIN_HIGH 1
 ]
-"30 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+"23 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+[e E2693 . `uc
+R_NOK 0
+R_OK 1
+]
+"42
+[e E2715 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E2705 . `uc
+PIN0 0
+PIN1 1
+PIN2 2
+PIN3 3
+PIN4 4
+PIN5 5
+PIN6 6
+PIN7 7
+]
+[e E2701 . `uc
+DIRECTION_OUTPUT 0
+DIRECTION_INPUT 1
+]
+"92
+[e E2697 . `uc
+PIN_LOW 0
+PIN_HIGH 1
+]
+"10 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+[e E3075 . `uc
+LED_OFF 0
+LED_ON 1
+]
+[e E3033 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E3023 . `uc
+PIN0 0
+PIN1 1
+PIN2 2
+PIN3 3
+PIN4 4
+PIN5 5
+PIN6 6
+PIN7 7
+]
+"11
+[e E3094 . `uc
+BUTTON_NOT_PRESSED 0
+BUTTON_PRESSED 1
+]
+"34
+[e E3011 . `uc
+R_NOK 0
+R_OK 1
+]
+"15 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/button/ecu_button.c
+[e E2693 . `uc
+R_NOK 0
+R_OK 1
+]
+"22
+[e E2715 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E2705 . `uc
+PIN0 0
+PIN1 1
+PIN2 2
+PIN3 3
+PIN4 4
+PIN5 5
+PIN6 6
+PIN7 7
+]
+[e E2701 . `uc
+DIRECTION_OUTPUT 0
+DIRECTION_INPUT 1
+]
+"33
+[e E2757 . `uc
+BUTTON_NOT_PRESSED 0
+BUTTON_PRESSED 1
+]
+"40
+[e E2697 . `uc
+PIN_LOW 0
+PIN_HIGH 1
+]
+"33 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
 [v _main main `(i  1 e 2 0 ]
-"38
-[v _perform_led_seq perform_led_seq `(v  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
@@ -126,26 +166,38 @@ PIN_HIGH 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
+"15 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/button/ecu_button.c
+[v _button_initialize button_initialize `(E3011  1 e 1 0 ]
+"33
+[v _button_get_status button_get_status `(E3011  1 e 1 0 ]
 "16 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
-[v _led_initialize led_initialize `(E3011  1 e 1 0 ]
+[v _led_initialize led_initialize `(E2693  1 e 1 0 ]
 "36
-[v _led_turn_on led_turn_on `(E3011  1 e 1 0 ]
+[v _led_turn_on led_turn_on `(E2693  1 e 1 0 ]
 "55
-[v _led_turn_off led_turn_off `(E3011  1 e 1 0 ]
+[v _led_turn_off led_turn_off `(E2693  1 e 1 0 ]
 "42 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
 [v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(E2693  1 e 1 0 ]
 "92
 [v _gpio_pin_write_value gpio_pin_write_value `(E2693  1 e 1 0 ]
+"120
+[v _gpio_pin_read_value gpio_pin_read_value `(E2693  1 e 1 0 ]
 "140
 [v _gpio_pin_toggle_value gpio_pin_toggle_value `(E2693  1 e 1 0 ]
 [s S24 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin 1 0 :4:4 
 ]
-"11 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-[s S30 . 2 `S24 1 port_info 1 0 `E3075 1 led_status 1 1 ]
-[v _led_array led_array `[8]S30  1 e 16 0 ]
-"22
-[v _led_seq led_seq `[4][8]uc  1 e 32 0 ]
+"10 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+[s S30 . 2 `S24 1 port_info 1 0 `E2757 1 led_status 1 1 ]
+[v _led1 led1 `S30  1 e 2 0 ]
+[s S219 . 1 `uc 1 port_name 1 0 :4:0 
+`uc 1 pin 1 0 :3:4 
+`uc 1 button_status 1 0 :1:7 
+]
+"11
+[v _btn1 btn1 `S219  1 e 1 0 ]
+"12
+[v _btn1_status btn1_status `uc  1 e 1 0 ]
 "552 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f46k20.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "788
@@ -182,54 +234,38 @@ PIN_HIGH 1
 [v _lat_register lat_register `[5]*.39VEuc  1 s 10 lat_register ]
 "15
 [v _port_register port_register `[5]*.39VEuc  1 s 10 port_register ]
-"30 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+"33 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"36
-} 0
-"38
-[v _perform_led_seq perform_led_seq `(v  1 e 1 0 ]
-{
-"39
-[v perform_led_seq@l_led_pos l_led_pos `uc  1 a 1 22 ]
-[v perform_led_seq@l_led_counter l_led_counter `uc  1 a 1 21 ]
-[s S24 . 1 `uc 1 port_name 1 0 :4:0 
-`uc 1 pin 1 0 :4:4 
-]
-"38
-[s S30 . 2 `S24 1 port_info 1 0 `E3075 1 led_status 1 1 ]
-[v perform_led_seq@led_Arr led_Arr `*.39S30  1 p 2 13 ]
-[v perform_led_seq@led_pat led_pat `*.39[8]uc  1 p 2 15 ]
-[v perform_led_seq@seq_len seq_len `uc  1 p 1 17 ]
-"54
+"47
 } 0
 "36 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
-[v _led_turn_on led_turn_on `(E3011  1 e 1 0 ]
+[v _led_turn_on led_turn_on `(E2693  1 e 1 0 ]
 {
 [s S24 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin 1 0 :4:4 
 ]
-[s S30 . 2 `S24 1 port_info 1 0 `E3075 1 led_status 1 1 ]
+[s S30 . 2 `S24 1 port_info 1 0 `E2757 1 led_status 1 1 ]
 [v led_turn_on@led led `*.39S30  1 p 2 9 ]
 "47
 } 0
 "55
-[v _led_turn_off led_turn_off `(E3011  1 e 1 0 ]
+[v _led_turn_off led_turn_off `(E2693  1 e 1 0 ]
 {
 [s S24 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin 1 0 :4:4 
 ]
-[s S30 . 2 `S24 1 port_info 1 0 `E3075 1 led_status 1 1 ]
+[s S30 . 2 `S24 1 port_info 1 0 `E2757 1 led_status 1 1 ]
 [v led_turn_off@led led `*.39S30  1 p 2 9 ]
 "66
 } 0
 "16
-[v _led_initialize led_initialize `(E3011  1 e 1 0 ]
+[v _led_initialize led_initialize `(E2693  1 e 1 0 ]
 {
 [s S24 . 1 `uc 1 port_name 1 0 :4:0 
 `uc 1 pin 1 0 :4:4 
 ]
-[s S30 . 2 `S24 1 port_info 1 0 `E3075 1 led_status 1 1 ]
+[s S30 . 2 `S24 1 port_info 1 0 `E2757 1 led_status 1 1 ]
 [v led_initialize@led led `*.39S30  1 p 2 9 ]
 "28
 } 0
@@ -243,7 +279,17 @@ PIN_HIGH 1
 [v gpio_pin_write_value@port port `E2715  1 a 1 8 ]
 "110
 } 0
-"42
+"15 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/button/ecu_button.c
+[v _button_initialize button_initialize `(E3011  1 e 1 0 ]
+{
+[s S219 . 1 `uc 1 port_name 1 0 :4:0 
+`uc 1 pin 1 0 :3:4 
+`uc 1 button_status 1 0 :1:7 
+]
+[v button_initialize@btn btn `*.39S219  1 p 2 9 ]
+"26
+} 0
+"42 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
 [v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(E2693  1 e 1 0 ]
 {
 [v gpio_pin_direction_intialize@port port `E2715  1 a 1 wreg ]
@@ -252,4 +298,26 @@ PIN_HIGH 1
 [v gpio_pin_direction_intialize@direction direction `E2701  1 p 1 1 ]
 [v gpio_pin_direction_intialize@port port `E2715  1 a 1 8 ]
 "61
+} 0
+"33 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/button/ecu_button.c
+[v _button_get_status button_get_status `(E3011  1 e 1 0 ]
+{
+[s S219 . 1 `uc 1 port_name 1 0 :4:0 
+`uc 1 pin 1 0 :3:4 
+`uc 1 button_status 1 0 :1:7 
+]
+[v button_get_status@btn btn `*.39S219  1 p 2 9 ]
+[v button_get_status@btn_status btn_status `*.39E2757  1 p 2 11 ]
+"45
+} 0
+"120 D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+[v _gpio_pin_read_value gpio_pin_read_value `(E2693  1 e 1 0 ]
+{
+[v gpio_pin_read_value@port port `E2715  1 a 1 wreg ]
+[v gpio_pin_read_value@port port `E2715  1 a 1 wreg ]
+[v gpio_pin_read_value@pin pin `E2705  1 p 1 0 ]
+[v gpio_pin_read_value@logic logic `*.39E2697  1 p 2 1 ]
+"122
+[v gpio_pin_read_value@port port `E2715  1 a 1 8 ]
+"131
 } 0

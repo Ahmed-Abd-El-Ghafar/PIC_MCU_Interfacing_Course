@@ -1,4 +1,4 @@
-# 1 "ecu/led/ecu_led.c"
+# 1 "ecu/button/ecu_button.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ecu/led/ecu_led.c" 2
+# 1 "ecu/button/ecu_button.c" 2
 
 
 
@@ -14,10 +14,10 @@
 
 
 
-# 1 "ecu/led/ecu_led.h" 1
-# 11 "ecu/led/ecu_led.h"
-# 1 "ecu/led/../../mcal/gpio/mcal_gpio.h" 1
-# 12 "ecu/led/../../mcal/gpio/mcal_gpio.h"
+# 1 "ecu/button/ecu_button.h" 1
+# 11 "ecu/button/ecu_button.h"
+# 1 "ecu/button/../../mcal/gpio/mcal_gpio.h" 1
+# 12 "ecu/button/../../mcal/gpio/mcal_gpio.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\../pic18f46k20.h" 1 3
 # 44 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\../pic18f46k20.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__at.h" 1 3
@@ -4680,10 +4680,10 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 12 "ecu/led/../../mcal/gpio/mcal_gpio.h" 2
+# 12 "ecu/button/../../mcal/gpio/mcal_gpio.h" 2
 
-# 1 "ecu/led/../../mcal/gpio/../../std_types.h" 1
-# 11 "ecu/led/../../mcal/gpio/../../std_types.h"
+# 1 "ecu/button/../../mcal/gpio/../../std_types.h" 1
+# 11 "ecu/button/../../mcal/gpio/../../std_types.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4838,7 +4838,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 11 "ecu/led/../../mcal/gpio/../../std_types.h" 2
+# 11 "ecu/button/../../mcal/gpio/../../std_types.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 1 3
 # 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 3
@@ -4850,7 +4850,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
-# 12 "ecu/led/../../mcal/gpio/../../std_types.h" 2
+# 12 "ecu/button/../../mcal/gpio/../../std_types.h" 2
 
 
 typedef unsigned char uint8_t;
@@ -4868,8 +4868,8 @@ typedef enum{
     R_NOK,
     R_OK
 }ret_status;
-# 13 "ecu/led/../../mcal/gpio/mcal_gpio.h" 2
-# 34 "ecu/led/../../mcal/gpio/mcal_gpio.h"
+# 13 "ecu/button/../../mcal/gpio/mcal_gpio.h" 2
+# 34 "ecu/button/../../mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH
@@ -4914,26 +4914,27 @@ ret_status gpio_port_get_direction_status(port_index port, uint8_t *direction);
 ret_status gpio_port_write_value(port_index port, uint8_t value);
 ret_status gpio_port_read_value(port_index port, uint8_t *value);
 ret_status gpio_port_toggle_value(port_index port);
-# 11 "ecu/led/ecu_led.h" 2
+# 11 "ecu/button/ecu_button.h" 2
 
 
 
 
 
 typedef enum{
-    LED_OFF,
-    LED_ON
-}led_status;
+    BUTTON_NOT_PRESSED,
+    BUTTON_PRESSED
+}button_status;
 
 typedef struct{
-    struct{
-        uint8_t port_name : 4;
-        uint8_t pin : 4;
-    }port_info;
-    led_status led_status;
-}led_t;
-# 37 "ecu/led/ecu_led.h"
-ret_status led_initialize(led_t *led);
+    uint8_t port_name : 4;
+    uint8_t pin : 3;
+    uint8_t button_status : 1;
+}button_t;
+
+
+ret_status button_initialize(button_t *btn);
+ret_status button_get_status(button_t *btn, button_status *btn_status);
+# 8 "ecu/button/ecu_button.c" 2
 
 
 
@@ -4941,41 +4942,14 @@ ret_status led_initialize(led_t *led);
 
 
 
-ret_status led_turn_on(led_t *led);
-
-
-
-
-
-
-
-ret_status led_turn_off(led_t *led);
-
-
-
-
-
-
-
-ret_status led_turn_toggle(led_t *led);
-# 8 "ecu/led/ecu_led.c" 2
-
-
-
-
-
-
-
-
-ret_status led_initialize(led_t *led){
+ret_status button_initialize(button_t *btn){
     ret_status ret = R_NOK;
-    if((((void*)0) == led) || (led->port_info.port_name > 5U -1) ||
-            (led->port_info.pin > 8U -1)){
+    if((((void*)0) == btn) || (btn->port_name > 5U -1) ||
+            (btn->pin > 8U -1)){
         return ret;
     }
     else{
-        gpio_pin_direction_intialize(led->port_info.port_name, led->port_info.pin, DIRECTION_OUTPUT);
-        gpio_pin_write_value(led->port_info.port_name, led->port_info.pin, PIN_LOW);
+        gpio_pin_direction_intialize(btn->port_name, btn->pin, DIRECTION_INPUT);
         ret = R_OK;
     }
     return ret;
@@ -4986,53 +4960,15 @@ ret_status led_initialize(led_t *led){
 
 
 
-
-ret_status led_turn_on(led_t *led){
+ret_status button_get_status(button_t *btn, button_status *btn_status){
     ret_status ret = R_NOK;
-    if((((void*)0) == led) || (led->port_info.port_name > 5U -1) ||
-            (led->port_info.pin > 8U -1)){
+    if((((void*)0) == btn) || (btn->port_name > 5U -1) ||
+            (btn->pin > 8U -1)){
         return ret;
     }
     else{
-        gpio_pin_write_value(led->port_info.port_name, led->port_info.pin, PIN_HIGH);
-        ret = R_OK;
-    }
-    return ret;
-}
-
-
-
-
-
-
-
-ret_status led_turn_off(led_t *led){
-    ret_status ret = R_NOK;
-    if((((void*)0) == led) || (led->port_info.port_name > 5U -1) ||
-            (led->port_info.pin > 8U -1)){
-        return ret;
-    }
-    else{
-        gpio_pin_write_value(led->port_info.port_name, led->port_info.pin, PIN_LOW);
-        ret = R_OK;
-    }
-    return ret;
-}
-
-
-
-
-
-
-
-ret_status led_turn_toggle(led_t *led){
-    ret_status ret = R_NOK;
-    if((((void*)0) == led) || (led->port_info.port_name > 5U -1) ||
-            (led->port_info.pin > 8U -1)){
-        return ret;
-    }
-    else{
-        gpio_pin_toggle_value(led->port_info.port_name, led->port_info.pin);
+        gpio_pin_read_value(btn->port_name, btn->pin, btn_status);
+        btn->button_status = *btn_status;
         ret = R_OK;
     }
     return ret;

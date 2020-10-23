@@ -9,6 +9,7 @@
 #define	STD_TYPES_H
 
 #include "xc.h"
+#include <assert.h>
 
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;

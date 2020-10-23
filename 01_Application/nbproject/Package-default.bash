@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Spark_Application.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=Spark_Application.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=sparkapplication/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/01_Application.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=01_Application.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=01application/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/sparkapplication/bin
+makeDirectory ${TMPDIR}/01application/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/sparkapplication.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/01application.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/sparkapplication.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/01application.tar *
 checkReturnCode
 
 # Cleanup

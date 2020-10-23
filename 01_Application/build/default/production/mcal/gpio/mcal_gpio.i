@@ -4838,6 +4838,18 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 11 "mcal/gpio/../../std_types.h" 2
 
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 1 3
+# 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/assert.h" 1 3
+# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/assert.h" 3
+          void __assert_fail (const char *, const char *, int, const char *);
+# 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 2 3
+
+
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+# 12 "mcal/gpio/../../std_types.h" 2
+
 
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
@@ -4855,7 +4867,7 @@ typedef enum{
     R_OK
 }ret_status;
 # 13 "mcal/gpio/mcal_gpio.h" 2
-# 29 "mcal/gpio/mcal_gpio.h"
+# 34 "mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH
@@ -4896,7 +4908,7 @@ ret_status gpio_pin_toggle_value(port_index port, pin_index pin);
 
 ret_status gpio_port_default_init(uint8_t port_numbers);
 ret_status gpio_port_direction_intialize(port_index port, direction_t direction);
-ret_status gpio_port_get_direction_status(port_index port, direction_t *direction);
+ret_status gpio_port_get_direction_status(port_index port, uint8_t *direction);
 ret_status gpio_port_write_value(port_index port, uint8_t value);
 ret_status gpio_port_read_value(port_index port, uint8_t *value);
 ret_status gpio_port_toggle_value(port_index port);
@@ -5000,31 +5012,63 @@ ret_status gpio_pin_toggle_value(port_index port, pin_index pin){
         return ret;
     }
     else{
-        *lat_register[port] ^= (1U << pin);
+
+        (*lat_register[port] ^= (1U << pin));
         ret = R_OK;
     }
     return ret;
 }
-# 159 "mcal/gpio/mcal_gpio.c"
+# 160 "mcal/gpio/mcal_gpio.c"
 ret_status gpio_port_direction_intialize(port_index port, direction_t direction){
-
-}
-# 170 "mcal/gpio/mcal_gpio.c"
-ret_status gpio_port_get_direction_status(port_index port, direction_t *direction){
-
-}
-# 181 "mcal/gpio/mcal_gpio.c"
-ret_status gpio_port_write_value(port_index port, uint8_t value){
-
-}
-# 192 "mcal/gpio/mcal_gpio.c"
-ret_status gpio_port_read_value(port_index port, uint8_t *value){
     ret_status ret = R_NOK;
-    if(((void*)0) == value){
+    if(port > 5U -1){
         return ret;
     }
     else{
-
+        switch(direction){
+            case DIRECTION_OUTPUT :
+                *tris_register[port] = 0x00U;
+                break;
+            case DIRECTION_INPUT :
+                *tris_register[port] = 0xFFU;
+                break;
+            default : return ret;
+        }
+        ret = R_OK;
+    }
+    return ret;
+}
+# 187 "mcal/gpio/mcal_gpio.c"
+ret_status gpio_port_get_direction_status(port_index port, uint8_t *direction){
+    ret_status ret = R_NOK;
+    if((port > 5U -1) || (((void*)0) == direction)){
+        return R_NOK;
+    }
+    else{
+        *direction = *tris_register[port];
+        ret = R_OK;
+    }
+    return ret;
+}
+# 206 "mcal/gpio/mcal_gpio.c"
+ret_status gpio_port_write_value(port_index port, uint8_t value){
+    ret_status ret = R_NOK;
+    if(port > 5U -1){
+        return R_NOK;
+    }
+    else{
+        *lat_register[port] = value;
+        ret = R_OK;
+    }
+    return ret;
+}
+# 225 "mcal/gpio/mcal_gpio.c"
+ret_status gpio_port_read_value(port_index port, uint8_t *value){
+    ret_status ret = R_NOK;
+    if((port > 5U -1) || (((void*)0) == value)){
+        return ret;
+    }
+    else{
         *value = *port_register[port];
         ret = R_OK;
     }
@@ -5038,5 +5082,13 @@ ret_status gpio_port_read_value(port_index port, uint8_t *value){
 
 
 ret_status gpio_port_toggle_value(port_index port){
-
+    ret_status ret = R_NOK;
+    if(port > 5U -1){
+        return ret;
+    }
+    else{
+        (*lat_register[port] ^= 0XFF);
+        ret = R_OK;
+    }
+    return ret;
 }

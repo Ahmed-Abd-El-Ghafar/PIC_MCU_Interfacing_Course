@@ -151,40 +151,72 @@ ret_status gpio_pin_toggle_value(port_index port, pin_index pin){
 }
 
 /**
- * @brief 
+ * @brief Update the direction of each pin of a specific port
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param direction
  * @return Status of the function 
  *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_direction_intialize(port_index port, direction_t direction){
-    
+    ret_status ret = R_NOK;
+    if(port > PORT_MAX_NUMBERS-1){
+        return ret;
+    }
+    else{
+        switch(direction){
+            case DIRECTION_OUTPUT :
+                *tris_register[port] = PORT_DIRECTION_OUTPUT;
+                break;
+            case DIRECTION_INPUT :
+                *tris_register[port] = PORT_DIRECTION_INPUT;
+                break;
+            default : return ret;
+        }
+        ret = R_OK;
+    }
+    return ret;
 }
 
 /**
- * @brief 
+ * @brief Get the status direction of each pin of a specific port
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param direction
  * @return Status of the function 
  *         (R_OK) : The function done successfully
  */
-ret_status gpio_port_get_direction_status(port_index port, direction_t *direction){
-    
+ret_status gpio_port_get_direction_status(port_index port, uint8_t *direction){
+    ret_status ret = R_NOK;
+    if((port > PORT_MAX_NUMBERS-1) || (NULL == direction)){
+        return R_NOK;
+    }
+    else{
+        *direction = *tris_register[port];
+        ret = R_OK;
+    }
+    return ret;
 }
 
 /**
- * @brief 
+ * @brief Write a voltage level on the port
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param value
  * @return Status of the function 
  *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_write_value(port_index port, uint8_t value){
-    
+    ret_status ret = R_NOK;
+    if(port > PORT_MAX_NUMBERS-1){
+        return R_NOK;
+    }
+    else{
+        *lat_register[port] = value;
+        ret = R_OK;
+    }
+    return ret;
 }
 
 /**
- * @brief 
+ * @brief Read the voltage level on the port
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @param value : 
  * @return Status of the function 
@@ -192,11 +224,10 @@ ret_status gpio_port_write_value(port_index port, uint8_t value){
  */
 ret_status gpio_port_read_value(port_index port, uint8_t *value){
     ret_status ret = R_NOK;
-    if(NULL == value){
+    if((port > PORT_MAX_NUMBERS-1) || (NULL == value)){
         return ret;
     }
     else{
-        /*  */
         *value = *port_register[port];
         ret = R_OK;
     }
@@ -204,11 +235,19 @@ ret_status gpio_port_read_value(port_index port, uint8_t *value){
 }
 
 /**
- * @brief
+ * @brief Toggle the port voltage level
  * @param port  : The port that has the pin we need to Initialize -> PORTA_INDEX, PORTB_INDEX, ...
  * @return Status of the function 
  *         (R_OK) : The function done successfully
  */
 ret_status gpio_port_toggle_value(port_index port){
-    
+    ret_status ret = R_NOK;
+    if(port > PORT_MAX_NUMBERS-1){
+        return ret;
+    }
+    else{
+        TOGGLE_PORT(*lat_register[port]);
+        ret = R_OK;
+    }
+    return ret;
 }

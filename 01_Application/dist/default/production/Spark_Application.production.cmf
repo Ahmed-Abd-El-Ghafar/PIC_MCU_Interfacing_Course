@@ -11,28 +11,33 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
+$C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
 $dist/default/production\Spark_Application.production.o
-cinit CODE 0 FDA0 FDA0 2C 1
-text0 CODE 0 FDCC FDCC A4 1
-text1 CODE 0 FF38 FF38 C8 1
-text2 CODE 0 FE70 FE70 C8 1
-idataCOMRAM CODE 0 FD82 FD82 1E 1
-cstackCOMRAM COMRAM 1 1F 1F B 1
-dataCOMRAM COMRAM 1 1 1 1E 1
-bssCOMRAM COMRAM 1 2A 2A 1 1
+cinit CODE 0 FBB0 FBB0 4A 1
+text0 CODE 0 FB42 FB42 20 1
+text1 CODE 0 FF0E FF0E F2 1
+text2 CODE 0 FC70 FC70 76 1
+text3 CODE 0 FBFA FBFA 76 1
+text4 CODE 0 FCE6 FCE6 98 1
+text5 CODE 0 FE46 FE46 C8 1
+text6 CODE 0 FD7E FD7E C8 1
+idataCOMRAM CODE 0 FB82 FB82 2E 1
+cstackCOMRAM COMRAM 1 2F 2F 17 1
+idataBANK0 CODE 0 FB62 FB62 20 1
+dataBANK0 BANK0 1 60 60 20 1
+dataCOMRAM COMRAM 1 1 1 2E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 60-F5F 1
+RAM 80-F5F 1
 SFR F60-FFF 1
-BANK0 60-FF 1
+BANK0 80-FF 1
 BANK1 100-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
@@ -42,20 +47,21 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
-CONST 4-FD81 1
-STACK 60-F5F 1
-SMALLCONST 1000-FD81 1
-CODE 4-FD81 1
+CONST 4-FB41 1
+STACK 80-F5F 1
+SMALLCONST 1000-FB41 1
+CODE 4-FB41 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-EFF 1
 BANK15 F00-F5F 1
-BIGRAM 2B-F5F 1
-COMRAM 2B-5F 1
+BIGRAM 46-5F 1
+BIGRAM 80-F5F 1
+COMRAM 46-5F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 1000-FD81 1
+MEDIUMCONST 1000-FB41 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -70,57 +76,95 @@ MEDIUMCONST 1000-FD81 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Spark_Application.production.o
-FE70 text2 CODE >42:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FE72 text2 CODE >43:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FE72 text2 CODE >45:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FE86 text2 CODE >52:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FECC text2 CODE >55:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FF0C text2 CODE >57:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FF36 text2 CODE >58:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FF36 text2 CODE >61:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FF38 text1 CODE >92:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FF3A text1 CODE >93:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FF3A text1 CODE >94:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FF4E text1 CODE >101:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FF94 text1 CODE >104:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FFD4 text1 CODE >106:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FFFE text1 CODE >107:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FFFE text1 CODE >110:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-FDCC text0 CODE >12:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FDCC text0 CODE >13:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FDDA text0 CODE >14:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FDE8 text0 CODE >15:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FDF6 text0 CODE >16:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FE04 text0 CODE >17:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FE04 text0 CODE >18:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FE12 text0 CODE >19:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FE20 text0 CODE >20:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FE36 text0 CODE >21:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FE44 text0 CODE >22:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FE52 text0 CODE >23:D:\Embedded Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
-FDA0 cinit CODE >1451:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDA0 cinit CODE >1453:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDA0 cinit CODE >1456:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDA0 cinit CODE >1487:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDA2 cinit CODE >1488:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDA4 cinit CODE >1489:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDA6 cinit CODE >1490:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDA8 cinit CODE >1491:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDAA cinit CODE >1492:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDAC cinit CODE >1493:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDB0 cinit CODE >1494:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDB4 cinit CODE >1495:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDB4 cinit CODE >1496:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDB6 cinit CODE >1497:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDBA cinit CODE >1498:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDBC cinit CODE >1499:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDBE cinit CODE >1500:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDC0 cinit CODE >1504:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDC2 cinit CODE >1510:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDC2 cinit CODE >1513:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDC4 cinit CODE >1514:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDC6 cinit CODE >1515:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
-FDC8 cinit CODE >1516:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
+FD7E text6 CODE >42:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FD80 text6 CODE >43:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FD80 text6 CODE >45:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FD94 text6 CODE >52:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FDDA text6 CODE >55:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FE1A text6 CODE >57:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FE44 text6 CODE >58:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FE44 text6 CODE >61:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FE46 text5 CODE >92:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FE48 text5 CODE >93:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FE48 text5 CODE >94:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FE5C text5 CODE >101:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FEA2 text5 CODE >104:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FEE2 text5 CODE >106:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FF0C text5 CODE >107:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FF0C text5 CODE >110:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
+FCE6 text4 CODE >16:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FCE6 text4 CODE >17:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FCE6 text4 CODE >18:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FD38 text4 CODE >23:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FD5A text4 CODE >24:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FD7C text4 CODE >25:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FD7C text4 CODE >28:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FBFA text3 CODE >55:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FBFA text3 CODE >56:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FBFA text3 CODE >57:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FC4C text3 CODE >62:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FC6E text3 CODE >63:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FC6E text3 CODE >66:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FC70 text2 CODE >36:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FC70 text2 CODE >37:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FC70 text2 CODE >38:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FCC2 text2 CODE >43:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FCE4 text2 CODE >44:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FCE4 text2 CODE >47:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
+FF0E text1 CODE >38:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FF0E text1 CODE >39:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FF12 text1 CODE >40:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FF1A text1 CODE >41:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FF36 text1 CODE >42:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FF4A text1 CODE >43:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FF52 text1 CODE >44:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FF56 text1 CODE >45:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FF86 text1 CODE >46:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FFA2 text1 CODE >47:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FFA6 text1 CODE >49:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FFC2 text1 CODE >51:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FFD4 text1 CODE >52:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FFEA text1 CODE >53:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FFFE text1 CODE >54:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FB42 text0 CODE >30:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FB42 text0 CODE >32:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FB42 text0 CODE >33:D:\Embedded_Systems\github\PIC_MCU_Interfacing_Course\01_Application\application.c
+FBB0 cinit CODE >1517:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBB0 cinit CODE >1519:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBB0 cinit CODE >1522:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBB0 cinit CODE >1560:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBB2 cinit CODE >1561:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBB4 cinit CODE >1562:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBB6 cinit CODE >1563:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBB8 cinit CODE >1564:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBBA cinit CODE >1565:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBBC cinit CODE >1566:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBC0 cinit CODE >1567:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBC4 cinit CODE >1568:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBC4 cinit CODE >1569:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBC6 cinit CODE >1570:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBCA cinit CODE >1571:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBCC cinit CODE >1572:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBCE cinit CODE >1573:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBD0 cinit CODE >1577:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBD2 cinit CODE >1578:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBD4 cinit CODE >1579:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBD6 cinit CODE >1580:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBD8 cinit CODE >1581:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBDA cinit CODE >1582:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBDC cinit CODE >1583:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBE0 cinit CODE >1584:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBE4 cinit CODE >1585:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBE4 cinit CODE >1586:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBE6 cinit CODE >1587:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBEA cinit CODE >1588:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBEC cinit CODE >1589:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBEE cinit CODE >1590:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBF0 cinit CODE >1596:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBF0 cinit CODE >1599:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBF2 cinit CODE >1600:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBF4 cinit CODE >1601:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
+FBF6 cinit CODE >1602:C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -133,38 +177,45 @@ FDC8 cinit CODE >1516:C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.s
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
+__LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Spark_Application.production.o
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Spark_Application.production.o
 __Hspace_0 30000E 0 ABS 0 - dist/default/production\Spark_Application.production.o
-__Hspace_1 2B 0 ABS 0 - dist/default/production\Spark_Application.production.o
+__Hspace_1 80 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
+__HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Spark_Application.production.o
 __size_of_gpio_pin_direction_intialize 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
+_led_array 1F 0 COMRAM 1 dataCOMRAM dist/default/production\Spark_Application.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\Spark_Application.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Spark_Application.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-__end_of_gpio_pin_direction_intialize FF38 0 CODE 0 text2 dist/default/production\Spark_Application.production.o
+__end_of_gpio_pin_direction_intialize FE46 0 CODE 0 text6 dist/default/production\Spark_Application.production.o
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\Spark_Application.production.o
 _LATA F89 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _LATB F8A 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _LATC F8B 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _LATD F8C 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _LATE F8D 0 ABS 0 - dist/default/production\Spark_Application.production.o
-___sp 0 0 STACK 2 stack C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
-_main FDCC 0 CODE 0 text0 dist/default/production\Spark_Application.production.o
-start 0 0 CODE 0 init C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
+___sp 0 0 STACK 2 stack C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+_main FB42 0 CODE 0 text0 dist/default/production\Spark_Application.production.o
+perform_led_seq@led_Arr 3C 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+perform_led_seq@led_pat 3E 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+start 0 0 CODE 0 init C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Spark_Application.production.o
 _tris_register 15 0 COMRAM 1 dataCOMRAM dist/default/production\Spark_Application.production.o
+__LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\Spark_Application.production.o
 __Hpowerup 0 0 CODE 0 powerup dist/default/production\Spark_Application.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Spark_Application.production.o
-__accesstop 60 0 ABS 0 - C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
-intlevel0 0 0 CODE 0 text C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
-intlevel1 0 0 CODE 0 text C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
-intlevel2 0 0 CODE 0 text C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
-intlevel3 0 0 CODE 0 text C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
-__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\Spark_Application.production.o
+__accesstop 60 0 ABS 0 - C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+perform_led_seq@l_led_counter 44 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+intlevel0 0 0 CODE 0 text C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+intlevel1 0 0 CODE 0 text C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+intlevel2 0 0 CODE 0 text C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+intlevel3 0 0 CODE 0 text C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+__end_of_perform_led_seq 10000 0 CODE 0 text1 dist/default/production\Spark_Application.production.o
+__size_of_led_initialize 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Spark_Application.production.o
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
@@ -173,27 +224,34 @@ __CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production
 __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\Spark_Application.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\Spark_Application.production.o
-__pidataCOMRAM FD82 0 CODE 0 idataCOMRAM dist/default/production\Spark_Application.production.o
-gpio_pin_direction_intialize@direction 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
-gpio_pin_direction_intialize@pin 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
+perform_led_seq@seq_len 40 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+__pidataCOMRAM FB82 0 CODE 0 idataCOMRAM dist/default/production\Spark_Application.production.o
+gpio_pin_direction_intialize@direction 30 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+gpio_pin_direction_intialize@pin 2F 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+__size_of_led_turn_on 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+led_initialize@led 38 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\Spark_Application.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\Spark_Application.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\Spark_Application.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\Spark_Application.production.o
 __Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\Spark_Application.production.o
 __size_of_gpio_pin_write_value 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
+_perform_led_seq FF0E 0 CODE 0 text1 dist/default/production\Spark_Application.production.o
+_led_turn_off FBFA 0 CODE 0 text3 dist/default/production\Spark_Application.production.o
 __LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\Spark_Application.production.o
-__end_of_gpio_pin_write_value 10000 0 CODE 0 text1 dist/default/production\Spark_Application.production.o
+__end_of_gpio_pin_write_value FF0E 0 CODE 0 text5 dist/default/production\Spark_Application.production.o
+led_turn_on@led 38 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
 __Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\Spark_Application.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-start_initialization FDA0 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
+start_initialization FBB0 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\Spark_Application.production.o
-gpio_pin_direction_intialize@port 27 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+gpio_pin_direction_intialize@port 37 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\Spark_Application.production.o
-gpio_pin_write_value@port 27 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+gpio_pin_write_value@port 37 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
 __CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
+__size_of_led_turn_off 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\Spark_Application.production.o
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\Spark_Application.production.o
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\Spark_Application.production.o
@@ -215,19 +273,25 @@ __Hstack 0 0 STACK 2 stack dist/default/production\Spark_Application.production.
 __Htext0 0 0 ABS 0 text0 dist/default/production\Spark_Application.production.o
 __Htext1 0 0 ABS 0 text1 dist/default/production\Spark_Application.production.o
 __Htext2 0 0 ABS 0 text2 dist/default/production\Spark_Application.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production\Spark_Application.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production\Spark_Application.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production\Spark_Application.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production\Spark_Application.production.o
 __Hbank10 0 0 ABS 0 bank10 dist/default/production\Spark_Application.production.o
 __Hbank11 0 0 ABS 0 bank11 dist/default/production\Spark_Application.production.o
 __Hbank12 0 0 ABS 0 bank12 dist/default/production\Spark_Application.production.o
 __Hbank13 0 0 ABS 0 bank13 dist/default/production\Spark_Application.production.o
 __Hbank14 0 0 ABS 0 bank14 dist/default/production\Spark_Application.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\Spark_Application.production.o
+__end_of_led_turn_off FC70 0 CODE 0 text3 dist/default/production\Spark_Application.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\Spark_Application.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\Spark_Application.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\Spark_Application.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\Spark_Application.production.o
 __CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-gpio_pin_write_value@logic 20 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+__size_of_perform_led_seq 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
+gpio_pin_write_value@logic 30 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\Spark_Application.production.o
 __Lbank1 0 0 ABS 0 bank1 dist/default/production\Spark_Application.production.o
 __Lbank2 0 0 ABS 0 bank2 dist/default/production\Spark_Application.production.o
@@ -249,6 +313,10 @@ __Lstack 0 0 STACK 2 stack dist/default/production\Spark_Application.production.
 __Ltext0 0 0 ABS 0 text0 dist/default/production\Spark_Application.production.o
 __Ltext1 0 0 ABS 0 text1 dist/default/production\Spark_Application.production.o
 __Ltext2 0 0 ABS 0 text2 dist/default/production\Spark_Application.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production\Spark_Application.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production\Spark_Application.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production\Spark_Application.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production\Spark_Application.production.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\Spark_Application.production.o
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\Spark_Application.production.o
 __Habs1 0 0 ABS 0 abs1 dist/default/production\Spark_Application.production.o
@@ -270,10 +338,10 @@ __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Spark_Application
 __Hintret 0 0 ABS 0 intret dist/default/production\Spark_Application.production.o
 __Hirdata 0 0 CODE 0 irdata dist/default/production\Spark_Application.production.o
 __S0 30000E 0 ABS 0 - dist/default/production\Spark_Application.production.o
-__S1 2B 0 ABS 0 - dist/default/production\Spark_Application.production.o
+__S1 80 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __S2 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-_var 2A 0 COMRAM 1 bssCOMRAM dist/default/production\Spark_Application.production.o
 __CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
+_led_turn_on FC70 0 CODE 0 text2 dist/default/production\Spark_Application.production.o
 __HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\Spark_Application.production.o
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Spark_Application.production.o
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\Spark_Application.production.o
@@ -281,8 +349,11 @@ __CFG_CCP2MX$PORTC 0 0 ABS 0 - dist/default/production\Spark_Application.product
 __Lintentry 0 0 ABS 0 intentry dist/default/production\Spark_Application.production.o
 __Hramtop 1000 0 RAM 0 ramtop dist/default/production\Spark_Application.production.o
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\Spark_Application.production.o
+__pdataBANK0 60 0 BANK0 1 dataBANK0 dist/default/production\Spark_Application.production.o
 __activetblptr 2 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\Spark_Application.production.o
+_led_seq 60 0 BANK0 1 dataBANK0 dist/default/production\Spark_Application.production.o
+_led_initialize FCE6 0 CODE 0 text4 dist/default/production\Spark_Application.production.o
 __CFG_HFOFST$ON 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Lbank10 0 0 ABS 0 bank10 dist/default/production\Spark_Application.production.o
 __Lbank11 0 0 ABS 0 bank11 dist/default/production\Spark_Application.production.o
@@ -298,40 +369,44 @@ __Lconfig 300000 0 CONFIG 0 config dist/default/production\Spark_Application.pro
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\Spark_Application.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\Spark_Application.production.o
 _lat_register B 0 COMRAM 1 dataCOMRAM dist/default/production\Spark_Application.production.o
-stackhi F5F 0 ABS 0 - C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
-stacklo 60 0 ABS 0 - C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
+stackhi F5F 0 ABS 0 - C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
+stacklo 80 0 ABS 0 - C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
 __Lintcode 0 0 CODE 0 intcode dist/default/production\Spark_Application.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\Spark_Application.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\Spark_Application.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Lspace_2 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-__pbssCOMRAM 2A 0 COMRAM 1 bssCOMRAM dist/default/production\Spark_Application.production.o
-gpio_pin_write_value@pin 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+__end_of_led_initialize FD7E 0 CODE 0 text4 dist/default/production\Spark_Application.production.o
+gpio_pin_write_value@pin 2F 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-_gpio_pin_write_value FF38 0 CODE 0 text1 dist/default/production\Spark_Application.production.o
+_gpio_pin_write_value FE46 0 CODE 0 text5 dist/default/production\Spark_Application.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\Spark_Application.production.o
-end_of_initialization FDC2 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
-_gpio_pin_direction_intialize FE70 0 CODE 0 text2 dist/default/production\Spark_Application.production.o
+end_of_initialization FBF0 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
+_gpio_pin_direction_intialize FD7E 0 CODE 0 text6 dist/default/production\Spark_Application.production.o
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\Spark_Application.production.o
 __Hintentry 0 0 ABS 0 intentry dist/default/production\Spark_Application.production.o
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\Spark_Application.production.o
 __Lramtop 1000 0 RAM 0 ramtop dist/default/production\Spark_Application.production.o
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\Spark_Application.production.o
-__pcinit FDA0 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
-__ptext0 FDCC 0 CODE 0 text0 dist/default/production\Spark_Application.production.o
-__ptext1 FF38 0 CODE 0 text1 dist/default/production\Spark_Application.production.o
-__ptext2 FE70 0 CODE 0 text2 dist/default/production\Spark_Application.production.o
+__pcinit FBB0 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
+__ptext0 FB42 0 CODE 0 text0 dist/default/production\Spark_Application.production.o
+__ptext1 FF0E 0 CODE 0 text1 dist/default/production\Spark_Application.production.o
+__ptext2 FC70 0 CODE 0 text2 dist/default/production\Spark_Application.production.o
+__ptext3 FBFA 0 CODE 0 text3 dist/default/production\Spark_Application.production.o
+__ptext4 FCE6 0 CODE 0 text4 dist/default/production\Spark_Application.production.o
+__ptext5 FE46 0 CODE 0 text5 dist/default/production\Spark_Application.production.o
+__ptext6 FD7E 0 CODE 0 text6 dist/default/production\Spark_Application.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\Spark_Application.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\AHMED~1.ELG\AppData\Local\Temp\s9oc.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\AHMED~1.ELG\AppData\Local\Temp\sn50.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\Spark_Application.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\Spark_Application.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\Spark_Application.production.o
 __CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 ___param_bank 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\Spark_Application.production.o
-__end_of__initialization FDC2 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
+__end_of__initialization FBF0 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
@@ -340,11 +415,14 @@ __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\Spark_Application.production.o
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
+__pidataBANK0 FB62 0 CODE 0 idataBANK0 dist/default/production\Spark_Application.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\Spark_Application.production.o
+perform_led_seq@l_led_pos 45 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
 __CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-__pcstackCOMRAM 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+__pcstackCOMRAM 2F 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
 __CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-__end_of_main FE70 0 CODE 0 text0 dist/default/production\Spark_Application.production.o
+led_turn_off@led 38 0 COMRAM 1 cstackCOMRAM dist/default/production\Spark_Application.production.o
+__end_of_main FB62 0 CODE 0 text0 dist/default/production\Spark_Application.production.o
 _PORTA F80 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _PORTB F81 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _PORTC F82 0 ABS 0 - dist/default/production\Spark_Application.production.o
@@ -355,6 +433,7 @@ _TRISB F93 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _TRISC F94 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _TRISD F95 0 ABS 0 - dist/default/production\Spark_Application.production.o
 _TRISE F96 0 ABS 0 - dist/default/production\Spark_Application.production.o
+__end_of_led_turn_on FCE6 0 CODE 0 text2 dist/default/production\Spark_Application.production.o
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __HRAM 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
@@ -369,7 +448,8 @@ __CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Spark_Application.production.o
-__initialization FDA0 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
+__HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\Spark_Application.production.o
+__initialization FBB0 0 CODE 0 cinit dist/default/production\Spark_Application.production.o
 __pdataCOMRAM 1 0 COMRAM 1 dataCOMRAM dist/default/production\Spark_Application.production.o
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\Spark_Application.production.o
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\Spark_Application.production.o
@@ -401,14 +481,20 @@ __Hintcode 0 0 CODE 0 intcode dist/default/production\Spark_Application.producti
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 FDA0 FDA0 2C 1
+cinit 0 FBB0 FBB0 4A 1
 idloc 0 200000 200000 8 1
-text0 0 FDCC FDCC A4 1
-text1 0 FF38 FF38 C8 1
-text2 0 FE70 FE70 C8 1
-idataCOMRAM 0 FD82 FD82 1E 1
+text0 0 FB42 FB42 20 1
+text1 0 FF0E FF0E F2 1
+text2 0 FC70 FC70 76 1
+text3 0 FBFA FBFA 76 1
+text4 0 FCE6 FCE6 98 1
+text5 0 FE46 FE46 C8 1
+text6 0 FD7E FD7E C8 1
+idataCOMRAM 0 FB82 FB82 2E 1
 reset_vec 0 0 0 4 1
-dataCOMRAM 1 1 1 2A 1
+idataBANK0 0 FB62 FB62 20 1
+dataBANK0 1 60 60 20 1
+dataCOMRAM 1 1 1 45 1
 config 0 300000 300000 E 1
 # OTES Section
 # This section contains data of all the note-psects.  The beginning of the section

@@ -18,12 +18,17 @@
 #define PORT_DIRECTION_INPUT        0xFFU
 #define PORT_DIRECTION_OUTPUT       0x00U
 #define PIN_MASK_VALUE              1U
+#define PORT_MASK_VALUE             0XFF
 
 /* Section: Macro Functions Declarations */
 #define CLEAR_BIT(REGISTER,BIT_POS)  (REGISTER &= ~(PIN_MASK_VALUE << BIT_POS))
 #define SET_BIT(REGISTER,BIT_POS)    (REGISTER |= (PIN_MASK_VALUE << BIT_POS))
 #define TOGGLE_BIT(REGISTER,BIT_POS) (REGISTER ^= (PIN_MASK_VALUE << BIT_POS))
 #define READ_BIT(REGISTER,BIT_POS)   ((REGISTER >> BIT_POS) & PIN_MASK_VALUE)
+
+#define CLEAR_PORT(REGISTER)    (REGISTER &= ~PORT_MASK_VALUE)
+#define SET_PORT(REGISTER)      (REGISTER |= PORT_MASK_VALUE)
+#define TOGGLE_PORT(REGISTER)   (REGISTER ^= PORT_MASK_VALUE)
 
 /* Section: Data Type Definitions */
 typedef enum{
@@ -66,7 +71,7 @@ ret_status gpio_pin_toggle_value(port_index port, pin_index pin);
 
 ret_status gpio_port_default_init(uint8_t port_numbers);
 ret_status gpio_port_direction_intialize(port_index port, direction_t direction);
-ret_status gpio_port_get_direction_status(port_index port, direction_t *direction);
+ret_status gpio_port_get_direction_status(port_index port, uint8_t *direction);
 ret_status gpio_port_write_value(port_index port, uint8_t value);
 ret_status gpio_port_read_value(port_index port, uint8_t *value);
 ret_status gpio_port_toggle_value(port_index port);

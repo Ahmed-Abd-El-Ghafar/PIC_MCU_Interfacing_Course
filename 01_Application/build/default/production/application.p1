@@ -1,25 +1,51 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"22 ./ecu/led/ecu_led.h
+[; ;./ecu/led/ecu_led.h: 22:     struct{
+[s S306 :4 `uc 1 :4 `uc 1 ]
+[n S306 . port_name pin ]
+"10 application.c
+[; ;application.c: 10: led_t led1 = {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN0, .led_status = LED_OFF};
+[c E3075 0 1 .. ]
+[n E3075 . LED_OFF LED_ON  ]
+"21 ./ecu/led/ecu_led.h
+[; ;./ecu/led/ecu_led.h: 21: typedef struct{
+[s S305 `S306 1 `E3075 1 ]
+[n S305 . port_info led_status ]
+"10 application.c
+[; ;application.c: 10: led_t led1 = {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN0, .led_status = LED_OFF};
+[c E3033 0 1 2 3 4 .. ]
+[n E3033 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E3023 0 1 2 3 4 5 6 7 .. ]
+[n E3023 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+"21 ./ecu/button/ecu_button.h
+[; ;./ecu/button/ecu_button.h: 21: typedef struct{
+[s S307 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S307 . port_name pin button_status ]
+"11 application.c
+[; ;application.c: 11: button_t btn1 = {.port_name = PORTD_INDEX, .pin = PIN0, .button_status = BUTTON_NOT_PRESSED};
+[c E3094 0 1 .. ]
+[n E3094 . BUTTON_NOT_PRESSED BUTTON_PRESSED  ]
 [p mainexit ]
-"13 application.c
-[; ;application.c: 13:     gpio_pin_direction_intialize(PORTC_INDEX, PIN0, DIRECTION_OUTPUT);
-[c E3027 0 1 2 3 4 .. ]
-[n E3027 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E3017 0 1 2 3 4 5 6 7 .. ]
-[n E3017 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
-[c E3013 0 1 .. ]
-[n E3013 . DIRECTION_OUTPUT DIRECTION_INPUT  ]
-[c E3005 0 1 .. ]
-[n E3005 . R_NOK R_OK  ]
-"61 ./ecu/led/../../mcal/gpio/mcal_gpio.h
-[; ;./ecu/led/../../mcal/gpio/mcal_gpio.h: 61: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction);
-[v _gpio_pin_direction_intialize `(E3005 ~T0 @X0 0 ef3`E3027`E3017`E3013 ]
-"15 application.c
-[; ;application.c: 15:     gpio_pin_write_value(PORTC_INDEX, PIN0, PIN_LOW);
-[c E3009 0 1 .. ]
-[n E3009 . PIN_LOW PIN_HIGH  ]
-"63 ./ecu/led/../../mcal/gpio/mcal_gpio.h
-[; ;./ecu/led/../../mcal/gpio/mcal_gpio.h: 63: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic);
-[v _gpio_pin_write_value `(E3005 ~T0 @X0 0 ef3`E3027`E3017`E3009 ]
+"34
+[; ;application.c: 34:     led_initialize(&led1);
+[c E3011 0 1 .. ]
+[n E3011 . R_NOK R_OK  ]
+"37 ./ecu/led/ecu_led.h
+[; ;./ecu/led/ecu_led.h: 37: ret_status led_initialize(led_t *led);
+[v _led_initialize `(E3011 ~T0 @X0 0 ef1`*S305 ]
+"28 ./ecu/button/ecu_button.h
+[; ;./ecu/button/ecu_button.h: 28: ret_status button_initialize(button_t *btn);
+[v _button_initialize `(E3011 ~T0 @X0 0 ef1`*S307 ]
+"29
+[; ;./ecu/button/ecu_button.h: 29: ret_status button_get_status(button_t *btn, button_status *btn_status);
+[v _button_get_status `(E3011 ~T0 @X0 0 ef2`*S307`*E3094 ]
+"45 ./ecu/led/ecu_led.h
+[; ;./ecu/led/ecu_led.h: 45: ret_status led_turn_on(led_t *led);
+[v _led_turn_on `(E3011 ~T0 @X0 0 ef1`*S305 ]
+"53
+[; ;./ecu/led/ecu_led.h: 53: ret_status led_turn_off(led_t *led);
+[v _led_turn_off `(E3011 ~T0 @X0 0 ef1`*S305 ]
+[v F3122 `uc ~T0 @X0 -> 8 `i t ]
 [v F2991 `(v ~T0 @X0 1 tf1`ul ]
 "187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
 [v __delay `JF2991 ~T0 @X0 0 e ]
@@ -319,63 +345,312 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7352
 [; <" TOSU equ 0FFFh ;# ">
 "10 application.c
-[; ;application.c: 10: uint8_t var = 0;
-[v _var `uc ~T0 @X0 1 e ]
-[i _var
+[; ;application.c: 10: led_t led1 = {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN0, .led_status = LED_OFF};
+[v _led1 `S305 ~T0 @X0 1 e ]
+[i _led1
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 0 `uc
+..
+..
+. `E3075 0
+..
+..
+]
+"11
+[; ;application.c: 11: button_t btn1 = {.port_name = PORTD_INDEX, .pin = PIN0, .button_status = BUTTON_NOT_PRESSED};
+[v _btn1 `S307 ~T0 @X0 1 e ]
+[i _btn1
+:U ..
+:U ..
+-> . `E3033 3 `uc
+-> . `E3023 0 `uc
+-> . `E3094 0 `uc
+..
+..
+]
+"12
+[; ;application.c: 12: uint8_t btn1_status = 0;
+[v _btn1_status `uc ~T0 @X0 1 e ]
+[i _btn1_status
 -> -> 0 `i `uc
 ]
+"14
+[; ;application.c: 14: led_t led_array[8] = {
+[v _led_array `S305 ~T0 @X0 -> 8 `i e ]
+[i _led_array
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 0 `uc
+..
+..
+. `E3075 0
+..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 1 `uc
+..
+..
+. `E3075 0
+..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 2 `uc
+..
+..
+. `E3075 0
+..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 3 `uc
+..
+..
+. `E3075 0
+..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 4 `uc
+..
+..
+. `E3075 0
+..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 5 `uc
+..
+..
+. `E3075 0
+..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 6 `uc
+..
+..
+. `E3075 0
+..
+:U ..
+:U ..
+:U ..
+-> . `E3033 2 `uc
+-> . `E3023 7 `uc
+..
+..
+. `E3075 0
+..
+..
+]
+[v F3113 `uc ~T0 @X0 -> 8 `i t ]
+"25
+[; ;application.c: 25: uint8_t led_seq[][8] = {{1, 0, 0, 0, 0, 0, 0, 1},
+[v _led_seq `F3113 ~T0 @X0 -> 4 `i e ]
+[i _led_seq
+:U ..
+:U ..
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+..
+:U ..
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+..
+:U ..
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+..
+:U ..
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+-> -> 1 `i `uc
+..
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"12
-[; ;application.c: 12: int main() {
+"33
+[; ;application.c: 33: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"13
-[; ;application.c: 13:     gpio_pin_direction_intialize(PORTC_INDEX, PIN0, DIRECTION_OUTPUT);
-[e ( _gpio_pin_direction_intialize (3 , , . `E3027 2 . `E3017 0 . `E3013 0 ]
-"14
-[; ;application.c: 14:     gpio_pin_direction_intialize(PORTC_INDEX, PIN1, DIRECTION_OUTPUT);
-[e ( _gpio_pin_direction_intialize (3 , , . `E3027 2 . `E3017 1 . `E3013 0 ]
-"15
-[; ;application.c: 15:     gpio_pin_write_value(PORTC_INDEX, PIN0, PIN_LOW);
-[e ( _gpio_pin_write_value (3 , , . `E3027 2 . `E3017 0 . `E3009 0 ]
-"16
-[; ;application.c: 16:     gpio_pin_write_value(PORTC_INDEX, PIN1, PIN_LOW);
-[e ( _gpio_pin_write_value (3 , , . `E3027 2 . `E3017 1 . `E3009 0 ]
-"17
-[; ;application.c: 17:     while(1){
-[e :U 307 ]
+"34
+[; ;application.c: 34:     led_initialize(&led1);
+[e ( _led_initialize (1 &U _led1 ]
+"35
+[; ;application.c: 35:     button_initialize(&btn1);
+[e ( _button_initialize (1 &U _btn1 ]
+"36
+[; ;application.c: 36:     while(1){
+[e :U 310 ]
 {
-"18
-[; ;application.c: 18:         gpio_pin_write_value(PORTC_INDEX, PIN0, PIN_HIGH);
-[e ( _gpio_pin_write_value (3 , , . `E3027 2 . `E3017 0 . `E3009 1 ]
-"19
-[; ;application.c: 19:         gpio_pin_write_value(PORTC_INDEX, PIN1, PIN_LOW);
-[e ( _gpio_pin_write_value (3 , , . `E3027 2 . `E3017 1 . `E3009 0 ]
-"20
-[; ;application.c: 20:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"21
-[; ;application.c: 21:         gpio_pin_write_value(PORTC_INDEX, PIN0, PIN_LOW);
-[e ( _gpio_pin_write_value (3 , , . `E3027 2 . `E3017 0 . `E3009 0 ]
-"22
-[; ;application.c: 22:         gpio_pin_write_value(PORTC_INDEX, PIN1, PIN_HIGH);
-[e ( _gpio_pin_write_value (3 , , . `E3027 2 . `E3017 1 . `E3009 1 ]
-"23
-[; ;application.c: 23:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"24
-[; ;application.c: 24:     }
+"38
+[; ;application.c: 38:         button_get_status(&btn1, &btn1_status);
+[e ( _button_get_status (2 , &U _btn1 -> &U _btn1_status `*E3094 ]
+"39
+[; ;application.c: 39:         if(btn1_status == BUTTON_PRESSED){
+[e $ ! == -> _btn1_status `i -> . `E3094 1 `i 312  ]
+{
+"40
+[; ;application.c: 40:             led_turn_on(&led1);
+[e ( _led_turn_on (1 &U _led1 ]
+"41
+[; ;application.c: 41:         }
 }
-[e :U 306 ]
-[e $U 307  ]
-[e :U 308 ]
-"25
-[; ;application.c: 25:     return (0);
+[e $U 313  ]
+"42
+[; ;application.c: 42:         else{
+[e :U 312 ]
+{
+"43
+[; ;application.c: 43:             led_turn_off((&led1));
+[e ( _led_turn_off (1 &U _led1 ]
+"44
+[; ;application.c: 44:         }
+}
+[e :U 313 ]
+"45
+[; ;application.c: 45:     }
+}
+[e :U 309 ]
+[e $U 310  ]
+[e :U 311 ]
+"46
+[; ;application.c: 46:     return (0);
 [e ) -> 0 `i ]
-[e $UE 305  ]
-"26
-[; ;application.c: 26: }
-[e :UE 305 ]
+[e $UE 308  ]
+"47
+[; ;application.c: 47: }
+[e :UE 308 ]
+}
+"49
+[; ;application.c: 49: void perform_led_seq(led_t led_Arr[], uint8_t led_pat[][8], uint8_t seq_len){
+[v _perform_led_seq `(v ~T0 @X0 1 ef3`*S305`*F3122`uc ]
+{
+[e :U _perform_led_seq ]
+[v _led_Arr `*S305 ~T0 @X0 1 r1 ]
+[v F3125 `uc ~T0 @X0 -> 8 `i t ]
+[v _led_pat `*F3125 ~T0 @X0 1 r2 ]
+[v _seq_len `uc ~T0 @X0 1 r3 ]
+[f ]
+"50
+[; ;application.c: 50:     uint8_t l_led_counter = 0, l_led_pos = 0;
+[v _l_led_counter `uc ~T0 @X0 1 a ]
+[e = _l_led_counter -> -> 0 `i `uc ]
+[v _l_led_pos `uc ~T0 @X0 1 a ]
+[e = _l_led_pos -> -> 0 `i `uc ]
+"51
+[; ;application.c: 51:     for(l_led_counter = 0; l_led_counter<seq_len; l_led_counter++){
+{
+[e = _l_led_counter -> -> 0 `i `uc ]
+[e $U 318  ]
+[e :U 315 ]
+{
+"52
+[; ;application.c: 52:         led_initialize(&led_Arr[l_led_counter]);
+[e ( _led_initialize (1 &U *U + _led_Arr * -> _l_led_counter `ux -> -> # *U _led_Arr `ui `ux ]
+"53
+[; ;application.c: 53:     }
+}
+[e ++ _l_led_counter -> -> 1 `i `uc ]
+[e :U 318 ]
+[e $ < -> _l_led_counter `i -> _seq_len `i 315  ]
+[e :U 316 ]
+}
+"54
+[; ;application.c: 54:     for(l_led_counter = 0; l_led_counter<seq_len; l_led_counter++){
+{
+[e = _l_led_counter -> -> 0 `i `uc ]
+[e $U 322  ]
+[e :U 319 ]
+{
+"55
+[; ;application.c: 55:         for(l_led_pos = 0; l_led_pos<8; l_led_pos++){
+{
+[e = _l_led_pos -> -> 0 `i `uc ]
+[e $ < -> _l_led_pos `i -> 8 `i 323  ]
+[e $U 324  ]
+[e :U 323 ]
+{
+"56
+[; ;application.c: 56:             if(led_pat[l_led_counter][l_led_pos] == LED_ON){
+[e $ ! == -> *U + &U *U + _led_pat * -> _l_led_counter `ux -> * -> # *U &U *U _led_pat `ui -> -> 8 `i `ui `ux * -> _l_led_pos `ux -> -> # *U &U *U + _led_pat * -> _l_led_counter `ux -> * -> # *U &U *U _led_pat `ui -> -> 8 `i `ui `ux `ui `ux `i -> . `E3075 1 `i 326  ]
+{
+"57
+[; ;application.c: 57:                 led_turn_on(&led_Arr[l_led_pos]);
+[e ( _led_turn_on (1 &U *U + _led_Arr * -> _l_led_pos `ux -> -> # *U _led_Arr `ui `ux ]
+"58
+[; ;application.c: 58:             }
+}
+[e $U 327  ]
+"59
+[; ;application.c: 59:             else{
+[e :U 326 ]
+{
+"60
+[; ;application.c: 60:                 led_turn_off(&led_Arr[l_led_pos]);
+[e ( _led_turn_off (1 &U *U + _led_Arr * -> _l_led_pos `ux -> -> # *U _led_Arr `ui `ux ]
+"61
+[; ;application.c: 61:             }
+}
+[e :U 327 ]
+"62
+[; ;application.c: 62:         }
+}
+[e ++ _l_led_pos -> -> 1 `i `uc ]
+[e $ < -> _l_led_pos `i -> 8 `i 323  ]
+[e :U 324 ]
+}
+"63
+[; ;application.c: 63:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"64
+[; ;application.c: 64:     }
+}
+[e ++ _l_led_counter -> -> 1 `i `uc ]
+[e :U 322 ]
+[e $ < -> _l_led_counter `i -> _seq_len `i 319  ]
+[e :U 320 ]
+}
+"65
+[; ;application.c: 65: }
+[e :UE 314 ]
 }
