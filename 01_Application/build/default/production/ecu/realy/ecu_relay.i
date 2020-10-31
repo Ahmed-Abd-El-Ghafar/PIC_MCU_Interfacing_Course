@@ -1,4 +1,4 @@
-# 1 "ecu/led/ecu_led.c"
+# 1 "ecu/realy/ecu_relay.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "ecu/led/ecu_led.c" 2
+# 1 "ecu/realy/ecu_relay.c" 2
 
 
 
@@ -14,10 +14,10 @@
 
 
 
-# 1 "ecu/led/ecu_led.h" 1
-# 11 "ecu/led/ecu_led.h"
-# 1 "ecu/led/../../mcal/gpio/mcal_gpio.h" 1
-# 12 "ecu/led/../../mcal/gpio/mcal_gpio.h"
+# 1 "ecu/realy/ecu_relay.h" 1
+# 11 "ecu/realy/ecu_relay.h"
+# 1 "ecu/realy/../../mcal/gpio/mcal_gpio.h" 1
+# 12 "ecu/realy/../../mcal/gpio/mcal_gpio.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\../pic18f4620.h" 1 3
 # 44 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\../pic18f4620.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__at.h" 1 3
@@ -4231,10 +4231,10 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 12 "ecu/led/../../mcal/gpio/mcal_gpio.h" 2
+# 12 "ecu/realy/../../mcal/gpio/mcal_gpio.h" 2
 
-# 1 "ecu/led/../../mcal/gpio/../../std_types.h" 1
-# 11 "ecu/led/../../mcal/gpio/../../std_types.h"
+# 1 "ecu/realy/../../mcal/gpio/../../std_types.h" 1
+# 11 "ecu/realy/../../mcal/gpio/../../std_types.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4389,7 +4389,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 11 "ecu/led/../../mcal/gpio/../../std_types.h" 2
+# 11 "ecu/realy/../../mcal/gpio/../../std_types.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 1 3
 # 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 3
@@ -4401,7 +4401,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
-# 12 "ecu/led/../../mcal/gpio/../../std_types.h" 2
+# 12 "ecu/realy/../../mcal/gpio/../../std_types.h" 2
 
 
 typedef unsigned char uint8_t;
@@ -4419,8 +4419,8 @@ typedef enum{
     R_NOK,
     R_OK
 }ret_status;
-# 13 "ecu/led/../../mcal/gpio/mcal_gpio.h" 2
-# 34 "ecu/led/../../mcal/gpio/mcal_gpio.h"
+# 13 "ecu/realy/../../mcal/gpio/mcal_gpio.h" 2
+# 34 "ecu/realy/../../mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH
@@ -4465,125 +4465,65 @@ ret_status gpio_port_get_direction_status(port_index port, uint8_t *direction);
 ret_status gpio_port_write_value(port_index port, uint8_t value);
 ret_status gpio_port_read_value(port_index port, uint8_t *value);
 ret_status gpio_port_toggle_value(port_index port);
-# 11 "ecu/led/ecu_led.h" 2
-
-
+# 11 "ecu/realy/ecu_relay.h" 2
 
 
 
 typedef enum{
-    LED_OFF,
-    LED_ON
-}led_status;
+    RELAY_OFF,
+    RELAY_ON
+}relay_status;
 
 typedef struct{
     uint8_t port_name : 4;
     uint8_t pin : 3;
-    uint8_t led_status : 1;
-}led_t;
-# 35 "ecu/led/ecu_led.h"
-ret_status led_initialize(led_t *led);
+    uint8_t relay_status : 1;
+}relay_t;
+
+ret_status relay_initialize(relay_t *led);
+ret_status relay_turn_on(relay_t *led);
+ret_status relay_turn_off(relay_t *led);
+# 8 "ecu/realy/ecu_relay.c" 2
 
 
-
-
-
-
-
-ret_status led_turn_on(led_t *led);
-
-
-
-
-
-
-
-ret_status led_turn_off(led_t *led);
-
-
-
-
-
-
-
-ret_status led_turn_toggle(led_t *led);
-# 8 "ecu/led/ecu_led.c" 2
-
-
-
-
-
-
-
-
-ret_status led_initialize(led_t *led){
+ret_status relay_initialize(relay_t *relay){
     ret_status ret = R_NOK;
-    if((((void*)0) == led) || (led->port_name > 5U -1) ||
-            (led->pin > 8U -1)){
+    if((((void*)0) == relay) || (relay->port_name > 5U -1) ||
+            (relay->pin > 8U -1)){
         return ret;
     }
     else{
-        gpio_pin_direction_intialize(led->port_name, led->pin, DIRECTION_OUTPUT);
-        gpio_pin_write_value(led->port_name, led->pin, PIN_LOW);
+        gpio_pin_direction_intialize(relay->port_name, relay->pin, DIRECTION_OUTPUT);
+        gpio_pin_write_value(relay->port_name, relay->pin, PIN_LOW);
+        relay->relay_status = RELAY_OFF;
         ret = R_OK;
     }
     return ret;
 }
 
-
-
-
-
-
-
-ret_status led_turn_on(led_t *led){
+ret_status relay_turn_on(relay_t *relay){
     ret_status ret = R_NOK;
-    if((((void*)0) == led) || (led->port_name > 5U -1) ||
-            (led->pin > 8U -1)){
+    if((((void*)0) == relay) || (relay->port_name > 5U -1) ||
+            (relay->pin > 8U -1)){
         return ret;
     }
     else{
-        gpio_pin_write_value(led->port_name, led->pin, PIN_HIGH);
-        led->led_status = LED_ON;
+        gpio_pin_write_value(relay->port_name, relay->pin, PIN_HIGH);
+        relay->relay_status = RELAY_ON;
         ret = R_OK;
     }
     return ret;
 }
 
-
-
-
-
-
-
-ret_status led_turn_off(led_t *led){
+ret_status relay_turn_off(relay_t *relay){
     ret_status ret = R_NOK;
-    if((((void*)0) == led) || (led->port_name > 5U -1) ||
-            (led->pin > 8U -1)){
+    if((((void*)0) == relay) || (relay->port_name > 5U -1) ||
+            (relay->pin > 8U -1)){
         return ret;
     }
     else{
-        gpio_pin_write_value(led->port_name, led->pin, PIN_LOW);
-        led->led_status = LED_OFF;
-        ret = R_OK;
-    }
-    return ret;
-}
-
-
-
-
-
-
-
-ret_status led_turn_toggle(led_t *led){
-    ret_status ret = R_NOK;
-    if((((void*)0) == led) || (led->port_name > 5U -1) ||
-            (led->pin > 8U -1)){
-        return ret;
-    }
-    else{
-        gpio_pin_toggle_value(led->port_name, led->pin);
+        gpio_pin_write_value(relay->port_name, relay->pin, PIN_LOW);
+        relay->relay_status = RELAY_OFF;
         ret = R_OK;
     }
     return ret;

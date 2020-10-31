@@ -15,13 +15,13 @@
  */
 ret_status led_initialize(led_t *led){
     ret_status ret = R_NOK;
-    if((NULL == led) || (led->port_info.port_name > PORT_MAX_NUMBERS-1) || 
-            (led->port_info.pin > PORT_PIN_MAX_NUMBERS-1)){
+    if((NULL == led) || (led->port_name > PORT_MAX_NUMBERS-1) || 
+            (led->pin > PORT_PIN_MAX_NUMBERS-1)){
         return ret;
     }
     else{
-        gpio_pin_direction_intialize(led->port_info.port_name, led->port_info.pin, DIRECTION_OUTPUT);
-        gpio_pin_write_value(led->port_info.port_name, led->port_info.pin, PIN_LOW);
+        gpio_pin_direction_intialize(led->port_name, led->pin, DIRECTION_OUTPUT);
+        gpio_pin_write_value(led->port_name, led->pin, PIN_LOW);
         ret = R_OK;
     }
     return ret;
@@ -35,12 +35,13 @@ ret_status led_initialize(led_t *led){
  */
 ret_status led_turn_on(led_t *led){
     ret_status ret = R_NOK;
-    if((NULL == led) || (led->port_info.port_name > PORT_MAX_NUMBERS-1) || 
-            (led->port_info.pin > PORT_PIN_MAX_NUMBERS-1)){
+    if((NULL == led) || (led->port_name > PORT_MAX_NUMBERS-1) || 
+            (led->pin > PORT_PIN_MAX_NUMBERS-1)){
         return ret;
     }
     else{
-        gpio_pin_write_value(led->port_info.port_name, led->port_info.pin, PIN_HIGH);
+        gpio_pin_write_value(led->port_name, led->pin, PIN_HIGH);
+        led->led_status = LED_ON;
         ret = R_OK;
     }
     return ret;
@@ -54,12 +55,13 @@ ret_status led_turn_on(led_t *led){
  */
 ret_status led_turn_off(led_t *led){
     ret_status ret = R_NOK;
-    if((NULL == led) || (led->port_info.port_name > PORT_MAX_NUMBERS-1) || 
-            (led->port_info.pin > PORT_PIN_MAX_NUMBERS-1)){
+    if((NULL == led) || (led->port_name > PORT_MAX_NUMBERS-1) || 
+            (led->pin > PORT_PIN_MAX_NUMBERS-1)){
         return ret;
     }
     else{
-        gpio_pin_write_value(led->port_info.port_name, led->port_info.pin, PIN_LOW);
+        gpio_pin_write_value(led->port_name, led->pin, PIN_LOW);
+        led->led_status = LED_OFF;
         ret = R_OK;
     }
     return ret;
@@ -73,12 +75,12 @@ ret_status led_turn_off(led_t *led){
  */
 ret_status led_turn_toggle(led_t *led){
     ret_status ret = R_NOK;
-    if((NULL == led) || (led->port_info.port_name > PORT_MAX_NUMBERS-1) || 
-            (led->port_info.pin > PORT_PIN_MAX_NUMBERS-1)){
+    if((NULL == led) || (led->port_name > PORT_MAX_NUMBERS-1) || 
+            (led->pin > PORT_PIN_MAX_NUMBERS-1)){
         return ret;
     }
     else{
-        gpio_pin_toggle_value(led->port_info.port_name, led->port_info.pin);
+        gpio_pin_toggle_value(led->port_name, led->pin);
         ret = R_OK;
     }
     return ret;

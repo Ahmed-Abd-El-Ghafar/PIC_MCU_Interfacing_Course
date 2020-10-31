@@ -42,7 +42,7 @@ ret_status gpio_port_default_init(uint8_t port_numbers){
 ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction){
     ret_status ret = R_NOK;
     /* Validating the pin number */
-    if(pin > PORT_PIN_MAX_NUMBERS-1 || pin < ZERO_INIT){
+    if((pin > PORT_PIN_MAX_NUMBERS-1) || (pin < ZERO_INIT)){
         return ret;
     }
     else{

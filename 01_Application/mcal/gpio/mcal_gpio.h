@@ -9,7 +9,7 @@
 #define	MCAL_GPIO_H
 
 /* Section: Include */
-#include "../pic18f46k20.h"
+#include "../pic18f4620.h"
 #include "../../std_types.h"
 
 /* Section: Macro Declarations */

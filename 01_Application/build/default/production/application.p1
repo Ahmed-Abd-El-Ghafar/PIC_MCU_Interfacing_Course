@@ -1,656 +1,536 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"22 ./ecu/led/ecu_led.h
-[; ;./ecu/led/ecu_led.h: 22:     struct{
-[s S306 :4 `uc 1 :4 `uc 1 ]
-[n S306 . port_name pin ]
-"10 application.c
-[; ;application.c: 10: led_t led1 = {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN0, .led_status = LED_OFF};
-[c E3075 0 1 .. ]
-[n E3075 . LED_OFF LED_ON  ]
-"21 ./ecu/led/ecu_led.h
-[; ;./ecu/led/ecu_led.h: 21: typedef struct{
-[s S305 `S306 1 `E3075 1 ]
-[n S305 . port_info led_status ]
-"10 application.c
-[; ;application.c: 10: led_t led1 = {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN0, .led_status = LED_OFF};
-[c E3033 0 1 2 3 4 .. ]
-[n E3033 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
-[c E3023 0 1 2 3 4 5 6 7 .. ]
-[n E3023 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+"19 ./ecu/dc_motor/../realy/ecu_relay.h
+[s S274 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S274 . port_name pin relay_status ]
+"13 ./ecu/dc_motor/ecu_dc_motor.h
+[; ;./ecu/dc_motor/ecu_dc_motor.h: 13: typedef struct{
+[s S275 `S274 1 `S274 1 ]
+[n S275 . relay1 relay2 ]
+"17 application.c
+[; ;application.c: 17: dc_motor_t dc_motor1_1 = {{.port_name = PORTC_INDEX, .pin = PIN0, .relay_status = RELAY_OFF},
+[c E2784 0 1 2 3 4 .. ]
+[n E2784 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E2774 0 1 2 3 4 5 6 7 .. ]
+[n E2774 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
+[c E2857 0 1 .. ]
+[n E2857 . RELAY_OFF RELAY_ON  ]
 "21 ./ecu/button/ecu_button.h
 [; ;./ecu/button/ecu_button.h: 21: typedef struct{
-[s S307 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S307 . port_name pin button_status ]
-"11 application.c
-[; ;application.c: 11: button_t btn1 = {.port_name = PORTD_INDEX, .pin = PIN0, .button_status = BUTTON_NOT_PRESSED};
-[c E3094 0 1 .. ]
-[n E3094 . BUTTON_NOT_PRESSED BUTTON_PRESSED  ]
+[s S273 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S273 . port_name pin button_status ]
+"22 application.c
+[; ;application.c: 22: button_t btn1 = {.port_name = PORTD_INDEX, .pin = PIN0, .button_status = BUTTON_NOT_PRESSED};
+[c E2843 0 1 .. ]
+[n E2843 . BUTTON_NOT_PRESSED BUTTON_PRESSED  ]
 [p mainexit ]
-"34
-[; ;application.c: 34:     led_initialize(&led1);
-[c E3011 0 1 .. ]
-[n E3011 . R_NOK R_OK  ]
-"37 ./ecu/led/ecu_led.h
-[; ;./ecu/led/ecu_led.h: 37: ret_status led_initialize(led_t *led);
-[v _led_initialize `(E3011 ~T0 @X0 0 ef1`*S305 ]
+"29
+[; ;application.c: 29:     dc_motor_initialize(&dc_motor1_1);
+[c E2762 0 1 .. ]
+[n E2762 . R_NOK R_OK  ]
+"18 ./ecu/dc_motor/ecu_dc_motor.h
+[; ;./ecu/dc_motor/ecu_dc_motor.h: 18: ret_status dc_motor_initialize(dc_motor_t *dc_mtor);
+[v _dc_motor_initialize `(E2762 ~T0 @X0 0 ef1`*S275 ]
 "28 ./ecu/button/ecu_button.h
 [; ;./ecu/button/ecu_button.h: 28: ret_status button_initialize(button_t *btn);
-[v _button_initialize `(E3011 ~T0 @X0 0 ef1`*S307 ]
+[v _button_initialize `(E2762 ~T0 @X0 0 ef1`*S273 ]
 "29
 [; ;./ecu/button/ecu_button.h: 29: ret_status button_get_status(button_t *btn, button_status *btn_status);
-[v _button_get_status `(E3011 ~T0 @X0 0 ef2`*S307`*E3094 ]
-"45 ./ecu/led/ecu_led.h
-[; ;./ecu/led/ecu_led.h: 45: ret_status led_turn_on(led_t *led);
-[v _led_turn_on `(E3011 ~T0 @X0 0 ef1`*S305 ]
-"53
-[; ;./ecu/led/ecu_led.h: 53: ret_status led_turn_off(led_t *led);
-[v _led_turn_off `(E3011 ~T0 @X0 0 ef1`*S305 ]
-[v F3122 `uc ~T0 @X0 -> 8 `i t ]
-[v F2991 `(v ~T0 @X0 1 tf1`ul ]
-"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
-[v __delay `JF2991 ~T0 @X0 0 e ]
-[p i __delay ]
-"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f46k20.h
-[; <" SSPMSK equ 0F77h ;# ">
-"124
-[; <" SLRCON equ 0F78h ;# ">
-"168
-[; <" CM2CON1 equ 0F79h ;# ">
-"207
-[; <" CM2CON0 equ 0F7Ah ;# ">
-"277
-[; <" CM1CON0 equ 0F7Bh ;# ">
-"347
-[; <" WPUB equ 0F7Ch ;# ">
-"409
-[; <" IOCB equ 0F7Dh ;# ">
-"448
-[; <" ANSEL equ 0F7Eh ;# ">
-"510
-[; <" ANSELH equ 0F7Fh ;# ">
-"554
+[v _button_get_status `(E2762 ~T0 @X0 0 ef2`*S273`*E2843 ]
+"20 ./application.h
+[; ;./application.h: 20: void robot_move_forward(void);
+[v _robot_move_forward `(v ~T0 @X0 0 ef ]
+"21
+[; ;./application.h: 21: void robot_move_backward(void);
+[v _robot_move_backward `(v ~T0 @X0 0 ef ]
+"22
+[; ;./application.h: 22: void robot_move_stop(void);
+[v _robot_move_stop `(v ~T0 @X0 0 ef ]
+"19 ./ecu/dc_motor/ecu_dc_motor.h
+[; ;./ecu/dc_motor/ecu_dc_motor.h: 19: ret_status dc_motor_rotate_right(dc_motor_t *dc_mtor);
+[v _dc_motor_rotate_right `(E2762 ~T0 @X0 0 ef1`*S275 ]
+"20
+[; ;./ecu/dc_motor/ecu_dc_motor.h: 20: ret_status dc_motor_rotate_left(dc_motor_t *dc_mtor);
+[v _dc_motor_rotate_left `(E2762 ~T0 @X0 0 ef1`*S275 ]
+"21
+[; ;./ecu/dc_motor/ecu_dc_motor.h: 21: ret_status dc_motor_stop(dc_motor_t *dc_mtor);
+[v _dc_motor_stop `(E2762 ~T0 @X0 0 ef1`*S275 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\../pic18f4620.h
 [; <" PORTA equ 0F80h ;# ">
-"790
+"191
 [; <" PORTB equ 0F81h ;# ">
-"998
+"362
 [; <" PORTC equ 0F82h ;# ">
-"1186
+"537
 [; <" PORTD equ 0F83h ;# ">
-"1328
+"679
 [; <" PORTE equ 0F84h ;# ">
-"1534
+"882
 [; <" LATA equ 0F89h ;# ">
-"1646
+"994
 [; <" LATB equ 0F8Ah ;# ">
-"1758
+"1106
 [; <" LATC equ 0F8Bh ;# ">
-"1870
+"1218
 [; <" LATD equ 0F8Ch ;# ">
-"1982
+"1330
 [; <" LATE equ 0F8Dh ;# ">
-"2034
+"1382
 [; <" TRISA equ 0F92h ;# ">
-"2039
+"1387
 [; <" DDRA equ 0F92h ;# ">
-"2256
+"1604
 [; <" TRISB equ 0F93h ;# ">
-"2261
+"1609
 [; <" DDRB equ 0F93h ;# ">
-"2478
+"1826
 [; <" TRISC equ 0F94h ;# ">
-"2483
+"1831
 [; <" DDRC equ 0F94h ;# ">
-"2700
+"2048
 [; <" TRISD equ 0F95h ;# ">
-"2705
+"2053
 [; <" DDRD equ 0F95h ;# ">
-"2922
+"2270
 [; <" TRISE equ 0F96h ;# ">
-"2927
+"2275
 [; <" DDRE equ 0F96h ;# ">
-"3074
+"2434
 [; <" OSCTUNE equ 0F9Bh ;# ">
-"3144
+"2499
 [; <" PIE1 equ 0F9Dh ;# ">
-"3221
+"2576
 [; <" PIR1 equ 0F9Eh ;# ">
-"3298
+"2653
 [; <" IPR1 equ 0F9Fh ;# ">
-"3375
+"2730
 [; <" PIE2 equ 0FA0h ;# ">
-"3455
+"2796
 [; <" PIR2 equ 0FA1h ;# ">
-"3535
+"2862
 [; <" IPR2 equ 0FA2h ;# ">
-"3615
+"2928
 [; <" EECON1 equ 0FA6h ;# ">
-"3681
+"2994
 [; <" EECON2 equ 0FA7h ;# ">
-"3688
+"3001
 [; <" EEDATA equ 0FA8h ;# ">
-"3695
+"3008
 [; <" EEADR equ 0FA9h ;# ">
-"3757
+"3015
 [; <" EEADRH equ 0FAAh ;# ">
-"3783
+"3022
 [; <" RCSTA equ 0FABh ;# ">
-"3788
+"3027
 [; <" RCSTA1 equ 0FABh ;# ">
-"3993
+"3232
 [; <" TXSTA equ 0FACh ;# ">
-"3998
+"3237
 [; <" TXSTA1 equ 0FACh ;# ">
-"4249
+"3488
 [; <" TXREG equ 0FADh ;# ">
-"4254
+"3493
 [; <" TXREG1 equ 0FADh ;# ">
-"4261
+"3500
 [; <" RCREG equ 0FAEh ;# ">
-"4266
+"3505
 [; <" RCREG1 equ 0FAEh ;# ">
-"4273
+"3512
 [; <" SPBRG equ 0FAFh ;# ">
-"4278
+"3517
 [; <" SPBRG1 equ 0FAFh ;# ">
-"4285
+"3524
 [; <" SPBRGH equ 0FB0h ;# ">
-"4292
+"3531
 [; <" T3CON equ 0FB1h ;# ">
-"4404
+"3643
 [; <" TMR3 equ 0FB2h ;# ">
-"4411
+"3650
 [; <" TMR3L equ 0FB2h ;# ">
-"4418
+"3657
 [; <" TMR3H equ 0FB3h ;# ">
-"4425
-[; <" CVRCON2 equ 0FB4h ;# ">
-"4452
+"3664
+[; <" CMCON equ 0FB4h ;# ">
+"3754
 [; <" CVRCON equ 0FB5h ;# ">
-"4531
+"3833
 [; <" ECCP1AS equ 0FB6h ;# ">
-"4613
+"3915
 [; <" PWM1CON equ 0FB7h ;# ">
-"4683
+"3985
 [; <" BAUDCON equ 0FB8h ;# ">
-"4688
+"3990
 [; <" BAUDCTL equ 0FB8h ;# ">
-"4849
-[; <" PSTRCON equ 0FB9h ;# ">
-"4893
+"4157
 [; <" CCP2CON equ 0FBAh ;# ">
-"4957
+"4236
 [; <" CCPR2 equ 0FBBh ;# ">
-"4964
+"4243
 [; <" CCPR2L equ 0FBBh ;# ">
-"4971
+"4250
 [; <" CCPR2H equ 0FBCh ;# ">
-"4978
+"4257
 [; <" CCP1CON equ 0FBDh ;# ">
-"5060
+"4354
 [; <" CCPR1 equ 0FBEh ;# ">
-"5067
+"4361
 [; <" CCPR1L equ 0FBEh ;# ">
-"5074
+"4368
 [; <" CCPR1H equ 0FBFh ;# ">
-"5081
+"4375
 [; <" ADCON2 equ 0FC0h ;# ">
-"5152
+"4446
 [; <" ADCON1 equ 0FC1h ;# ">
-"5203
+"4531
 [; <" ADCON0 equ 0FC2h ;# ">
-"5322
+"4650
 [; <" ADRES equ 0FC3h ;# ">
-"5329
+"4657
 [; <" ADRESL equ 0FC3h ;# ">
-"5336
+"4664
 [; <" ADRESH equ 0FC4h ;# ">
-"5343
+"4671
 [; <" SSPCON2 equ 0FC5h ;# ">
-"5405
+"4733
 [; <" SSPCON1 equ 0FC6h ;# ">
-"5475
+"4803
 [; <" SSPSTAT equ 0FC7h ;# ">
-"5700
+"5024
 [; <" SSPADD equ 0FC8h ;# ">
-"5707
+"5031
 [; <" SSPBUF equ 0FC9h ;# ">
-"5714
+"5038
 [; <" T2CON equ 0FCAh ;# ">
-"5785
+"5109
 [; <" PR2 equ 0FCBh ;# ">
-"5790
+"5114
 [; <" MEMCON equ 0FCBh ;# ">
-"5895
+"5219
 [; <" TMR2 equ 0FCCh ;# ">
-"5902
+"5226
 [; <" T1CON equ 0FCDh ;# ">
-"6005
+"5329
 [; <" TMR1 equ 0FCEh ;# ">
-"6012
+"5336
 [; <" TMR1L equ 0FCEh ;# ">
-"6019
+"5343
 [; <" TMR1H equ 0FCFh ;# ">
-"6026
+"5350
 [; <" RCON equ 0FD0h ;# ">
-"6159
+"5483
 [; <" WDTCON equ 0FD1h ;# ">
-"6187
+"5511
 [; <" HLVDCON equ 0FD2h ;# ">
-"6192
+"5516
 [; <" LVDCON equ 0FD2h ;# ">
-"6457
+"5781
 [; <" OSCCON equ 0FD3h ;# ">
-"6534
+"5858
 [; <" T0CON equ 0FD5h ;# ">
-"6604
+"5935
 [; <" TMR0 equ 0FD6h ;# ">
-"6611
+"5942
 [; <" TMR0L equ 0FD6h ;# ">
-"6618
+"5949
 [; <" TMR0H equ 0FD7h ;# ">
-"6625
+"5956
 [; <" STATUS equ 0FD8h ;# ">
-"6696
+"6027
 [; <" FSR2 equ 0FD9h ;# ">
-"6703
+"6034
 [; <" FSR2L equ 0FD9h ;# ">
-"6710
+"6041
 [; <" FSR2H equ 0FDAh ;# ">
-"6717
+"6048
 [; <" PLUSW2 equ 0FDBh ;# ">
-"6724
+"6055
 [; <" PREINC2 equ 0FDCh ;# ">
-"6731
+"6062
 [; <" POSTDEC2 equ 0FDDh ;# ">
-"6738
+"6069
 [; <" POSTINC2 equ 0FDEh ;# ">
-"6745
+"6076
 [; <" INDF2 equ 0FDFh ;# ">
-"6752
+"6083
 [; <" BSR equ 0FE0h ;# ">
-"6759
+"6090
 [; <" FSR1 equ 0FE1h ;# ">
-"6766
+"6097
 [; <" FSR1L equ 0FE1h ;# ">
-"6773
+"6104
 [; <" FSR1H equ 0FE2h ;# ">
-"6780
+"6111
 [; <" PLUSW1 equ 0FE3h ;# ">
-"6787
+"6118
 [; <" PREINC1 equ 0FE4h ;# ">
-"6794
+"6125
 [; <" POSTDEC1 equ 0FE5h ;# ">
-"6801
+"6132
 [; <" POSTINC1 equ 0FE6h ;# ">
-"6808
+"6139
 [; <" INDF1 equ 0FE7h ;# ">
-"6815
+"6146
 [; <" WREG equ 0FE8h ;# ">
-"6827
+"6158
 [; <" FSR0 equ 0FE9h ;# ">
-"6834
+"6165
 [; <" FSR0L equ 0FE9h ;# ">
-"6841
+"6172
 [; <" FSR0H equ 0FEAh ;# ">
-"6848
+"6179
 [; <" PLUSW0 equ 0FEBh ;# ">
-"6855
+"6186
 [; <" PREINC0 equ 0FECh ;# ">
-"6862
+"6193
 [; <" POSTDEC0 equ 0FEDh ;# ">
-"6869
+"6200
 [; <" POSTINC0 equ 0FEEh ;# ">
-"6876
+"6207
 [; <" INDF0 equ 0FEFh ;# ">
-"6883
+"6214
 [; <" INTCON3 equ 0FF0h ;# ">
-"6975
+"6306
 [; <" INTCON2 equ 0FF1h ;# ">
-"7045
+"6376
 [; <" INTCON equ 0FF2h ;# ">
-"7162
+"6493
 [; <" PROD equ 0FF3h ;# ">
-"7169
+"6500
 [; <" PRODL equ 0FF3h ;# ">
-"7176
+"6507
 [; <" PRODH equ 0FF4h ;# ">
-"7183
+"6514
 [; <" TABLAT equ 0FF5h ;# ">
-"7192
+"6523
 [; <" TBLPTR equ 0FF6h ;# ">
-"7199
+"6530
 [; <" TBLPTRL equ 0FF6h ;# ">
-"7206
+"6537
 [; <" TBLPTRH equ 0FF7h ;# ">
-"7213
+"6544
 [; <" TBLPTRU equ 0FF8h ;# ">
-"7222
+"6553
 [; <" PCLAT equ 0FF9h ;# ">
-"7229
+"6560
 [; <" PC equ 0FF9h ;# ">
-"7236
+"6567
 [; <" PCL equ 0FF9h ;# ">
-"7243
+"6574
 [; <" PCLATH equ 0FFAh ;# ">
-"7250
+"6581
 [; <" PCLATU equ 0FFBh ;# ">
-"7257
+"6588
 [; <" STKPTR equ 0FFCh ;# ">
-"7331
+"6694
 [; <" TOS equ 0FFDh ;# ">
-"7338
+"6701
 [; <" TOSL equ 0FFDh ;# ">
-"7345
+"6708
 [; <" TOSH equ 0FFEh ;# ">
-"7352
+"6715
 [; <" TOSU equ 0FFFh ;# ">
-"10 application.c
-[; ;application.c: 10: led_t led1 = {.port_info.port_name = PORTC_INDEX, .port_info.pin = PIN0, .led_status = LED_OFF};
-[v _led1 `S305 ~T0 @X0 1 e ]
-[i _led1
+"17 application.c
+[; ;application.c: 17: dc_motor_t dc_motor1_1 = {{.port_name = PORTC_INDEX, .pin = PIN0, .relay_status = RELAY_OFF},
+[v _dc_motor1_1 `S275 ~T0 @X0 1 e ]
+[i _dc_motor1_1
 :U ..
 :U ..
 :U ..
 :U ..
--> . `E3033 2 `uc
--> . `E3023 0 `uc
+-> . `E2784 2 `uc
+-> . `E2774 0 `uc
+-> . `E2857 0 `uc
 ..
 ..
-. `E3075 0
+:U ..
+:U ..
+-> . `E2784 2 `uc
+-> . `E2774 1 `uc
+-> . `E2857 0 `uc
+..
+..
 ..
 ..
 ]
-"11
-[; ;application.c: 11: button_t btn1 = {.port_name = PORTD_INDEX, .pin = PIN0, .button_status = BUTTON_NOT_PRESSED};
-[v _btn1 `S307 ~T0 @X0 1 e ]
+"19
+[; ;application.c: 19: dc_motor_t dc_motor1_2 = {{.port_name = PORTC_INDEX, .pin = PIN2, .relay_status = RELAY_OFF},
+[v _dc_motor1_2 `S275 ~T0 @X0 1 e ]
+[i _dc_motor1_2
+:U ..
+:U ..
+:U ..
+:U ..
+-> . `E2784 2 `uc
+-> . `E2774 2 `uc
+-> . `E2857 0 `uc
+..
+..
+:U ..
+:U ..
+-> . `E2784 2 `uc
+-> . `E2774 3 `uc
+-> . `E2857 0 `uc
+..
+..
+..
+..
+]
+"22
+[; ;application.c: 22: button_t btn1 = {.port_name = PORTD_INDEX, .pin = PIN0, .button_status = BUTTON_NOT_PRESSED};
+[v _btn1 `S273 ~T0 @X0 1 e ]
 [i _btn1
 :U ..
 :U ..
--> . `E3033 3 `uc
--> . `E3023 0 `uc
--> . `E3094 0 `uc
+-> . `E2784 3 `uc
+-> . `E2774 0 `uc
+-> . `E2843 0 `uc
 ..
 ..
 ]
-"12
-[; ;application.c: 12: uint8_t btn1_status = 0;
-[v _btn1_status `uc ~T0 @X0 1 e ]
+"23
+[; ;application.c: 23: button_t btn2 = {.port_name = PORTD_INDEX, .pin = PIN1, .button_status = BUTTON_NOT_PRESSED};
+[v _btn2 `S273 ~T0 @X0 1 e ]
+[i _btn2
+:U ..
+:U ..
+-> . `E2784 3 `uc
+-> . `E2774 1 `uc
+-> . `E2843 0 `uc
+..
+..
+]
+"24
+[; ;application.c: 24: button_status btn1_status = 0, btn2_status = 0;
+[v _btn1_status `E2843 ~T0 @X0 1 e ]
 [i _btn1_status
--> -> 0 `i `uc
+-> -> 0 `i `E2843
 ]
-"14
-[; ;application.c: 14: led_t led_array[8] = {
-[v _led_array `S305 ~T0 @X0 -> 8 `i e ]
-[i _led_array
-:U ..
-:U ..
-:U ..
-:U ..
--> . `E3033 2 `uc
--> . `E3023 0 `uc
-..
-..
-. `E3075 0
-..
-:U ..
-:U ..
-:U ..
--> . `E3033 2 `uc
--> . `E3023 1 `uc
-..
-..
-. `E3075 0
-..
-:U ..
-:U ..
-:U ..
--> . `E3033 2 `uc
--> . `E3023 2 `uc
-..
-..
-. `E3075 0
-..
-:U ..
-:U ..
-:U ..
--> . `E3033 2 `uc
--> . `E3023 3 `uc
-..
-..
-. `E3075 0
-..
-:U ..
-:U ..
-:U ..
--> . `E3033 2 `uc
--> . `E3023 4 `uc
-..
-..
-. `E3075 0
-..
-:U ..
-:U ..
-:U ..
--> . `E3033 2 `uc
--> . `E3023 5 `uc
-..
-..
-. `E3075 0
-..
-:U ..
-:U ..
-:U ..
--> . `E3033 2 `uc
--> . `E3023 6 `uc
-..
-..
-. `E3075 0
-..
-:U ..
-:U ..
-:U ..
--> . `E3033 2 `uc
--> . `E3023 7 `uc
-..
-..
-. `E3075 0
-..
-..
-]
-[v F3113 `uc ~T0 @X0 -> 8 `i t ]
-"25
-[; ;application.c: 25: uint8_t led_seq[][8] = {{1, 0, 0, 0, 0, 0, 0, 1},
-[v _led_seq `F3113 ~T0 @X0 -> 4 `i e ]
-[i _led_seq
-:U ..
-:U ..
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 1 `i `uc
-..
-:U ..
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
-..
-:U ..
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
-..
-:U ..
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
--> -> 1 `i `uc
-..
-..
+[v _btn2_status `E2843 ~T0 @X0 1 e ]
+[i _btn2_status
+-> -> 0 `i `E2843
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"33
-[; ;application.c: 33: int main() {
+"26
+[; ;application.c: 26: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"34
-[; ;application.c: 34:     led_initialize(&led1);
-[e ( _led_initialize (1 &U _led1 ]
-"35
-[; ;application.c: 35:     button_initialize(&btn1);
+"29
+[; ;application.c: 29:     dc_motor_initialize(&dc_motor1_1);
+[e ( _dc_motor_initialize (1 &U _dc_motor1_1 ]
+"30
+[; ;application.c: 30:     dc_motor_initialize(&dc_motor1_2);
+[e ( _dc_motor_initialize (1 &U _dc_motor1_2 ]
+"31
+[; ;application.c: 31:     button_initialize(&btn1);
 [e ( _button_initialize (1 &U _btn1 ]
-"36
-[; ;application.c: 36:     while(1){
-[e :U 310 ]
-{
-"38
-[; ;application.c: 38:         button_get_status(&btn1, &btn1_status);
-[e ( _button_get_status (2 , &U _btn1 -> &U _btn1_status `*E3094 ]
-"39
-[; ;application.c: 39:         if(btn1_status == BUTTON_PRESSED){
-[e $ ! == -> _btn1_status `i -> . `E3094 1 `i 312  ]
-{
-"40
-[; ;application.c: 40:             led_turn_on(&led1);
-[e ( _led_turn_on (1 &U _led1 ]
-"41
-[; ;application.c: 41:         }
-}
-[e $U 313  ]
-"42
-[; ;application.c: 42:         else{
-[e :U 312 ]
+"32
+[; ;application.c: 32:     button_initialize(&btn2);
+[e ( _button_initialize (1 &U _btn2 ]
+"33
+[; ;application.c: 33:     while(1){
+[e :U 278 ]
 {
 "43
-[; ;application.c: 43:             led_turn_off((&led1));
-[e ( _led_turn_off (1 &U _led1 ]
+[; ;application.c: 43:         button_get_status(&btn1, &btn1_status);
+[e ( _button_get_status (2 , &U _btn1 &U _btn1_status ]
 "44
-[; ;application.c: 44:         }
-}
-[e :U 313 ]
+[; ;application.c: 44:         button_get_status(&btn2, &btn2_status);
+[e ( _button_get_status (2 , &U _btn2 &U _btn2_status ]
 "45
-[; ;application.c: 45:     }
-}
-[e :U 309 ]
-[e $U 310  ]
-[e :U 311 ]
+[; ;application.c: 45:         if(btn1_status == BUTTON_PRESSED && btn2_status == BUTTON_NOT_PRESSED){
+[e $ ! && == -> _btn1_status `ui -> . `E2843 1 `ui == -> _btn2_status `ui -> . `E2843 0 `ui 280  ]
+{
 "46
-[; ;application.c: 46:     return (0);
-[e ) -> 0 `i ]
-[e $UE 308  ]
+[; ;application.c: 46:             robot_move_forward();
+[e ( _robot_move_forward ..  ]
 "47
-[; ;application.c: 47: }
-[e :UE 308 ]
+[; ;application.c: 47:         }
 }
+[e $U 281  ]
+"48
+[; ;application.c: 48:         else if(btn2_status == BUTTON_PRESSED && btn1_status == BUTTON_NOT_PRESSED){
+[e :U 280 ]
+[e $ ! && == -> _btn2_status `ui -> . `E2843 1 `ui == -> _btn1_status `ui -> . `E2843 0 `ui 282  ]
+{
 "49
-[; ;application.c: 49: void perform_led_seq(led_t led_Arr[], uint8_t led_pat[][8], uint8_t seq_len){
-[v _perform_led_seq `(v ~T0 @X0 1 ef3`*S305`*F3122`uc ]
-{
-[e :U _perform_led_seq ]
-[v _led_Arr `*S305 ~T0 @X0 1 r1 ]
-[v F3125 `uc ~T0 @X0 -> 8 `i t ]
-[v _led_pat `*F3125 ~T0 @X0 1 r2 ]
-[v _seq_len `uc ~T0 @X0 1 r3 ]
-[f ]
+[; ;application.c: 49:             robot_move_backward();
+[e ( _robot_move_backward ..  ]
 "50
-[; ;application.c: 50:     uint8_t l_led_counter = 0, l_led_pos = 0;
-[v _l_led_counter `uc ~T0 @X0 1 a ]
-[e = _l_led_counter -> -> 0 `i `uc ]
-[v _l_led_pos `uc ~T0 @X0 1 a ]
-[e = _l_led_pos -> -> 0 `i `uc ]
+[; ;application.c: 50:         }
+}
+[e $U 283  ]
 "51
-[; ;application.c: 51:     for(l_led_counter = 0; l_led_counter<seq_len; l_led_counter++){
-{
-[e = _l_led_counter -> -> 0 `i `uc ]
-[e $U 318  ]
-[e :U 315 ]
+[; ;application.c: 51:         else{
+[e :U 282 ]
 {
 "52
-[; ;application.c: 52:         led_initialize(&led_Arr[l_led_counter]);
-[e ( _led_initialize (1 &U *U + _led_Arr * -> _l_led_counter `ux -> -> # *U _led_Arr `ui `ux ]
+[; ;application.c: 52:             robot_move_stop();
+[e ( _robot_move_stop ..  ]
 "53
-[; ;application.c: 53:     }
+[; ;application.c: 53:         }
 }
-[e ++ _l_led_counter -> -> 1 `i `uc ]
-[e :U 318 ]
-[e $ < -> _l_led_counter `i -> _seq_len `i 315  ]
-[e :U 316 ]
-}
+[e :U 283 ]
+[e :U 281 ]
 "54
-[; ;application.c: 54:     for(l_led_counter = 0; l_led_counter<seq_len; l_led_counter++){
-{
-[e = _l_led_counter -> -> 0 `i `uc ]
-[e $U 322  ]
-[e :U 319 ]
-{
+[; ;application.c: 54:     }
+}
+[e :U 277 ]
+[e $U 278  ]
+[e :U 279 ]
 "55
-[; ;application.c: 55:         for(l_led_pos = 0; l_led_pos<8; l_led_pos++){
-{
-[e = _l_led_pos -> -> 0 `i `uc ]
-[e $ < -> _l_led_pos `i -> 8 `i 323  ]
-[e $U 324  ]
-[e :U 323 ]
-{
+[; ;application.c: 55:     return (0);
+[e ) -> 0 `i ]
+[e $UE 276  ]
 "56
-[; ;application.c: 56:             if(led_pat[l_led_counter][l_led_pos] == LED_ON){
-[e $ ! == -> *U + &U *U + _led_pat * -> _l_led_counter `ux -> * -> # *U &U *U _led_pat `ui -> -> 8 `i `ui `ux * -> _l_led_pos `ux -> -> # *U &U *U + _led_pat * -> _l_led_counter `ux -> * -> # *U &U *U _led_pat `ui -> -> 8 `i `ui `ux `ui `ux `i -> . `E3075 1 `i 326  ]
-{
-"57
-[; ;application.c: 57:                 led_turn_on(&led_Arr[l_led_pos]);
-[e ( _led_turn_on (1 &U *U + _led_Arr * -> _l_led_pos `ux -> -> # *U _led_Arr `ui `ux ]
+[; ;application.c: 56: }
+[e :UE 276 ]
+}
 "58
-[; ;application.c: 58:             }
-}
-[e $U 327  ]
-"59
-[; ;application.c: 59:             else{
-[e :U 326 ]
+[; ;application.c: 58: void robot_move_forward(void){
+[v _robot_move_forward `(v ~T0 @X0 1 ef ]
 {
+[e :U _robot_move_forward ]
+[f ]
+"59
+[; ;application.c: 59:     dc_motor_rotate_right(&dc_motor1_1);
+[e ( _dc_motor_rotate_right (1 &U _dc_motor1_1 ]
 "60
-[; ;application.c: 60:                 led_turn_off(&led_Arr[l_led_pos]);
-[e ( _led_turn_off (1 &U *U + _led_Arr * -> _l_led_pos `ux -> -> # *U _led_Arr `ui `ux ]
+[; ;application.c: 60:     dc_motor_rotate_right(&dc_motor1_2);
+[e ( _dc_motor_rotate_right (1 &U _dc_motor1_2 ]
 "61
-[; ;application.c: 61:             }
-}
-[e :U 327 ]
-"62
-[; ;application.c: 62:         }
-}
-[e ++ _l_led_pos -> -> 1 `i `uc ]
-[e $ < -> _l_led_pos `i -> 8 `i 323  ]
-[e :U 324 ]
+[; ;application.c: 61: }
+[e :UE 284 ]
 }
 "63
-[; ;application.c: 63:         _delay((unsigned long)((250)*(8000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+[; ;application.c: 63: void robot_move_backward(void){
+[v _robot_move_backward `(v ~T0 @X0 1 ef ]
+{
+[e :U _robot_move_backward ]
+[f ]
 "64
-[; ;application.c: 64:     }
-}
-[e ++ _l_led_counter -> -> 1 `i `uc ]
-[e :U 322 ]
-[e $ < -> _l_led_counter `i -> _seq_len `i 319  ]
-[e :U 320 ]
-}
+[; ;application.c: 64:     dc_motor_rotate_left(&dc_motor1_1);
+[e ( _dc_motor_rotate_left (1 &U _dc_motor1_1 ]
 "65
-[; ;application.c: 65: }
-[e :UE 314 ]
+[; ;application.c: 65:     dc_motor_rotate_left(&dc_motor1_2);
+[e ( _dc_motor_rotate_left (1 &U _dc_motor1_2 ]
+"66
+[; ;application.c: 66: }
+[e :UE 285 ]
+}
+"68
+[; ;application.c: 68: void robot_move_stop(void){
+[v _robot_move_stop `(v ~T0 @X0 1 ef ]
+{
+[e :U _robot_move_stop ]
+[f ]
+"69
+[; ;application.c: 69:     dc_motor_stop(&dc_motor1_1);
+[e ( _dc_motor_stop (1 &U _dc_motor1_1 ]
+"70
+[; ;application.c: 70:     dc_motor_stop(&dc_motor1_2);
+[e ( _dc_motor_stop (1 &U _dc_motor1_2 ]
+"71
+[; ;application.c: 71: }
+[e :UE 286 ]
 }

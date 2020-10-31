@@ -8,8 +8,14 @@
         <logicalFolder name="button" displayName="button" projectFiles="true">
           <itemPath>ecu/button/ecu_button.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="dc_motor" displayName="dc_motor" projectFiles="true">
+          <itemPath>ecu/dc_motor/ecu_dc_motor.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="led" displayName="led" projectFiles="true">
           <itemPath>ecu/led/ecu_led.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="realy" displayName="realy" projectFiles="true">
+          <itemPath>ecu/realy/ecu_relay.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="mcal" displayName="mcal" projectFiles="true">
@@ -32,8 +38,14 @@
         <logicalFolder name="button" displayName="button" projectFiles="true">
           <itemPath>ecu/button/ecu_button.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="dc_motor" displayName="dc_motor" projectFiles="true">
+          <itemPath>ecu/dc_motor/ecu_dc_motor.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="led" displayName="led" projectFiles="true">
           <itemPath>ecu/led/ecu_led.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="realy" displayName="realy" projectFiles="true">
+          <itemPath>ecu/realy/ecu_relay.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="mcal" displayName="mcal" projectFiles="true">
@@ -58,7 +70,7 @@
     <conf name="default" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
-        <targetDevice>PIC18F46K20</targetDevice>
+        <targetDevice>PIC18F4620</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
         <platformTool></platformTool>
@@ -67,7 +79,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18F-K_DFP" vendor="Microchip" version="1.3.84"/>
+        <pack name="PIC18Fxxxx_DFP" vendor="Microchip" version="1.2.26"/>
       </packs>
       <compileType>
         <linkerTool>

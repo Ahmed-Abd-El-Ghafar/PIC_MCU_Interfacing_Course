@@ -1,0 +1,488 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"19 ecu/dc_motor/../realy/ecu_relay.h
+[; ;ecu/dc_motor/../realy/ecu_relay.h: 19: typedef struct{
+[s S270 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S270 . port_name pin relay_status ]
+"13 ecu/dc_motor/ecu_dc_motor.h
+[; ;ecu/dc_motor/ecu_dc_motor.h: 13: typedef struct{
+[s S271 `S270 1 `S270 1 ]
+[n S271 . relay1 relay2 ]
+"10 ecu/dc_motor/ecu_dc_motor.c
+[; ;ecu/dc_motor/ecu_dc_motor.c: 10: ret_status dc_motor_initialize(dc_motor_t *dc_mtor){
+[c E2444 0 1 .. ]
+[n E2444 . R_NOK R_OK  ]
+"25 ecu/dc_motor/../realy/ecu_relay.h
+[; ;ecu/dc_motor/../realy/ecu_relay.h: 25: ret_status relay_initialize(relay_t *led);
+[v _relay_initialize `(E2444 ~T0 @X0 0 ef1`*S270 ]
+"26
+[; ;ecu/dc_motor/../realy/ecu_relay.h: 26: ret_status relay_turn_on(relay_t *led);
+[v _relay_turn_on `(E2444 ~T0 @X0 0 ef1`*S270 ]
+"27
+[; ;ecu/dc_motor/../realy/ecu_relay.h: 27: ret_status relay_turn_off(relay_t *led);
+[v _relay_turn_off `(E2444 ~T0 @X0 0 ef1`*S270 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"191
+[; <" PORTB equ 0F81h ;# ">
+"362
+[; <" PORTC equ 0F82h ;# ">
+"537
+[; <" PORTD equ 0F83h ;# ">
+"679
+[; <" PORTE equ 0F84h ;# ">
+"882
+[; <" LATA equ 0F89h ;# ">
+"994
+[; <" LATB equ 0F8Ah ;# ">
+"1106
+[; <" LATC equ 0F8Bh ;# ">
+"1218
+[; <" LATD equ 0F8Ch ;# ">
+"1330
+[; <" LATE equ 0F8Dh ;# ">
+"1382
+[; <" TRISA equ 0F92h ;# ">
+"1387
+[; <" DDRA equ 0F92h ;# ">
+"1604
+[; <" TRISB equ 0F93h ;# ">
+"1609
+[; <" DDRB equ 0F93h ;# ">
+"1826
+[; <" TRISC equ 0F94h ;# ">
+"1831
+[; <" DDRC equ 0F94h ;# ">
+"2048
+[; <" TRISD equ 0F95h ;# ">
+"2053
+[; <" DDRD equ 0F95h ;# ">
+"2270
+[; <" TRISE equ 0F96h ;# ">
+"2275
+[; <" DDRE equ 0F96h ;# ">
+"2434
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2499
+[; <" PIE1 equ 0F9Dh ;# ">
+"2576
+[; <" PIR1 equ 0F9Eh ;# ">
+"2653
+[; <" IPR1 equ 0F9Fh ;# ">
+"2730
+[; <" PIE2 equ 0FA0h ;# ">
+"2796
+[; <" PIR2 equ 0FA1h ;# ">
+"2862
+[; <" IPR2 equ 0FA2h ;# ">
+"2928
+[; <" EECON1 equ 0FA6h ;# ">
+"2994
+[; <" EECON2 equ 0FA7h ;# ">
+"3001
+[; <" EEDATA equ 0FA8h ;# ">
+"3008
+[; <" EEADR equ 0FA9h ;# ">
+"3015
+[; <" EEADRH equ 0FAAh ;# ">
+"3022
+[; <" RCSTA equ 0FABh ;# ">
+"3027
+[; <" RCSTA1 equ 0FABh ;# ">
+"3232
+[; <" TXSTA equ 0FACh ;# ">
+"3237
+[; <" TXSTA1 equ 0FACh ;# ">
+"3488
+[; <" TXREG equ 0FADh ;# ">
+"3493
+[; <" TXREG1 equ 0FADh ;# ">
+"3500
+[; <" RCREG equ 0FAEh ;# ">
+"3505
+[; <" RCREG1 equ 0FAEh ;# ">
+"3512
+[; <" SPBRG equ 0FAFh ;# ">
+"3517
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3524
+[; <" SPBRGH equ 0FB0h ;# ">
+"3531
+[; <" T3CON equ 0FB1h ;# ">
+"3643
+[; <" TMR3 equ 0FB2h ;# ">
+"3650
+[; <" TMR3L equ 0FB2h ;# ">
+"3657
+[; <" TMR3H equ 0FB3h ;# ">
+"3664
+[; <" CMCON equ 0FB4h ;# ">
+"3754
+[; <" CVRCON equ 0FB5h ;# ">
+"3833
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3915
+[; <" PWM1CON equ 0FB7h ;# ">
+"3985
+[; <" BAUDCON equ 0FB8h ;# ">
+"3990
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4157
+[; <" CCP2CON equ 0FBAh ;# ">
+"4236
+[; <" CCPR2 equ 0FBBh ;# ">
+"4243
+[; <" CCPR2L equ 0FBBh ;# ">
+"4250
+[; <" CCPR2H equ 0FBCh ;# ">
+"4257
+[; <" CCP1CON equ 0FBDh ;# ">
+"4354
+[; <" CCPR1 equ 0FBEh ;# ">
+"4361
+[; <" CCPR1L equ 0FBEh ;# ">
+"4368
+[; <" CCPR1H equ 0FBFh ;# ">
+"4375
+[; <" ADCON2 equ 0FC0h ;# ">
+"4446
+[; <" ADCON1 equ 0FC1h ;# ">
+"4531
+[; <" ADCON0 equ 0FC2h ;# ">
+"4650
+[; <" ADRES equ 0FC3h ;# ">
+"4657
+[; <" ADRESL equ 0FC3h ;# ">
+"4664
+[; <" ADRESH equ 0FC4h ;# ">
+"4671
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4733
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4803
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5024
+[; <" SSPADD equ 0FC8h ;# ">
+"5031
+[; <" SSPBUF equ 0FC9h ;# ">
+"5038
+[; <" T2CON equ 0FCAh ;# ">
+"5109
+[; <" PR2 equ 0FCBh ;# ">
+"5114
+[; <" MEMCON equ 0FCBh ;# ">
+"5219
+[; <" TMR2 equ 0FCCh ;# ">
+"5226
+[; <" T1CON equ 0FCDh ;# ">
+"5329
+[; <" TMR1 equ 0FCEh ;# ">
+"5336
+[; <" TMR1L equ 0FCEh ;# ">
+"5343
+[; <" TMR1H equ 0FCFh ;# ">
+"5350
+[; <" RCON equ 0FD0h ;# ">
+"5483
+[; <" WDTCON equ 0FD1h ;# ">
+"5511
+[; <" HLVDCON equ 0FD2h ;# ">
+"5516
+[; <" LVDCON equ 0FD2h ;# ">
+"5781
+[; <" OSCCON equ 0FD3h ;# ">
+"5858
+[; <" T0CON equ 0FD5h ;# ">
+"5935
+[; <" TMR0 equ 0FD6h ;# ">
+"5942
+[; <" TMR0L equ 0FD6h ;# ">
+"5949
+[; <" TMR0H equ 0FD7h ;# ">
+"5956
+[; <" STATUS equ 0FD8h ;# ">
+"6027
+[; <" FSR2 equ 0FD9h ;# ">
+"6034
+[; <" FSR2L equ 0FD9h ;# ">
+"6041
+[; <" FSR2H equ 0FDAh ;# ">
+"6048
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6055
+[; <" PREINC2 equ 0FDCh ;# ">
+"6062
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6069
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6076
+[; <" INDF2 equ 0FDFh ;# ">
+"6083
+[; <" BSR equ 0FE0h ;# ">
+"6090
+[; <" FSR1 equ 0FE1h ;# ">
+"6097
+[; <" FSR1L equ 0FE1h ;# ">
+"6104
+[; <" FSR1H equ 0FE2h ;# ">
+"6111
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6118
+[; <" PREINC1 equ 0FE4h ;# ">
+"6125
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6132
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6139
+[; <" INDF1 equ 0FE7h ;# ">
+"6146
+[; <" WREG equ 0FE8h ;# ">
+"6158
+[; <" FSR0 equ 0FE9h ;# ">
+"6165
+[; <" FSR0L equ 0FE9h ;# ">
+"6172
+[; <" FSR0H equ 0FEAh ;# ">
+"6179
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6186
+[; <" PREINC0 equ 0FECh ;# ">
+"6193
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6200
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6207
+[; <" INDF0 equ 0FEFh ;# ">
+"6214
+[; <" INTCON3 equ 0FF0h ;# ">
+"6306
+[; <" INTCON2 equ 0FF1h ;# ">
+"6376
+[; <" INTCON equ 0FF2h ;# ">
+"6493
+[; <" PROD equ 0FF3h ;# ">
+"6500
+[; <" PRODL equ 0FF3h ;# ">
+"6507
+[; <" PRODH equ 0FF4h ;# ">
+"6514
+[; <" TABLAT equ 0FF5h ;# ">
+"6523
+[; <" TBLPTR equ 0FF6h ;# ">
+"6530
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6537
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6544
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6553
+[; <" PCLAT equ 0FF9h ;# ">
+"6560
+[; <" PC equ 0FF9h ;# ">
+"6567
+[; <" PCL equ 0FF9h ;# ">
+"6574
+[; <" PCLATH equ 0FFAh ;# ">
+"6581
+[; <" PCLATU equ 0FFBh ;# ">
+"6588
+[; <" STKPTR equ 0FFCh ;# ">
+"6694
+[; <" TOS equ 0FFDh ;# ">
+"6701
+[; <" TOSL equ 0FFDh ;# ">
+"6708
+[; <" TOSH equ 0FFEh ;# ">
+"6715
+[; <" TOSU equ 0FFFh ;# ">
+"10 ecu/dc_motor/ecu_dc_motor.c
+[; ;ecu/dc_motor/ecu_dc_motor.c: 10: ret_status dc_motor_initialize(dc_motor_t *dc_mtor){
+[v _dc_motor_initialize `(E2444 ~T0 @X0 1 ef1`*S271 ]
+{
+[e :U _dc_motor_initialize ]
+[v _dc_mtor `*S271 ~T0 @X0 1 r1 ]
+[f ]
+"11
+[; ;ecu/dc_motor/ecu_dc_motor.c: 11:     ret_status ret = R_NOK;
+[v _ret `E2444 ~T0 @X0 1 a ]
+[e = _ret . `E2444 0 ]
+"12
+[; ;ecu/dc_motor/ecu_dc_motor.c: 12:     if(((void*)0) == dc_mtor){
+[e $ ! == -> -> -> 0 `i `*v `*S271 _dc_mtor 273  ]
+{
+"13
+[; ;ecu/dc_motor/ecu_dc_motor.c: 13:         return ret;
+[e ) _ret ]
+[e $UE 272  ]
+"14
+[; ;ecu/dc_motor/ecu_dc_motor.c: 14:     }
+}
+[e $U 274  ]
+"15
+[; ;ecu/dc_motor/ecu_dc_motor.c: 15:     else{
+[e :U 273 ]
+{
+"16
+[; ;ecu/dc_motor/ecu_dc_motor.c: 16:         relay_initialize(&(dc_mtor->relay1));
+[e ( _relay_initialize (1 &U . *U _dc_mtor 0 ]
+"17
+[; ;ecu/dc_motor/ecu_dc_motor.c: 17:         relay_initialize(&(dc_mtor->relay2));
+[e ( _relay_initialize (1 &U . *U _dc_mtor 1 ]
+"18
+[; ;ecu/dc_motor/ecu_dc_motor.c: 18:         ret = R_OK;
+[e = _ret . `E2444 1 ]
+"19
+[; ;ecu/dc_motor/ecu_dc_motor.c: 19:     }
+}
+[e :U 274 ]
+"20
+[; ;ecu/dc_motor/ecu_dc_motor.c: 20:     return ret;
+[e ) _ret ]
+[e $UE 272  ]
+"21
+[; ;ecu/dc_motor/ecu_dc_motor.c: 21: }
+[e :UE 272 ]
+}
+"23
+[; ;ecu/dc_motor/ecu_dc_motor.c: 23: ret_status dc_motor_rotate_right(dc_motor_t *dc_mtor){
+[v _dc_motor_rotate_right `(E2444 ~T0 @X0 1 ef1`*S271 ]
+{
+[e :U _dc_motor_rotate_right ]
+[v _dc_mtor `*S271 ~T0 @X0 1 r1 ]
+[f ]
+"24
+[; ;ecu/dc_motor/ecu_dc_motor.c: 24:     ret_status ret = R_NOK;
+[v _ret `E2444 ~T0 @X0 1 a ]
+[e = _ret . `E2444 0 ]
+"25
+[; ;ecu/dc_motor/ecu_dc_motor.c: 25:     if(((void*)0) == dc_mtor){
+[e $ ! == -> -> -> 0 `i `*v `*S271 _dc_mtor 276  ]
+{
+"26
+[; ;ecu/dc_motor/ecu_dc_motor.c: 26:         return ret;
+[e ) _ret ]
+[e $UE 275  ]
+"27
+[; ;ecu/dc_motor/ecu_dc_motor.c: 27:     }
+}
+[e $U 277  ]
+"28
+[; ;ecu/dc_motor/ecu_dc_motor.c: 28:     else{
+[e :U 276 ]
+{
+"29
+[; ;ecu/dc_motor/ecu_dc_motor.c: 29:         relay_turn_on(&(dc_mtor->relay1));
+[e ( _relay_turn_on (1 &U . *U _dc_mtor 0 ]
+"30
+[; ;ecu/dc_motor/ecu_dc_motor.c: 30:         relay_turn_off(&(dc_mtor->relay2));
+[e ( _relay_turn_off (1 &U . *U _dc_mtor 1 ]
+"31
+[; ;ecu/dc_motor/ecu_dc_motor.c: 31:         ret = R_OK;
+[e = _ret . `E2444 1 ]
+"32
+[; ;ecu/dc_motor/ecu_dc_motor.c: 32:     }
+}
+[e :U 277 ]
+"33
+[; ;ecu/dc_motor/ecu_dc_motor.c: 33:     return ret;
+[e ) _ret ]
+[e $UE 275  ]
+"34
+[; ;ecu/dc_motor/ecu_dc_motor.c: 34: }
+[e :UE 275 ]
+}
+"36
+[; ;ecu/dc_motor/ecu_dc_motor.c: 36: ret_status dc_motor_rotate_left(dc_motor_t *dc_mtor){
+[v _dc_motor_rotate_left `(E2444 ~T0 @X0 1 ef1`*S271 ]
+{
+[e :U _dc_motor_rotate_left ]
+[v _dc_mtor `*S271 ~T0 @X0 1 r1 ]
+[f ]
+"37
+[; ;ecu/dc_motor/ecu_dc_motor.c: 37:     ret_status ret = R_NOK;
+[v _ret `E2444 ~T0 @X0 1 a ]
+[e = _ret . `E2444 0 ]
+"38
+[; ;ecu/dc_motor/ecu_dc_motor.c: 38:     if(((void*)0) == dc_mtor){
+[e $ ! == -> -> -> 0 `i `*v `*S271 _dc_mtor 279  ]
+{
+"39
+[; ;ecu/dc_motor/ecu_dc_motor.c: 39:         return ret;
+[e ) _ret ]
+[e $UE 278  ]
+"40
+[; ;ecu/dc_motor/ecu_dc_motor.c: 40:     }
+}
+[e $U 280  ]
+"41
+[; ;ecu/dc_motor/ecu_dc_motor.c: 41:     else{
+[e :U 279 ]
+{
+"42
+[; ;ecu/dc_motor/ecu_dc_motor.c: 42:         relay_turn_off(&(dc_mtor->relay1));
+[e ( _relay_turn_off (1 &U . *U _dc_mtor 0 ]
+"43
+[; ;ecu/dc_motor/ecu_dc_motor.c: 43:         relay_turn_on(&(dc_mtor->relay2));
+[e ( _relay_turn_on (1 &U . *U _dc_mtor 1 ]
+"44
+[; ;ecu/dc_motor/ecu_dc_motor.c: 44:         ret = R_OK;
+[e = _ret . `E2444 1 ]
+"45
+[; ;ecu/dc_motor/ecu_dc_motor.c: 45:     }
+}
+[e :U 280 ]
+"46
+[; ;ecu/dc_motor/ecu_dc_motor.c: 46:     return ret;
+[e ) _ret ]
+[e $UE 278  ]
+"47
+[; ;ecu/dc_motor/ecu_dc_motor.c: 47: }
+[e :UE 278 ]
+}
+"49
+[; ;ecu/dc_motor/ecu_dc_motor.c: 49: ret_status dc_motor_stop(dc_motor_t *dc_mtor){
+[v _dc_motor_stop `(E2444 ~T0 @X0 1 ef1`*S271 ]
+{
+[e :U _dc_motor_stop ]
+[v _dc_mtor `*S271 ~T0 @X0 1 r1 ]
+[f ]
+"50
+[; ;ecu/dc_motor/ecu_dc_motor.c: 50:     ret_status ret = R_NOK;
+[v _ret `E2444 ~T0 @X0 1 a ]
+[e = _ret . `E2444 0 ]
+"51
+[; ;ecu/dc_motor/ecu_dc_motor.c: 51:     if(((void*)0) == dc_mtor){
+[e $ ! == -> -> -> 0 `i `*v `*S271 _dc_mtor 282  ]
+{
+"52
+[; ;ecu/dc_motor/ecu_dc_motor.c: 52:         return ret;
+[e ) _ret ]
+[e $UE 281  ]
+"53
+[; ;ecu/dc_motor/ecu_dc_motor.c: 53:     }
+}
+[e $U 283  ]
+"54
+[; ;ecu/dc_motor/ecu_dc_motor.c: 54:     else{
+[e :U 282 ]
+{
+"55
+[; ;ecu/dc_motor/ecu_dc_motor.c: 55:         relay_turn_off(&(dc_mtor->relay1));
+[e ( _relay_turn_off (1 &U . *U _dc_mtor 0 ]
+"56
+[; ;ecu/dc_motor/ecu_dc_motor.c: 56:         relay_turn_off(&(dc_mtor->relay2));
+[e ( _relay_turn_off (1 &U . *U _dc_mtor 1 ]
+"57
+[; ;ecu/dc_motor/ecu_dc_motor.c: 57:         ret = R_OK;
+[e = _ret . `E2444 1 ]
+"58
+[; ;ecu/dc_motor/ecu_dc_motor.c: 58:     }
+}
+[e :U 283 ]
+"59
+[; ;ecu/dc_motor/ecu_dc_motor.c: 59:     return ret;
+[e ) _ret ]
+[e $UE 281  ]
+"60
+[; ;ecu/dc_motor/ecu_dc_motor.c: 60: }
+[e :UE 281 ]
+}
