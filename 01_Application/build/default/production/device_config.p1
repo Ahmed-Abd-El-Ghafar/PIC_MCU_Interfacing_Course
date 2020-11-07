@@ -410,69 +410,69 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6715
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h: 6715: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"11 device_config.c
+"15 device_config.c
 [p x OSC = HS ]
-"12
-[p x FCMEN = OFF ]
-"13
-[p x IESO = OFF ]
 "16
-[p x PWRT = OFF ]
+[p x FCMEN = OFF ]
 "17
-[p x BOREN = SBORDIS ]
-"18
-[p x BORV = 3 ]
+[p x IESO = OFF ]
+"20
+[p x PWRT = OFF ]
 "21
-[p x WDT = OFF ]
+[p x BOREN = OFF ]
 "22
-[p x WDTPS = 32768 ]
+[p x BORV = 1 ]
 "25
-[p x CCP2MX = PORTC ]
+[p x WDT = OFF ]
 "26
+[p x WDTPS = 32768 ]
+"29
+[p x CCP2MX = PORTC ]
+"30
 [p x PBADEN = ON ]
-"27
-[p x LPT1OSC = OFF ]
-"28
-[p x MCLRE = ON ]
 "31
-[p x STVREN = ON ]
+[p x LPT1OSC = OFF ]
 "32
-[p x LVP = ON ]
-"33
-[p x XINST = OFF ]
+[p x MCLRE = ON ]
+"35
+[p x STVREN = ON ]
 "36
-[p x CP0 = OFF ]
+[p x LVP = OFF ]
 "37
+[p x XINST = OFF ]
+"40
+[p x CP0 = OFF ]
+"41
 [p x CP1 = OFF ]
-"38
-[p x CP2 = OFF ]
-"39
-[p x CP3 = OFF ]
 "42
-[p x CPB = OFF ]
+[p x CP2 = OFF ]
 "43
-[p x CPD = OFF ]
+[p x CP3 = OFF ]
 "46
-[p x WRT0 = OFF ]
+[p x CPB = OFF ]
 "47
+[p x CPD = OFF ]
+"50
+[p x WRT0 = OFF ]
+"51
 [p x WRT1 = OFF ]
-"48
-[p x WRT2 = OFF ]
-"49
-[p x WRT3 = OFF ]
 "52
-[p x WRTC = OFF ]
+[p x WRT2 = OFF ]
 "53
-[p x WRTB = OFF ]
-"54
-[p x WRTD = OFF ]
+[p x WRT3 = OFF ]
+"56
+[p x WRTC = OFF ]
 "57
-[p x EBTR0 = OFF ]
+[p x WRTB = OFF ]
 "58
+[p x WRTD = OFF ]
+"61
+[p x EBTR0 = OFF ]
+"62
 [p x EBTR1 = OFF ]
-"59
-[p x EBTR2 = OFF ]
-"60
-[p x EBTR3 = OFF ]
 "63
+[p x EBTR2 = OFF ]
+"64
+[p x EBTR3 = OFF ]
+"67
 [p x EBTRB = OFF ]

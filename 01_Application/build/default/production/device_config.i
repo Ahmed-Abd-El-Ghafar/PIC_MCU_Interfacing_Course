@@ -4390,14 +4390,18 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 
+
+
+
+
 #pragma config OSC = HS
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
 
 
 #pragma config PWRT = OFF
-#pragma config BOREN = SBORDIS
-#pragma config BORV = 3
+#pragma config BOREN = OFF
+#pragma config BORV = 1
 
 
 #pragma config WDT = OFF
@@ -4411,7 +4415,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 
 
 #pragma config STVREN = ON
-#pragma config LVP = ON
+#pragma config LVP = OFF
 #pragma config XINST = OFF
 
 

@@ -4393,17 +4393,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 11 "ecu/dc_motor/../realy/../../mcal/gpio/../../std_types.h" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 1 3
-# 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/assert.h" 1 3
-# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/assert.h" 3
-          void __assert_fail (const char *, const char *, int, const char *);
-# 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 2 3
-
-
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 12 "ecu/dc_motor/../realy/../../mcal/gpio/../../std_types.h" 2
 
 
 typedef unsigned char uint8_t;
@@ -4417,12 +4406,14 @@ typedef signed int sint32_t;
 
 
 
+
+
 typedef enum{
     R_NOK,
     R_OK
 }ret_status;
 # 13 "ecu/dc_motor/../realy/../../mcal/gpio/mcal_gpio.h" 2
-# 34 "ecu/dc_motor/../realy/../../mcal/gpio/mcal_gpio.h"
+# 35 "ecu/dc_motor/../realy/../../mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH

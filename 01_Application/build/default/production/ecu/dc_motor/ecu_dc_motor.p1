@@ -9,17 +9,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S271 . relay1 relay2 ]
 "10 ecu/dc_motor/ecu_dc_motor.c
 [; ;ecu/dc_motor/ecu_dc_motor.c: 10: ret_status dc_motor_initialize(dc_motor_t *dc_mtor){
-[c E2444 0 1 .. ]
-[n E2444 . R_NOK R_OK  ]
+[c E2438 0 1 .. ]
+[n E2438 . R_NOK R_OK  ]
 "25 ecu/dc_motor/../realy/ecu_relay.h
 [; ;ecu/dc_motor/../realy/ecu_relay.h: 25: ret_status relay_initialize(relay_t *led);
-[v _relay_initialize `(E2444 ~T0 @X0 0 ef1`*S270 ]
+[v _relay_initialize `(E2438 ~T0 @X0 0 ef1`*S270 ]
 "26
 [; ;ecu/dc_motor/../realy/ecu_relay.h: 26: ret_status relay_turn_on(relay_t *led);
-[v _relay_turn_on `(E2444 ~T0 @X0 0 ef1`*S270 ]
+[v _relay_turn_on `(E2438 ~T0 @X0 0 ef1`*S270 ]
 "27
 [; ;ecu/dc_motor/../realy/ecu_relay.h: 27: ret_status relay_turn_off(relay_t *led);
-[v _relay_turn_off `(E2444 ~T0 @X0 0 ef1`*S270 ]
+[v _relay_turn_off `(E2438 ~T0 @X0 0 ef1`*S270 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h
 [; <" PORTA equ 0F80h ;# ">
 "191
@@ -296,15 +296,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "10 ecu/dc_motor/ecu_dc_motor.c
 [; ;ecu/dc_motor/ecu_dc_motor.c: 10: ret_status dc_motor_initialize(dc_motor_t *dc_mtor){
-[v _dc_motor_initialize `(E2444 ~T0 @X0 1 ef1`*S271 ]
+[v _dc_motor_initialize `(E2438 ~T0 @X0 1 ef1`*S271 ]
 {
 [e :U _dc_motor_initialize ]
 [v _dc_mtor `*S271 ~T0 @X0 1 r1 ]
 [f ]
 "11
 [; ;ecu/dc_motor/ecu_dc_motor.c: 11:     ret_status ret = R_NOK;
-[v _ret `E2444 ~T0 @X0 1 a ]
-[e = _ret . `E2444 0 ]
+[v _ret `E2438 ~T0 @X0 1 a ]
+[e = _ret . `E2438 0 ]
 "12
 [; ;ecu/dc_motor/ecu_dc_motor.c: 12:     if(((void*)0) == dc_mtor){
 [e $ ! == -> -> -> 0 `i `*v `*S271 _dc_mtor 273  ]
@@ -329,7 +329,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _relay_initialize (1 &U . *U _dc_mtor 1 ]
 "18
 [; ;ecu/dc_motor/ecu_dc_motor.c: 18:         ret = R_OK;
-[e = _ret . `E2444 1 ]
+[e = _ret . `E2438 1 ]
 "19
 [; ;ecu/dc_motor/ecu_dc_motor.c: 19:     }
 }
@@ -344,15 +344,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "23
 [; ;ecu/dc_motor/ecu_dc_motor.c: 23: ret_status dc_motor_rotate_right(dc_motor_t *dc_mtor){
-[v _dc_motor_rotate_right `(E2444 ~T0 @X0 1 ef1`*S271 ]
+[v _dc_motor_rotate_right `(E2438 ~T0 @X0 1 ef1`*S271 ]
 {
 [e :U _dc_motor_rotate_right ]
 [v _dc_mtor `*S271 ~T0 @X0 1 r1 ]
 [f ]
 "24
 [; ;ecu/dc_motor/ecu_dc_motor.c: 24:     ret_status ret = R_NOK;
-[v _ret `E2444 ~T0 @X0 1 a ]
-[e = _ret . `E2444 0 ]
+[v _ret `E2438 ~T0 @X0 1 a ]
+[e = _ret . `E2438 0 ]
 "25
 [; ;ecu/dc_motor/ecu_dc_motor.c: 25:     if(((void*)0) == dc_mtor){
 [e $ ! == -> -> -> 0 `i `*v `*S271 _dc_mtor 276  ]
@@ -377,7 +377,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _relay_turn_off (1 &U . *U _dc_mtor 1 ]
 "31
 [; ;ecu/dc_motor/ecu_dc_motor.c: 31:         ret = R_OK;
-[e = _ret . `E2444 1 ]
+[e = _ret . `E2438 1 ]
 "32
 [; ;ecu/dc_motor/ecu_dc_motor.c: 32:     }
 }
@@ -392,15 +392,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "36
 [; ;ecu/dc_motor/ecu_dc_motor.c: 36: ret_status dc_motor_rotate_left(dc_motor_t *dc_mtor){
-[v _dc_motor_rotate_left `(E2444 ~T0 @X0 1 ef1`*S271 ]
+[v _dc_motor_rotate_left `(E2438 ~T0 @X0 1 ef1`*S271 ]
 {
 [e :U _dc_motor_rotate_left ]
 [v _dc_mtor `*S271 ~T0 @X0 1 r1 ]
 [f ]
 "37
 [; ;ecu/dc_motor/ecu_dc_motor.c: 37:     ret_status ret = R_NOK;
-[v _ret `E2444 ~T0 @X0 1 a ]
-[e = _ret . `E2444 0 ]
+[v _ret `E2438 ~T0 @X0 1 a ]
+[e = _ret . `E2438 0 ]
 "38
 [; ;ecu/dc_motor/ecu_dc_motor.c: 38:     if(((void*)0) == dc_mtor){
 [e $ ! == -> -> -> 0 `i `*v `*S271 _dc_mtor 279  ]
@@ -425,7 +425,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _relay_turn_on (1 &U . *U _dc_mtor 1 ]
 "44
 [; ;ecu/dc_motor/ecu_dc_motor.c: 44:         ret = R_OK;
-[e = _ret . `E2444 1 ]
+[e = _ret . `E2438 1 ]
 "45
 [; ;ecu/dc_motor/ecu_dc_motor.c: 45:     }
 }
@@ -440,15 +440,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "49
 [; ;ecu/dc_motor/ecu_dc_motor.c: 49: ret_status dc_motor_stop(dc_motor_t *dc_mtor){
-[v _dc_motor_stop `(E2444 ~T0 @X0 1 ef1`*S271 ]
+[v _dc_motor_stop `(E2438 ~T0 @X0 1 ef1`*S271 ]
 {
 [e :U _dc_motor_stop ]
 [v _dc_mtor `*S271 ~T0 @X0 1 r1 ]
 [f ]
 "50
 [; ;ecu/dc_motor/ecu_dc_motor.c: 50:     ret_status ret = R_NOK;
-[v _ret `E2444 ~T0 @X0 1 a ]
-[e = _ret . `E2444 0 ]
+[v _ret `E2438 ~T0 @X0 1 a ]
+[e = _ret . `E2438 0 ]
 "51
 [; ;ecu/dc_motor/ecu_dc_motor.c: 51:     if(((void*)0) == dc_mtor){
 [e $ ! == -> -> -> 0 `i `*v `*S271 _dc_mtor 282  ]
@@ -473,7 +473,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _relay_turn_off (1 &U . *U _dc_mtor 1 ]
 "57
 [; ;ecu/dc_motor/ecu_dc_motor.c: 57:         ret = R_OK;
-[e = _ret . `E2444 1 ]
+[e = _ret . `E2438 1 ]
 "58
 [; ;ecu/dc_motor/ecu_dc_motor.c: 58:     }
 }

@@ -16,10 +16,9 @@
 #include "ecu/button/ecu_button.h"
 #include "ecu/realy/ecu_relay.h"
 #include "ecu/dc_motor/ecu_dc_motor.h"
+#include "ecu/char_lcd/ecu_char_lcd.h"
 
-void robot_move_forward(void);
-void robot_move_backward(void);
-void robot_move_stop(void);
+void application_init(void);
 
 #endif	/* APPLICATION_H */
 

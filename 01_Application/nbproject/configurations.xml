@@ -8,6 +8,9 @@
         <logicalFolder name="button" displayName="button" projectFiles="true">
           <itemPath>ecu/button/ecu_button.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="f1" displayName="char_lcd" projectFiles="true">
+          <itemPath>ecu/char_lcd/ecu_char_lcd.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="dc_motor" displayName="dc_motor" projectFiles="true">
           <itemPath>ecu/dc_motor/ecu_dc_motor.h</itemPath>
         </logicalFolder>
@@ -37,6 +40,9 @@
       <logicalFolder name="ecu" displayName="ecu" projectFiles="true">
         <logicalFolder name="button" displayName="button" projectFiles="true">
           <itemPath>ecu/button/ecu_button.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="f1" displayName="char_lcd" projectFiles="true">
+          <itemPath>ecu/char_lcd/ecu_char_lcd.c</itemPath>
         </logicalFolder>
         <logicalFolder name="dc_motor" displayName="dc_motor" projectFiles="true">
           <itemPath>ecu/dc_motor/ecu_dc_motor.c</itemPath>

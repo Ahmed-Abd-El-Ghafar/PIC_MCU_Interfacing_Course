@@ -4527,20 +4527,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "./ecu/led/../../mcal/gpio/mcal_gpio.h" 1
 # 13 "./ecu/led/../../mcal/gpio/mcal_gpio.h"
 # 1 "./ecu/led/../../mcal/gpio/../../std_types.h" 1
-# 12 "./ecu/led/../../mcal/gpio/../../std_types.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 1 3
-# 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/assert.h" 1 3
-# 19 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/assert.h" 3
-          void __assert_fail (const char *, const char *, int, const char *);
-# 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\assert.h" 2 3
-
-
-#pragma intrinsic(__builtin_software_breakpoint)
-extern void __builtin_software_breakpoint(void);
-# 12 "./ecu/led/../../mcal/gpio/../../std_types.h" 2
-
-
+# 14 "./ecu/led/../../mcal/gpio/../../std_types.h"
 typedef unsigned char uint8_t;
 typedef unsigned short uint16_t;
 typedef unsigned int uint32_t;
@@ -4552,12 +4539,14 @@ typedef signed int sint32_t;
 
 
 
+
+
 typedef enum{
     R_NOK,
     R_OK
 }ret_status;
 # 13 "./ecu/led/../../mcal/gpio/mcal_gpio.h" 2
-# 34 "./ecu/led/../../mcal/gpio/mcal_gpio.h"
+# 35 "./ecu/led/../../mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH
@@ -4695,56 +4684,96 @@ ret_status dc_motor_rotate_left(dc_motor_t *dc_mtor);
 ret_status dc_motor_stop(dc_motor_t *dc_mtor);
 # 18 "./application.h" 2
 
+# 1 "./ecu/char_lcd/ecu_char_lcd.h" 1
+# 34 "./ecu/char_lcd/ecu_char_lcd.h"
+typedef struct{
 
-void robot_move_forward(void);
-void robot_move_backward(void);
-void robot_move_stop(void);
+    uint8_t lcd_data_port : 4;
+    uint8_t lcd_en_port : 4;
+    uint8_t lcd_rs_port : 4;
+    uint8_t lcd_en_pin : 3;
+    uint8_t lcd_rs_pin : 3;
+    uint8_t lcd_status : 6;
+# 53 "./ecu/char_lcd/ecu_char_lcd.h"
+}char_lcd_t;
+
+
+
+
+ret_status lcd_intialize(const char_lcd_t *_lcd);
+ret_status lcd_send_command(const char_lcd_t *_lcd, uint8_t command);
+ret_status lcd_send_char_data(const char_lcd_t *_lcd, uint8_t _data);
+ret_status lcd_send_char_data_pos(const char_lcd_t *_lcd, uint8_t row, uint8_t coulmn, uint8_t _data);
+ret_status lcd_send_string_data_current_pos(const char_lcd_t *_lcd, uint8_t *_data);
+ret_status lcd_send_string_data_pos(const char_lcd_t *_lcd, uint8_t row, uint8_t coulmn, uint8_t *_data);
+ret_status lcd_send_custome_char(const char_lcd_t *_lcd, uint8_t row, uint8_t coulmn, const char arr[], uint8_t _pos);
+ret_status lcd_clear_display(const char_lcd_t *_lcd);
+void byte_to_string(uint8_t number, uint8_t *_output);
+void short_to_string(uint16_t number, uint8_t *_output);
+void int_to_string(uint32_t number, uint8_t *_output);
+# 19 "./application.h" 2
+
+
+void application_init(void);
 # 8 "application.c" 2
-# 17 "application.c"
-dc_motor_t dc_motor1_1 = {{.port_name = PORTC_INDEX, .pin = PIN0, .relay_status = RELAY_OFF},
-                          {.port_name = PORTC_INDEX, .pin = PIN1, .relay_status = RELAY_OFF}};
-dc_motor_t dc_motor1_2 = {{.port_name = PORTC_INDEX, .pin = PIN2, .relay_status = RELAY_OFF},
-                          {.port_name = PORTC_INDEX, .pin = PIN3, .relay_status = RELAY_OFF}};
+# 33 "application.c"
+char_lcd_t lcd_1 = {
+    .lcd_data_port = PORTC_INDEX,
+    .lcd_en_port = PORTD_INDEX,
+    .lcd_rs_port = PORTD_INDEX,
+    .lcd_rs_pin = PIN0,
+    .lcd_en_pin = PIN1
+};
 
-button_t btn1 = {.port_name = PORTD_INDEX, .pin = PIN0, .button_status = BUTTON_NOT_PRESSED};
-button_t btn2 = {.port_name = PORTD_INDEX, .pin = PIN1, .button_status = BUTTON_NOT_PRESSED};
-button_status btn1_status = 0, btn2_status = 0;
+
+const char character1[] = {14,10,17,17,17,17,31,0};
+const char character2[] = {14,10,17,17,17,31,31,0};
+const char character3[] = {14,10,17,17,31,31,31,0};
+const char character4[] = {14,10,17,31,31,31,31,0};
+const char character5[] = {14,10,31,31,31,31,31,0};
+const char character6[] = {14,14,31,31,31,31,31,0};
+const char blt[] = {6,21,13,6,13,21,6,0};
+const char Shab[] = {31,21,14,4,4,4,4,0};
+const char shab_bat1[] = {24,24,24,24,24,24,24,0};
+const char shab_bat2[] = {28,28,28,28,28,28,28,0};
+const char shab_bat3[] = {30,30,30,30,30,30,30,0};
+const char mesg1[] = {31,24,22,17,16,31,0,0};
+const char mesg2[] = {31,3,13,17,1,31,0,0};
 
 int main() {
-
-
-    dc_motor_initialize(&dc_motor1_1);
-    dc_motor_initialize(&dc_motor1_2);
-    button_initialize(&btn1);
-    button_initialize(&btn2);
+    application_init();
+    lcd_send_custome_char(&lcd_1, 4, 20, character6, 0);
+    lcd_send_custome_char(&lcd_1, 1, 19, blt, 1);
+    lcd_send_custome_char(&lcd_1, 4, 1, Shab, 2);
+    lcd_send_custome_char(&lcd_1, 3, 1, shab_bat1, 3);
+    lcd_send_custome_char(&lcd_1, 3, 20, shab_bat1, 3);
+    lcd_send_custome_char(&lcd_1, 2, 1, shab_bat2, 4);
+    lcd_send_custome_char(&lcd_1, 2, 20, shab_bat2, 4);
+    lcd_send_custome_char(&lcd_1, 1, 20, shab_bat3, 4);
+    lcd_send_custome_char(&lcd_1, 1, 2, mesg1, 5);
+    lcd_send_custome_char(&lcd_1, 1, 3, mesg2, 6);
+    lcd_send_string_data_pos(&lcd_1, 2, 2, "3 messages");
+    lcd_send_string_data_pos(&lcd_1, 3, 5, "received");
+    lcd_send_string_data_pos(&lcd_1, 4, 9, "Read");
     while(1){
-# 43 "application.c"
-        button_get_status(&btn1, &btn1_status);
-        button_get_status(&btn2, &btn2_status);
-        if(btn1_status == BUTTON_PRESSED && btn2_status == BUTTON_NOT_PRESSED){
-            robot_move_forward();
-        }
-        else if(btn2_status == BUTTON_PRESSED && btn1_status == BUTTON_NOT_PRESSED){
-            robot_move_backward();
-        }
-        else{
-            robot_move_stop();
-        }
+        lcd_send_string_data_pos(&lcd_1, 1, 6, "ES Diploma");
+        lcd_send_string_data_pos(&lcd_1, 4, 9, "Read");_delay((unsigned long)((500)*(4000000UL/4000.0)));
+        lcd_send_string_data_pos(&lcd_1, 4, 9, "    ");_delay((unsigned long)((500)*(4000000UL/4000.0)));
+
+
+
+
     }
     return (0);
 }
 
-void robot_move_forward(void){
-    dc_motor_rotate_right(&dc_motor1_1);
-    dc_motor_rotate_right(&dc_motor1_2);
-}
+void application_init(void){
 
-void robot_move_backward(void){
-    dc_motor_rotate_left(&dc_motor1_1);
-    dc_motor_rotate_left(&dc_motor1_2);
-}
 
-void robot_move_stop(void){
-    dc_motor_stop(&dc_motor1_1);
-    dc_motor_stop(&dc_motor1_2);
+
+
+
+
+    lcd_intialize(&lcd_1);
+
 }
