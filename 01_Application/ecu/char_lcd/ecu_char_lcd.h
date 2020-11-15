@@ -12,7 +12,7 @@
 #include "../../mcal/gpio/mcal_gpio.h"
 
 /* Section: Macro Declarations */
-#define CHAR_LCD_MODE 8
+#define CHAR_LCD_MODE 4
 /********* LCD Commands *********/
 #define _LCD_CLEAR              0X01
 #define _LCD_RETURN_HOME        0x02

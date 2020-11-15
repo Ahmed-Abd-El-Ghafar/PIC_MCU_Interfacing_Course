@@ -1,10 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "34 ecu/char_lcd/ecu_char_lcd.h
 [; ;ecu/char_lcd/ecu_char_lcd.h: 34: typedef struct{
-[s S272 :4 `uc 1 :4 `uc 1 :4 `uc 1 :3 `uc 1 :3 `uc 1 :6 `uc 1 ]
-[n S272 . lcd_data_port lcd_en_port lcd_rs_port lcd_en_pin lcd_rs_pin lcd_status ]
-"18 ecu/char_lcd/ecu_char_lcd.c
-[; ;ecu/char_lcd/ecu_char_lcd.c: 18:     gpio_pin_write_value(_lcd->lcd_en_port, _lcd->lcd_en_pin, PIN_HIGH);
+[s S272 :6 `uc 1 :3 `uc 1 :3 `uc 1 :3 `uc 1 :3 `uc 1 :3 `uc 1 :3 `uc 1 ]
+[n S272 . lcd_data_port lcd_data_pin4 lcd_data_pin5 lcd_data_pin6 lcd_data_pin7 lcd_en_pin lcd_rs_pin ]
+"22 ecu/char_lcd/ecu_char_lcd.c
+[; ;ecu/char_lcd/ecu_char_lcd.c: 22:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_en_pin, PIN_HIGH);
 [c E2778 0 1 2 3 4 .. ]
 [n E2778 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
 [c E2768 0 1 2 3 4 5 6 7 .. ]
@@ -13,8 +13,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E2760 . PIN_LOW PIN_HIGH  ]
 [c E2756 0 1 .. ]
 [n E2756 . R_NOK R_OK  ]
-"69 ecu/char_lcd/../../mcal/gpio/mcal_gpio.h
-[; ;ecu/char_lcd/../../mcal/gpio/mcal_gpio.h: 69: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic);
+"70 ecu/char_lcd/../../mcal/gpio/mcal_gpio.h
+[; ;ecu/char_lcd/../../mcal/gpio/mcal_gpio.h: 70: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic);
 [v _gpio_pin_write_value `(E2756 ~T0 @X0 0 ef3`E2778`E2768`E2760 ]
 [v F2742 `(v ~T0 @X0 1 tf1`ul ]
 "187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
@@ -23,18 +23,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "59 ecu/char_lcd/ecu_char_lcd.h
 [; ;ecu/char_lcd/ecu_char_lcd.h: 59: ret_status lcd_send_command(const char_lcd_t *_lcd, uint8_t command);
 [v _lcd_send_command `(E2756 ~T0 @X0 0 ef2`*CS272`uc ]
-"65 ecu/char_lcd/ecu_char_lcd.c
-[; ;ecu/char_lcd/ecu_char_lcd.c: 65:     gpio_port_direction_intialize(_lcd->lcd_data_port, 0x00U);
+"94 ecu/char_lcd/ecu_char_lcd.c
+[; ;ecu/char_lcd/ecu_char_lcd.c: 94:     gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin4, DIRECTION_OUTPUT);
 [c E2764 0 1 .. ]
 [n E2764 . DIRECTION_OUTPUT DIRECTION_INPUT  ]
-"74 ecu/char_lcd/../../mcal/gpio/mcal_gpio.h
-[; ;ecu/char_lcd/../../mcal/gpio/mcal_gpio.h: 74: ret_status gpio_port_direction_intialize(port_index port, direction_t direction);
-[v _gpio_port_direction_intialize `(E2756 ~T0 @X0 0 ef2`E2778`E2764 ]
-"76
-[; ;ecu/char_lcd/../../mcal/gpio/mcal_gpio.h: 76: ret_status gpio_port_write_value(port_index port, uint8_t value);
-[v _gpio_port_write_value `(E2756 ~T0 @X0 0 ef2`E2778`uc ]
-"67
-[; ;ecu/char_lcd/../../mcal/gpio/mcal_gpio.h: 67: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction);
+"68 ecu/char_lcd/../../mcal/gpio/mcal_gpio.h
+[; ;ecu/char_lcd/../../mcal/gpio/mcal_gpio.h: 68: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction);
 [v _gpio_pin_direction_intialize `(E2756 ~T0 @X0 0 ef3`E2778`E2768`E2764 ]
 "113 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
@@ -319,15 +313,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _lcd_send_enable ]
 [v __lcd `*CS272 ~T0 @X0 1 r1 ]
 [f ]
-"18
-[; ;ecu/char_lcd/ecu_char_lcd.c: 18:     gpio_pin_write_value(_lcd->lcd_en_port, _lcd->lcd_en_pin, PIN_HIGH);
-[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 1 `E2778 -> . *U __lcd 3 `E2768 . `E2760 1 ]
-"19
-[; ;ecu/char_lcd/ecu_char_lcd.c: 19:     _delay((unsigned long)((200)*(4000000UL/4000000.0)));
+"22
+[; ;ecu/char_lcd/ecu_char_lcd.c: 22:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_en_pin, PIN_HIGH);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 5 `E2768 . `E2760 1 ]
+"23
+[; ;ecu/char_lcd/ecu_char_lcd.c: 23:     _delay((unsigned long)((200)*(4000000UL/4000000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
-"20
-[; ;ecu/char_lcd/ecu_char_lcd.c: 20:     gpio_pin_write_value(_lcd->lcd_en_port, _lcd->lcd_en_pin, PIN_LOW);
-[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 1 `E2778 -> . *U __lcd 3 `E2768 . `E2760 0 ]
+"24
+[; ;ecu/char_lcd/ecu_char_lcd.c: 24:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_en_pin, PIN_LOW);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 5 `E2768 . `E2760 0 ]
 "26
 [; ;ecu/char_lcd/ecu_char_lcd.c: 26: }
 [e :UE 273 ]
@@ -386,70 +380,94 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ecu/char_lcd/ecu_char_lcd.c: 43: }
 [e :UE 274 ]
 }
-"64
-[; ;ecu/char_lcd/ecu_char_lcd.c: 64: static void lcd_8bit_intialize(const char_lcd_t *_lcd){
-[v _lcd_8bit_intialize `(v ~T0 @X0 1 sf1`*CS272 ]
+"51
+[; ;ecu/char_lcd/ecu_char_lcd.c: 51: static void lcd_send_4bit(const char_lcd_t *_lcd, uint8_t _data){
+[v _lcd_send_4bit `(v ~T0 @X0 1 sf2`*CS272`uc ]
 {
-[e :U _lcd_8bit_intialize ]
+[e :U _lcd_send_4bit ]
+[v __lcd `*CS272 ~T0 @X0 1 r1 ]
+[v __data `uc ~T0 @X0 1 r2 ]
+[f ]
+"52
+[; ;ecu/char_lcd/ecu_char_lcd.c: 52:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin4, ((_data >> 0) & 0x1));
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 1 `E2768 -> & >> -> __data `i -> 0 `i -> 1 `i `E2760 ]
+"53
+[; ;ecu/char_lcd/ecu_char_lcd.c: 53:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin5, ((_data >> 1) & 0x1));
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 2 `E2768 -> & >> -> __data `i -> 1 `i -> 1 `i `E2760 ]
+"54
+[; ;ecu/char_lcd/ecu_char_lcd.c: 54:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin6, ((_data >> 2) & 0x1));
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 3 `E2768 -> & >> -> __data `i -> 2 `i -> 1 `i `E2760 ]
+"55
+[; ;ecu/char_lcd/ecu_char_lcd.c: 55:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin7, ((_data >> 3) & 0x1));
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 4 `E2768 -> & >> -> __data `i -> 3 `i -> 1 `i `E2760 ]
+"56
+[; ;ecu/char_lcd/ecu_char_lcd.c: 56: }
+[e :UE 282 ]
+}
+"93
+[; ;ecu/char_lcd/ecu_char_lcd.c: 93: static void lcd_4bit_intialize(const char_lcd_t *_lcd){
+[v _lcd_4bit_intialize `(v ~T0 @X0 1 sf1`*CS272 ]
+{
+[e :U _lcd_4bit_intialize ]
 [v __lcd `*CS272 ~T0 @X0 1 r1 ]
 [f ]
-"65
-[; ;ecu/char_lcd/ecu_char_lcd.c: 65:     gpio_port_direction_intialize(_lcd->lcd_data_port, 0x00U);
-[e ( _gpio_port_direction_intialize (2 , -> . *U __lcd 0 `E2778 -> -> 0 `ui `E2764 ]
-"66
-[; ;ecu/char_lcd/ecu_char_lcd.c: 66:     gpio_port_write_value(_lcd->lcd_data_port, 0X00);
-[e ( _gpio_port_write_value (2 , -> . *U __lcd 0 `E2778 -> -> 0 `i `uc ]
-"67
-[; ;ecu/char_lcd/ecu_char_lcd.c: 67:     gpio_pin_direction_intialize(_lcd->lcd_en_port, _lcd->lcd_en_pin, DIRECTION_OUTPUT);
-[e ( _gpio_pin_direction_intialize (3 , , -> . *U __lcd 1 `E2778 -> . *U __lcd 3 `E2768 . `E2764 0 ]
-"68
-[; ;ecu/char_lcd/ecu_char_lcd.c: 68:     gpio_pin_write_value(_lcd->lcd_en_port, _lcd->lcd_en_pin, PIN_LOW);
-[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 1 `E2778 -> . *U __lcd 3 `E2768 . `E2760 0 ]
-"69
-[; ;ecu/char_lcd/ecu_char_lcd.c: 69:     gpio_pin_direction_intialize(_lcd->lcd_rs_port, _lcd->lcd_rs_pin, DIRECTION_OUTPUT);
-[e ( _gpio_pin_direction_intialize (3 , , -> . *U __lcd 2 `E2778 -> . *U __lcd 4 `E2768 . `E2764 0 ]
-"70
-[; ;ecu/char_lcd/ecu_char_lcd.c: 70:     gpio_pin_write_value(_lcd->lcd_rs_port, _lcd->lcd_rs_pin, PIN_LOW);
-[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 2 `E2778 -> . *U __lcd 4 `E2768 . `E2760 0 ]
-"72
-[; ;ecu/char_lcd/ecu_char_lcd.c: 72:     _delay((unsigned long)((40)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"73
-[; ;ecu/char_lcd/ecu_char_lcd.c: 73:     lcd_send_command(_lcd, 0x38);
-[e ( _lcd_send_command (2 , __lcd -> -> 56 `i `uc ]
-"74
-[; ;ecu/char_lcd/ecu_char_lcd.c: 74:     _delay((unsigned long)((5)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"75
-[; ;ecu/char_lcd/ecu_char_lcd.c: 75:     lcd_send_command(_lcd, 0x38);
-[e ( _lcd_send_command (2 , __lcd -> -> 56 `i `uc ]
-"76
-[; ;ecu/char_lcd/ecu_char_lcd.c: 76:     _delay((unsigned long)((300)*(4000000UL/4000000.0)));
-[e ( __delay (1 -> * -> -> 300 `i `d / -> -> 4000000 `ul `d .4000000.0 `ul ]
-"77
-[; ;ecu/char_lcd/ecu_char_lcd.c: 77:     lcd_send_command(_lcd, 0x38);
-[e ( _lcd_send_command (2 , __lcd -> -> 56 `i `uc ]
-"79
-[; ;ecu/char_lcd/ecu_char_lcd.c: 79:     lcd_send_command(_lcd, 0X01);
+"94
+[; ;ecu/char_lcd/ecu_char_lcd.c: 94:     gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin4, DIRECTION_OUTPUT);
+[e ( _gpio_pin_direction_intialize (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 1 `E2768 . `E2764 0 ]
+"95
+[; ;ecu/char_lcd/ecu_char_lcd.c: 95:     gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin5, DIRECTION_OUTPUT);
+[e ( _gpio_pin_direction_intialize (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 2 `E2768 . `E2764 0 ]
+"96
+[; ;ecu/char_lcd/ecu_char_lcd.c: 96:     gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin6, DIRECTION_OUTPUT);
+[e ( _gpio_pin_direction_intialize (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 3 `E2768 . `E2764 0 ]
+"97
+[; ;ecu/char_lcd/ecu_char_lcd.c: 97:     gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin7, DIRECTION_OUTPUT);
+[e ( _gpio_pin_direction_intialize (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 4 `E2768 . `E2764 0 ]
+"98
+[; ;ecu/char_lcd/ecu_char_lcd.c: 98:     gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_en_pin, DIRECTION_OUTPUT);
+[e ( _gpio_pin_direction_intialize (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 5 `E2768 . `E2764 0 ]
+"99
+[; ;ecu/char_lcd/ecu_char_lcd.c: 99:     gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_rs_pin, DIRECTION_OUTPUT);
+[e ( _gpio_pin_direction_intialize (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 6 `E2768 . `E2764 0 ]
+"100
+[; ;ecu/char_lcd/ecu_char_lcd.c: 100:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin4, PIN_LOW);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 1 `E2768 . `E2760 0 ]
+"101
+[; ;ecu/char_lcd/ecu_char_lcd.c: 101:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin5, PIN_LOW);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 2 `E2768 . `E2760 0 ]
+"102
+[; ;ecu/char_lcd/ecu_char_lcd.c: 102:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin6, PIN_LOW);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 3 `E2768 . `E2760 0 ]
+"103
+[; ;ecu/char_lcd/ecu_char_lcd.c: 103:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin7, PIN_LOW);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 4 `E2768 . `E2760 0 ]
+"104
+[; ;ecu/char_lcd/ecu_char_lcd.c: 104:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_en_pin, PIN_LOW);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 5 `E2768 . `E2760 0 ]
+"105
+[; ;ecu/char_lcd/ecu_char_lcd.c: 105:     gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_rs_pin, PIN_LOW);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 6 `E2768 . `E2760 0 ]
+"107
+[; ;ecu/char_lcd/ecu_char_lcd.c: 107:     lcd_send_command(_lcd, 0X01);
 [e ( _lcd_send_command (2 , __lcd -> -> 1 `i `uc ]
-"80
-[; ;ecu/char_lcd/ecu_char_lcd.c: 80:     lcd_send_command(_lcd, 0x02);
+"108
+[; ;ecu/char_lcd/ecu_char_lcd.c: 108:     lcd_send_command(_lcd, 0x02);
 [e ( _lcd_send_command (2 , __lcd -> -> 2 `i `uc ]
-"81
-[; ;ecu/char_lcd/ecu_char_lcd.c: 81:     lcd_send_command(_lcd, 0X06);
-[e ( _lcd_send_command (2 , __lcd -> -> 6 `i `uc ]
-"82
-[; ;ecu/char_lcd/ecu_char_lcd.c: 82:     lcd_send_command(_lcd, 0X0C);
+"109
+[; ;ecu/char_lcd/ecu_char_lcd.c: 109:     lcd_send_command(_lcd, 0X0C);
 [e ( _lcd_send_command (2 , __lcd -> -> 12 `i `uc ]
-"83
-[; ;ecu/char_lcd/ecu_char_lcd.c: 83:     lcd_send_command(_lcd, 0x38);
-[e ( _lcd_send_command (2 , __lcd -> -> 56 `i `uc ]
-"84
-[; ;ecu/char_lcd/ecu_char_lcd.c: 84:     lcd_send_command(_lcd, 0x80);
+"110
+[; ;ecu/char_lcd/ecu_char_lcd.c: 110:     lcd_send_command(_lcd, 0x1C);
+[e ( _lcd_send_command (2 , __lcd -> -> 28 `i `uc ]
+"111
+[; ;ecu/char_lcd/ecu_char_lcd.c: 111:     lcd_send_command(_lcd, 0x28);
+[e ( _lcd_send_command (2 , __lcd -> -> 40 `i `uc ]
+"112
+[; ;ecu/char_lcd/ecu_char_lcd.c: 112:     lcd_send_command(_lcd, 0x80);
 [e ( _lcd_send_command (2 , __lcd -> -> 128 `i `uc ]
-"85
-[; ;ecu/char_lcd/ecu_char_lcd.c: 85: }
-[e :UE 282 ]
+"113
+[; ;ecu/char_lcd/ecu_char_lcd.c: 113: }
+[e :UE 283 ]
 }
 "121
 [; ;ecu/char_lcd/ecu_char_lcd.c: 121: ret_status lcd_intialize(const char_lcd_t *_lcd){
@@ -458,12 +476,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _lcd_intialize ]
 [v __lcd `*CS272 ~T0 @X0 1 r1 ]
 [f ]
-"123
-[; ;ecu/char_lcd/ecu_char_lcd.c: 123:     lcd_8bit_intialize(_lcd);
-[e ( _lcd_8bit_intialize (1 __lcd ]
+"125
+[; ;ecu/char_lcd/ecu_char_lcd.c: 125:     lcd_4bit_intialize(_lcd);
+[e ( _lcd_4bit_intialize (1 __lcd ]
 "127
 [; ;ecu/char_lcd/ecu_char_lcd.c: 127: }
-[e :UE 283 ]
+[e :UE 284 ]
 }
 "135
 [; ;ecu/char_lcd/ecu_char_lcd.c: 135: ret_status lcd_send_command(const char_lcd_t *_lcd, uint8_t command){
@@ -479,46 +497,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret . `E2756 0 ]
 "137
 [; ;ecu/char_lcd/ecu_char_lcd.c: 137:     if(((void*)0) == _lcd){
-[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 285  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 286  ]
 {
 "138
 [; ;ecu/char_lcd/ecu_char_lcd.c: 138:         return ret;
 [e ) _ret ]
-[e $UE 284  ]
+[e $UE 285  ]
 "139
 [; ;ecu/char_lcd/ecu_char_lcd.c: 139:     }
 }
-[e $U 286  ]
+[e $U 287  ]
 "140
 [; ;ecu/char_lcd/ecu_char_lcd.c: 140:     else{
-[e :U 285 ]
+[e :U 286 ]
 {
-"148
-[; ;ecu/char_lcd/ecu_char_lcd.c: 148:         gpio_pin_write_value(_lcd->lcd_rs_port, _lcd->lcd_rs_pin, PIN_LOW);
-[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 2 `E2778 -> . *U __lcd 4 `E2768 . `E2760 0 ]
-"149
-[; ;ecu/char_lcd/ecu_char_lcd.c: 149:         gpio_port_write_value(_lcd->lcd_data_port, command);
-[e ( _gpio_port_write_value (2 , -> . *U __lcd 0 `E2778 _command ]
-"150
-[; ;ecu/char_lcd/ecu_char_lcd.c: 150:         lcd_send_enable(_lcd);
+"142
+[; ;ecu/char_lcd/ecu_char_lcd.c: 142:         gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_rs_pin, PIN_LOW);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 6 `E2768 . `E2760 0 ]
+"143
+[; ;ecu/char_lcd/ecu_char_lcd.c: 143:         lcd_send_4bit(_lcd, command>>4);
+[e ( _lcd_send_4bit (2 , __lcd -> >> -> _command `i -> 4 `i `uc ]
+"144
+[; ;ecu/char_lcd/ecu_char_lcd.c: 144:         lcd_send_enable(_lcd);
 [e ( _lcd_send_enable (1 __lcd ]
-"151
-[; ;ecu/char_lcd/ecu_char_lcd.c: 151:         _delay((unsigned long)((2)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
+"145
+[; ;ecu/char_lcd/ecu_char_lcd.c: 145:         lcd_send_4bit(_lcd, command&0x0F);
+[e ( _lcd_send_4bit (2 , __lcd -> & -> _command `i -> 15 `i `uc ]
+"146
+[; ;ecu/char_lcd/ecu_char_lcd.c: 146:         lcd_send_enable(_lcd);
+[e ( _lcd_send_enable (1 __lcd ]
 "153
 [; ;ecu/char_lcd/ecu_char_lcd.c: 153:         ret = R_OK;
 [e = _ret . `E2756 1 ]
 "154
 [; ;ecu/char_lcd/ecu_char_lcd.c: 154:     }
 }
-[e :U 286 ]
+[e :U 287 ]
 "155
 [; ;ecu/char_lcd/ecu_char_lcd.c: 155:     return ret;
 [e ) _ret ]
-[e $UE 284  ]
+[e $UE 285  ]
 "156
 [; ;ecu/char_lcd/ecu_char_lcd.c: 156: }
-[e :UE 284 ]
+[e :UE 285 ]
 }
 "164
 [; ;ecu/char_lcd/ecu_char_lcd.c: 164: ret_status lcd_send_char_data(const char_lcd_t *_lcd, uint8_t _data){
@@ -534,28 +555,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret . `E2756 0 ]
 "166
 [; ;ecu/char_lcd/ecu_char_lcd.c: 166:     if(((void*)0) == _lcd){
-[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 288  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 289  ]
 {
 "167
 [; ;ecu/char_lcd/ecu_char_lcd.c: 167:         return ret;
 [e ) _ret ]
-[e $UE 287  ]
+[e $UE 288  ]
 "168
 [; ;ecu/char_lcd/ecu_char_lcd.c: 168:     }
 }
-[e $U 289  ]
+[e $U 290  ]
 "169
 [; ;ecu/char_lcd/ecu_char_lcd.c: 169:     else{
-[e :U 288 ]
+[e :U 289 ]
 {
-"177
-[; ;ecu/char_lcd/ecu_char_lcd.c: 177:         gpio_pin_write_value(_lcd->lcd_rs_port, _lcd->lcd_rs_pin, PIN_HIGH);
-[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 2 `E2778 -> . *U __lcd 4 `E2768 . `E2760 1 ]
-"178
-[; ;ecu/char_lcd/ecu_char_lcd.c: 178:         gpio_port_write_value(_lcd->lcd_data_port, _data);
-[e ( _gpio_port_write_value (2 , -> . *U __lcd 0 `E2778 __data ]
-"179
-[; ;ecu/char_lcd/ecu_char_lcd.c: 179:         lcd_send_enable(_lcd);
+"171
+[; ;ecu/char_lcd/ecu_char_lcd.c: 171:         gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_rs_pin, PIN_HIGH);
+[e ( _gpio_pin_write_value (3 , , -> . *U __lcd 0 `E2778 -> . *U __lcd 6 `E2768 . `E2760 1 ]
+"172
+[; ;ecu/char_lcd/ecu_char_lcd.c: 172:         lcd_send_4bit(_lcd, _data>>4);
+[e ( _lcd_send_4bit (2 , __lcd -> >> -> __data `i -> 4 `i `uc ]
+"173
+[; ;ecu/char_lcd/ecu_char_lcd.c: 173:         lcd_send_enable(_lcd);
+[e ( _lcd_send_enable (1 __lcd ]
+"174
+[; ;ecu/char_lcd/ecu_char_lcd.c: 174:         lcd_send_4bit(_lcd, _data&0x0F);
+[e ( _lcd_send_4bit (2 , __lcd -> & -> __data `i -> 15 `i `uc ]
+"175
+[; ;ecu/char_lcd/ecu_char_lcd.c: 175:         lcd_send_enable(_lcd);
 [e ( _lcd_send_enable (1 __lcd ]
 "181
 [; ;ecu/char_lcd/ecu_char_lcd.c: 181:         ret = R_OK;
@@ -563,14 +590,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "182
 [; ;ecu/char_lcd/ecu_char_lcd.c: 182:     }
 }
-[e :U 289 ]
+[e :U 290 ]
 "183
 [; ;ecu/char_lcd/ecu_char_lcd.c: 183:     return ret;
 [e ) _ret ]
-[e $UE 287  ]
+[e $UE 288  ]
 "184
 [; ;ecu/char_lcd/ecu_char_lcd.c: 184: }
-[e :UE 287 ]
+[e :UE 288 ]
 }
 "194
 [; ;ecu/char_lcd/ecu_char_lcd.c: 194: ret_status lcd_send_char_data_pos(const char_lcd_t *_lcd, uint8_t row, uint8_t coulmn, uint8_t _data){
@@ -588,19 +615,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret . `E2756 0 ]
 "196
 [; ;ecu/char_lcd/ecu_char_lcd.c: 196:     if(((void*)0) == _lcd){
-[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 291  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 292  ]
 {
 "197
 [; ;ecu/char_lcd/ecu_char_lcd.c: 197:         return ret;
 [e ) _ret ]
-[e $UE 290  ]
+[e $UE 291  ]
 "198
 [; ;ecu/char_lcd/ecu_char_lcd.c: 198:     }
 }
-[e $U 292  ]
+[e $U 293  ]
 "199
 [; ;ecu/char_lcd/ecu_char_lcd.c: 199:     else{
-[e :U 291 ]
+[e :U 292 ]
 {
 "200
 [; ;ecu/char_lcd/ecu_char_lcd.c: 200:         lcd_send_command(_lcd, 0x02);
@@ -617,14 +644,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "204
 [; ;ecu/char_lcd/ecu_char_lcd.c: 204:     }
 }
-[e :U 292 ]
+[e :U 293 ]
 "205
 [; ;ecu/char_lcd/ecu_char_lcd.c: 205:     return ret;
 [e ) _ret ]
-[e $UE 290  ]
+[e $UE 291  ]
 "206
 [; ;ecu/char_lcd/ecu_char_lcd.c: 206: }
-[e :UE 290 ]
+[e :UE 291 ]
 }
 "214
 [; ;ecu/char_lcd/ecu_char_lcd.c: 214: ret_status lcd_send_string_data_current_pos(const char_lcd_t *_lcd, uint8_t *_data){
@@ -640,24 +667,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret . `E2756 0 ]
 "216
 [; ;ecu/char_lcd/ecu_char_lcd.c: 216:     if(((void*)0) == _lcd){
-[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 294  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 295  ]
 {
 "217
 [; ;ecu/char_lcd/ecu_char_lcd.c: 217:         return ret;
 [e ) _ret ]
-[e $UE 293  ]
+[e $UE 294  ]
 "218
 [; ;ecu/char_lcd/ecu_char_lcd.c: 218:     }
 }
-[e $U 295  ]
+[e $U 296  ]
 "219
 [; ;ecu/char_lcd/ecu_char_lcd.c: 219:     else{
-[e :U 294 ]
+[e :U 295 ]
 {
 "220
 [; ;ecu/char_lcd/ecu_char_lcd.c: 220:         while(*_data){
-[e $U 296  ]
-[e :U 297 ]
+[e $U 297  ]
+[e :U 298 ]
 {
 "221
 [; ;ecu/char_lcd/ecu_char_lcd.c: 221:             lcd_send_char_data(_lcd, *_data++);
@@ -668,25 +695,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "223
 [; ;ecu/char_lcd/ecu_char_lcd.c: 223:         }
 }
-[e :U 296 ]
+[e :U 297 ]
 "220
 [; ;ecu/char_lcd/ecu_char_lcd.c: 220:         while(*_data){
-[e $ != -> *U __data `i -> 0 `i 297  ]
-[e :U 298 ]
+[e $ != -> *U __data `i -> 0 `i 298  ]
+[e :U 299 ]
 "224
 [; ;ecu/char_lcd/ecu_char_lcd.c: 224:         ret = R_OK;
 [e = _ret . `E2756 1 ]
 "225
 [; ;ecu/char_lcd/ecu_char_lcd.c: 225:     }
 }
-[e :U 295 ]
+[e :U 296 ]
 "226
 [; ;ecu/char_lcd/ecu_char_lcd.c: 226:     return ret;
 [e ) _ret ]
-[e $UE 293  ]
+[e $UE 294  ]
 "227
 [; ;ecu/char_lcd/ecu_char_lcd.c: 227: }
-[e :UE 293 ]
+[e :UE 294 ]
 }
 "237
 [; ;ecu/char_lcd/ecu_char_lcd.c: 237: ret_status lcd_send_string_data_pos(const char_lcd_t *_lcd, uint8_t row, uint8_t coulmn, uint8_t *_data){
@@ -704,19 +731,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret . `E2756 0 ]
 "239
 [; ;ecu/char_lcd/ecu_char_lcd.c: 239:     if(((void*)0) == _lcd){
-[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 300  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 301  ]
 {
 "240
 [; ;ecu/char_lcd/ecu_char_lcd.c: 240:         return ret;
 [e ) _ret ]
-[e $UE 299  ]
+[e $UE 300  ]
 "241
 [; ;ecu/char_lcd/ecu_char_lcd.c: 241:     }
 }
-[e $U 301  ]
+[e $U 302  ]
 "242
 [; ;ecu/char_lcd/ecu_char_lcd.c: 242:     else{
-[e :U 300 ]
+[e :U 301 ]
 {
 "243
 [; ;ecu/char_lcd/ecu_char_lcd.c: 243:         lcd_send_command(_lcd, 0x02);
@@ -726,8 +753,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _lcd_set_cursor (3 , , __lcd _row _coulmn ]
 "245
 [; ;ecu/char_lcd/ecu_char_lcd.c: 245:         while(*_data){
-[e $U 302  ]
-[e :U 303 ]
+[e $U 303  ]
+[e :U 304 ]
 {
 "246
 [; ;ecu/char_lcd/ecu_char_lcd.c: 246:             lcd_send_char_data(_lcd, *_data++);
@@ -738,25 +765,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "248
 [; ;ecu/char_lcd/ecu_char_lcd.c: 248:         }
 }
-[e :U 302 ]
+[e :U 303 ]
 "245
 [; ;ecu/char_lcd/ecu_char_lcd.c: 245:         while(*_data){
-[e $ != -> *U __data `i -> 0 `i 303  ]
-[e :U 304 ]
+[e $ != -> *U __data `i -> 0 `i 304  ]
+[e :U 305 ]
 "249
 [; ;ecu/char_lcd/ecu_char_lcd.c: 249:         ret = R_OK;
 [e = _ret . `E2756 1 ]
 "250
 [; ;ecu/char_lcd/ecu_char_lcd.c: 250:     }
 }
-[e :U 301 ]
+[e :U 302 ]
 "251
 [; ;ecu/char_lcd/ecu_char_lcd.c: 251:     return ret;
 [e ) _ret ]
-[e $UE 299  ]
+[e $UE 300  ]
 "252
 [; ;ecu/char_lcd/ecu_char_lcd.c: 252: }
-[e :UE 299 ]
+[e :UE 300 ]
 }
 "263
 [; ;ecu/char_lcd/ecu_char_lcd.c: 263: ret_status lcd_send_custome_char(const char_lcd_t *_lcd, uint8_t row, uint8_t coulmn, const char arr[], uint8_t _pos){
@@ -779,19 +806,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _l_counter -> -> 0 `i `uc ]
 "266
 [; ;ecu/char_lcd/ecu_char_lcd.c: 266:     if(((void*)0) == _lcd){
-[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 306  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 307  ]
 {
 "267
 [; ;ecu/char_lcd/ecu_char_lcd.c: 267:         return ret;
 [e ) _ret ]
-[e $UE 305  ]
+[e $UE 306  ]
 "268
 [; ;ecu/char_lcd/ecu_char_lcd.c: 268:     }
 }
-[e $U 307  ]
+[e $U 308  ]
 "269
 [; ;ecu/char_lcd/ecu_char_lcd.c: 269:     else{
-[e :U 306 ]
+[e :U 307 ]
 {
 "270
 [; ;ecu/char_lcd/ecu_char_lcd.c: 270:         lcd_send_command(_lcd, 0x40 +(_pos*8));
@@ -800,9 +827,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ecu/char_lcd/ecu_char_lcd.c: 271:         for(l_counter=0; l_counter<=7; l_counter++){
 {
 [e = _l_counter -> -> 0 `i `uc ]
-[e $ <= -> _l_counter `i -> 7 `i 308  ]
-[e $U 309  ]
-[e :U 308 ]
+[e $ <= -> _l_counter `i -> 7 `i 309  ]
+[e $U 310  ]
+[e :U 309 ]
 {
 "272
 [; ;ecu/char_lcd/ecu_char_lcd.c: 272:             lcd_send_char_data(_lcd, arr[l_counter]);
@@ -811,8 +838,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ecu/char_lcd/ecu_char_lcd.c: 273:         }
 }
 [e ++ _l_counter -> -> 1 `i `uc ]
-[e $ <= -> _l_counter `i -> 7 `i 308  ]
-[e :U 309 ]
+[e $ <= -> _l_counter `i -> 7 `i 309  ]
+[e :U 310 ]
 }
 "274
 [; ;ecu/char_lcd/ecu_char_lcd.c: 274:         lcd_send_command(_lcd, 0x02);
@@ -826,14 +853,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "277
 [; ;ecu/char_lcd/ecu_char_lcd.c: 277:     }
 }
-[e :U 307 ]
+[e :U 308 ]
 "278
 [; ;ecu/char_lcd/ecu_char_lcd.c: 278:     return ret;
 [e ) _ret ]
-[e $UE 305  ]
+[e $UE 306  ]
 "279
 [; ;ecu/char_lcd/ecu_char_lcd.c: 279: }
-[e :UE 305 ]
+[e :UE 306 ]
 }
 "286
 [; ;ecu/char_lcd/ecu_char_lcd.c: 286: ret_status lcd_clear_display(const char_lcd_t *_lcd){
@@ -848,19 +875,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ret . `E2756 1 ]
 "288
 [; ;ecu/char_lcd/ecu_char_lcd.c: 288:     if(((void*)0) == _lcd){
-[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 312  ]
+[e $ ! == -> -> -> 0 `i `*v `*CS272 __lcd 313  ]
 {
 "289
 [; ;ecu/char_lcd/ecu_char_lcd.c: 289:         return ret;
 [e ) _ret ]
-[e $UE 311  ]
+[e $UE 312  ]
 "290
 [; ;ecu/char_lcd/ecu_char_lcd.c: 290:     }
 }
-[e $U 313  ]
+[e $U 314  ]
 "291
 [; ;ecu/char_lcd/ecu_char_lcd.c: 291:     else{
-[e :U 312 ]
+[e :U 313 ]
 {
 "292
 [; ;ecu/char_lcd/ecu_char_lcd.c: 292:         lcd_send_command(_lcd, 0X01);
@@ -868,14 +895,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "293
 [; ;ecu/char_lcd/ecu_char_lcd.c: 293:     }
 }
-[e :U 313 ]
+[e :U 314 ]
 "294
 [; ;ecu/char_lcd/ecu_char_lcd.c: 294:     return ret;
 [e ) _ret ]
-[e $UE 311  ]
+[e $UE 312  ]
 "295
 [; ;ecu/char_lcd/ecu_char_lcd.c: 295: }
-[e :UE 311 ]
+[e :UE 312 ]
 }
 "302
 [; ;ecu/char_lcd/ecu_char_lcd.c: 302: void byte_to_string(uint8_t number, uint8_t *_output){
@@ -890,7 +917,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _sprintf (1 , (. , -> __output `*uc :s 1C -> _number `i ]
 "304
 [; ;ecu/char_lcd/ecu_char_lcd.c: 304: }
-[e :UE 314 ]
+[e :UE 315 ]
 }
 "311
 [; ;ecu/char_lcd/ecu_char_lcd.c: 311: void short_to_string(uint16_t number, uint8_t *_output){
@@ -905,7 +932,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _sprintf (1 , (. , -> __output `*uc :s 2C -> _number `ui ]
 "313
 [; ;ecu/char_lcd/ecu_char_lcd.c: 313: }
-[e :UE 315 ]
+[e :UE 316 ]
 }
 "320
 [; ;ecu/char_lcd/ecu_char_lcd.c: 320: void int_to_string(uint32_t number, uint8_t *_output){
@@ -920,7 +947,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _sprintf (1 , (. , -> __output `*uc :s 3C _number ]
 "322
 [; ;ecu/char_lcd/ecu_char_lcd.c: 322: }
-[e :UE 316 ]
+[e :UE 317 ]
 }
 [p f _sprintf 8388736 ]
 [a 1C 37 105 0 ]

@@ -4409,7 +4409,7 @@ typedef enum{
     R_OK
 }ret_status;
 # 13 "mcal/gpio/mcal_gpio.h" 2
-# 35 "mcal/gpio/mcal_gpio.h"
+# 36 "mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH

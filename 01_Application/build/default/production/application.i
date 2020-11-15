@@ -4546,7 +4546,7 @@ typedef enum{
     R_OK
 }ret_status;
 # 13 "./ecu/led/../../mcal/gpio/mcal_gpio.h" 2
-# 35 "./ecu/led/../../mcal/gpio/mcal_gpio.h"
+# 36 "./ecu/led/../../mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH
@@ -4687,14 +4687,17 @@ ret_status dc_motor_stop(dc_motor_t *dc_mtor);
 # 1 "./ecu/char_lcd/ecu_char_lcd.h" 1
 # 34 "./ecu/char_lcd/ecu_char_lcd.h"
 typedef struct{
-
-    uint8_t lcd_data_port : 4;
-    uint8_t lcd_en_port : 4;
-    uint8_t lcd_rs_port : 4;
+# 43 "./ecu/char_lcd/ecu_char_lcd.h"
+    uint8_t lcd_data_port : 6;
+    uint8_t lcd_data_pin4 : 3;
+    uint8_t lcd_data_pin5 : 3;
+    uint8_t lcd_data_pin6 : 3;
+    uint8_t lcd_data_pin7 : 3;
     uint8_t lcd_en_pin : 3;
     uint8_t lcd_rs_pin : 3;
-    uint8_t lcd_status : 6;
-# 53 "./ecu/char_lcd/ecu_char_lcd.h"
+
+
+
 }char_lcd_t;
 
 
@@ -4713,67 +4716,73 @@ void short_to_string(uint16_t number, uint8_t *_output);
 void int_to_string(uint32_t number, uint8_t *_output);
 # 19 "./application.h" 2
 
+# 1 "./ecu/keypad/ecu_keypad.h" 1
+# 17 "./ecu/keypad/ecu_keypad.h"
+typedef struct{
+    uint8_t port_name : 4;
+    uint8_t pin_number : 4;
+}keypad_pin_t;
+
+typedef struct{
+    keypad_pin_t keypad_rows[4];
+    keypad_pin_t keypad_columns[4];
+}keypad_t;
+
+ret_status keypad_initialize(const keypad_t *_keypad);
+uint8_t keypad_read_value(const keypad_t *_keypad);
+# 20 "./application.h" 2
+
+# 1 "./ecu/seven_segment/ecu_seven_segment.h" 1
+# 13 "./ecu/seven_segment/ecu_seven_segment.h"
+typedef enum{
+    COMMON_ANODE,
+    COMMON_CATHODE
+}segment_type_t;
+
+typedef struct{
+    port_index port;
+    segment_type_t type;
+}segment_t;
+
+void seven_segment_direct_connection_initialize(const segment_t *_seg);
+void seven_segment_direct_connection_write_number(const segment_t *_seg, uint8_t value);
+# 21 "./application.h" 2
+
 
 void application_init(void);
 # 8 "application.c" 2
-# 33 "application.c"
-char_lcd_t lcd_1 = {
-    .lcd_data_port = PORTC_INDEX,
-    .lcd_en_port = PORTD_INDEX,
-    .lcd_rs_port = PORTD_INDEX,
-    .lcd_rs_pin = PIN0,
-    .lcd_en_pin = PIN1
+
+
+segment_t seg_1 = {
+  .port = PORTC_INDEX,
+  .type = COMMON_ANODE
 };
 
+segment_t seg_2 = {
+  .port = PORTD_INDEX,
+  .type = COMMON_ANODE
+};
 
-const char character1[] = {14,10,17,17,17,17,31,0};
-const char character2[] = {14,10,17,17,17,31,31,0};
-const char character3[] = {14,10,17,17,31,31,31,0};
-const char character4[] = {14,10,17,31,31,31,31,0};
-const char character5[] = {14,10,31,31,31,31,31,0};
-const char character6[] = {14,14,31,31,31,31,31,0};
-const char blt[] = {6,21,13,6,13,21,6,0};
-const char Shab[] = {31,21,14,4,4,4,4,0};
-const char shab_bat1[] = {24,24,24,24,24,24,24,0};
-const char shab_bat2[] = {28,28,28,28,28,28,28,0};
-const char shab_bat3[] = {30,30,30,30,30,30,30,0};
-const char mesg1[] = {31,24,22,17,16,31,0,0};
-const char mesg2[] = {31,3,13,17,1,31,0,0};
+uint8_t ones = 0, tens = 0;
 
-int main() {
+int (*ptr) (void);
+
+int main(void) {
+    ptr = main;
     application_init();
-    lcd_send_custome_char(&lcd_1, 4, 20, character6, 0);
-    lcd_send_custome_char(&lcd_1, 1, 19, blt, 1);
-    lcd_send_custome_char(&lcd_1, 4, 1, Shab, 2);
-    lcd_send_custome_char(&lcd_1, 3, 1, shab_bat1, 3);
-    lcd_send_custome_char(&lcd_1, 3, 20, shab_bat1, 3);
-    lcd_send_custome_char(&lcd_1, 2, 1, shab_bat2, 4);
-    lcd_send_custome_char(&lcd_1, 2, 20, shab_bat2, 4);
-    lcd_send_custome_char(&lcd_1, 1, 20, shab_bat3, 4);
-    lcd_send_custome_char(&lcd_1, 1, 2, mesg1, 5);
-    lcd_send_custome_char(&lcd_1, 1, 3, mesg2, 6);
-    lcd_send_string_data_pos(&lcd_1, 2, 2, "3 messages");
-    lcd_send_string_data_pos(&lcd_1, 3, 5, "received");
-    lcd_send_string_data_pos(&lcd_1, 4, 9, "Read");
     while(1){
-        lcd_send_string_data_pos(&lcd_1, 1, 6, "ES Diploma");
-        lcd_send_string_data_pos(&lcd_1, 4, 9, "Read");_delay((unsigned long)((500)*(4000000UL/4000.0)));
-        lcd_send_string_data_pos(&lcd_1, 4, 9, "    ");_delay((unsigned long)((500)*(4000000UL/4000.0)));
-
-
-
-
+        for(tens=0; tens<= 9; tens++){
+            seven_segment_direct_connection_write_number(&seg_2, tens);
+            for(ones=0; ones<= 9; ones++){
+                seven_segment_direct_connection_write_number(&seg_1, ones);
+                _delay((unsigned long)((500)*(4000000UL/4000.0)));
+            }
+        }
     }
     return (0);
 }
 
 void application_init(void){
-
-
-
-
-
-
-    lcd_intialize(&lcd_1);
-
+   seven_segment_direct_connection_initialize(&seg_1);
+   seven_segment_direct_connection_initialize(&seg_2);
 }

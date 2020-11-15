@@ -4552,7 +4552,7 @@ typedef enum{
     R_OK
 }ret_status;
 # 13 "ecu/char_lcd/../../mcal/gpio/mcal_gpio.h" 2
-# 35 "ecu/char_lcd/../../mcal/gpio/mcal_gpio.h"
+# 36 "ecu/char_lcd/../../mcal/gpio/mcal_gpio.h"
 typedef enum{
     PIN_LOW,
     PIN_HIGH
@@ -4600,14 +4600,17 @@ ret_status gpio_port_toggle_value(port_index port);
 # 12 "ecu/char_lcd/ecu_char_lcd.h" 2
 # 34 "ecu/char_lcd/ecu_char_lcd.h"
 typedef struct{
-
-    uint8_t lcd_data_port : 4;
-    uint8_t lcd_en_port : 4;
-    uint8_t lcd_rs_port : 4;
+# 43 "ecu/char_lcd/ecu_char_lcd.h"
+    uint8_t lcd_data_port : 6;
+    uint8_t lcd_data_pin4 : 3;
+    uint8_t lcd_data_pin5 : 3;
+    uint8_t lcd_data_pin6 : 3;
+    uint8_t lcd_data_pin7 : 3;
     uint8_t lcd_en_pin : 3;
     uint8_t lcd_rs_pin : 3;
-    uint8_t lcd_status : 6;
-# 53 "ecu/char_lcd/ecu_char_lcd.h"
+
+
+
 }char_lcd_t;
 
 
@@ -4633,13 +4636,13 @@ void int_to_string(uint32_t number, uint8_t *_output);
 
 static void lcd_send_enable(const char_lcd_t *_lcd){
 
-    gpio_pin_write_value(_lcd->lcd_en_port, _lcd->lcd_en_pin, PIN_HIGH);
+
+
+
+
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_en_pin, PIN_HIGH);
     _delay((unsigned long)((200)*(4000000UL/4000000.0)));
-    gpio_pin_write_value(_lcd->lcd_en_port, _lcd->lcd_en_pin, PIN_LOW);
-
-
-
-
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_en_pin, PIN_LOW);
 
 }
 
@@ -4659,35 +4662,53 @@ static void lcd_set_cursor(const char_lcd_t *_lcd, uint8_t row, uint8_t coulmn){
         default : ;
     }
 }
-# 64 "ecu/char_lcd/ecu_char_lcd.c"
-static void lcd_8bit_intialize(const char_lcd_t *_lcd){
-    gpio_port_direction_intialize(_lcd->lcd_data_port, 0x00U);
-    gpio_port_write_value(_lcd->lcd_data_port, 0X00);
-    gpio_pin_direction_intialize(_lcd->lcd_en_port, _lcd->lcd_en_pin, DIRECTION_OUTPUT);
-    gpio_pin_write_value(_lcd->lcd_en_port, _lcd->lcd_en_pin, PIN_LOW);
-    gpio_pin_direction_intialize(_lcd->lcd_rs_port, _lcd->lcd_rs_pin, DIRECTION_OUTPUT);
-    gpio_pin_write_value(_lcd->lcd_rs_port, _lcd->lcd_rs_pin, PIN_LOW);
 
-    _delay((unsigned long)((40)*(4000000UL/4000.0)));
-    lcd_send_command(_lcd, 0x38);
-    _delay((unsigned long)((5)*(4000000UL/4000.0)));
-    lcd_send_command(_lcd, 0x38);
-    _delay((unsigned long)((300)*(4000000UL/4000000.0)));
-    lcd_send_command(_lcd, 0x38);
+
+
+
+
+
+
+static void lcd_send_4bit(const char_lcd_t *_lcd, uint8_t _data){
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin4, ((_data >> 0) & 0x1));
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin5, ((_data >> 1) & 0x1));
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin6, ((_data >> 2) & 0x1));
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin7, ((_data >> 3) & 0x1));
+}
+# 93 "ecu/char_lcd/ecu_char_lcd.c"
+static void lcd_4bit_intialize(const char_lcd_t *_lcd){
+    gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin4, DIRECTION_OUTPUT);
+    gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin5, DIRECTION_OUTPUT);
+    gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin6, DIRECTION_OUTPUT);
+    gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_data_pin7, DIRECTION_OUTPUT);
+    gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_en_pin, DIRECTION_OUTPUT);
+    gpio_pin_direction_intialize(_lcd->lcd_data_port, _lcd->lcd_rs_pin, DIRECTION_OUTPUT);
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin4, PIN_LOW);
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin5, PIN_LOW);
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin6, PIN_LOW);
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_data_pin7, PIN_LOW);
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_en_pin, PIN_LOW);
+    gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_rs_pin, PIN_LOW);
 
     lcd_send_command(_lcd, 0X01);
     lcd_send_command(_lcd, 0x02);
-    lcd_send_command(_lcd, 0X06);
     lcd_send_command(_lcd, 0X0C);
-    lcd_send_command(_lcd, 0x38);
+    lcd_send_command(_lcd, 0x1C);
+    lcd_send_command(_lcd, 0x28);
     lcd_send_command(_lcd, 0x80);
 }
-# 121 "ecu/char_lcd/ecu_char_lcd.c"
+
+
+
+
+
+
+
 ret_status lcd_intialize(const char_lcd_t *_lcd){
 
-    lcd_8bit_intialize(_lcd);
 
 
+    lcd_4bit_intialize(_lcd);
 
 }
 
@@ -4704,16 +4725,16 @@ ret_status lcd_send_command(const char_lcd_t *_lcd, uint8_t command){
     }
     else{
 
-
-
-
-
-
-
-        gpio_pin_write_value(_lcd->lcd_rs_port, _lcd->lcd_rs_pin, PIN_LOW);
-        gpio_port_write_value(_lcd->lcd_data_port, command);
+        gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_rs_pin, PIN_LOW);
+        lcd_send_4bit(_lcd, command>>4);
         lcd_send_enable(_lcd);
-        _delay((unsigned long)((2)*(4000000UL/4000.0)));
+        lcd_send_4bit(_lcd, command&0x0F);
+        lcd_send_enable(_lcd);
+
+
+
+
+
 
         ret = R_OK;
     }
@@ -4733,15 +4754,15 @@ ret_status lcd_send_char_data(const char_lcd_t *_lcd, uint8_t _data){
     }
     else{
 
-
-
-
-
-
-
-        gpio_pin_write_value(_lcd->lcd_rs_port, _lcd->lcd_rs_pin, PIN_HIGH);
-        gpio_port_write_value(_lcd->lcd_data_port, _data);
+        gpio_pin_write_value(_lcd->lcd_data_port, _lcd->lcd_rs_pin, PIN_HIGH);
+        lcd_send_4bit(_lcd, _data>>4);
         lcd_send_enable(_lcd);
+        lcd_send_4bit(_lcd, _data&0x0F);
+        lcd_send_enable(_lcd);
+
+
+
+
 
         ret = R_OK;
     }

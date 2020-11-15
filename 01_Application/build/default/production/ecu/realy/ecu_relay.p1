@@ -15,15 +15,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n E2450 . PIN0 PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7  ]
 [c E2446 0 1 .. ]
 [n E2446 . DIRECTION_OUTPUT DIRECTION_INPUT  ]
-"67 ecu/realy/../../mcal/gpio/mcal_gpio.h
-[; ;ecu/realy/../../mcal/gpio/mcal_gpio.h: 67: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction);
+"68 ecu/realy/../../mcal/gpio/mcal_gpio.h
+[; ;ecu/realy/../../mcal/gpio/mcal_gpio.h: 68: ret_status gpio_pin_direction_intialize(port_index port, pin_index pin, direction_t direction);
 [v _gpio_pin_direction_intialize `(E2438 ~T0 @X0 0 ef3`E2460`E2450`E2446 ]
 "18 ecu/realy/ecu_relay.c
 [; ;ecu/realy/ecu_relay.c: 18:         gpio_pin_write_value(relay->port_name, relay->pin, PIN_LOW);
 [c E2442 0 1 .. ]
 [n E2442 . PIN_LOW PIN_HIGH  ]
-"69 ecu/realy/../../mcal/gpio/mcal_gpio.h
-[; ;ecu/realy/../../mcal/gpio/mcal_gpio.h: 69: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic);
+"70 ecu/realy/../../mcal/gpio/mcal_gpio.h
+[; ;ecu/realy/../../mcal/gpio/mcal_gpio.h: 70: ret_status gpio_pin_write_value(port_index port, pin_index pin, pin_logic_t logic);
 [v _gpio_pin_write_value `(E2438 ~T0 @X0 0 ef3`E2460`E2450`E2442 ]
 "19 ecu/realy/ecu_relay.c
 [; ;ecu/realy/ecu_relay.c: 19:         relay->relay_status = RELAY_OFF;

@@ -20,6 +20,7 @@
 #define PIN_MASK_VALUE              1U
 #define PORT_MASK_VALUE             0XFF
 #define PORT_ALL_CLEAR              0X00
+#define PORT_ALL_OFF                0X00
 
 /* Section: Macro Functions Declarations */
 #define CLEAR_BIT(REGISTER,BIT_POS)  (REGISTER &= ~(PIN_MASK_VALUE << BIT_POS))

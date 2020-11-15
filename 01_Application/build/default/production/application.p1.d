@@ -8,4 +8,6 @@ ecu/led/../../mcal/gpio/../../std_types.h  \
 ecu/button/ecu_button.h  \
 ecu/realy/ecu_relay.h  \
 ecu/dc_motor/ecu_dc_motor.h  \
-ecu/char_lcd/ecu_char_lcd.h 
+ecu/char_lcd/ecu_char_lcd.h  \
+ecu/keypad/ecu_keypad.h  \
+ecu/seven_segment/ecu_seven_segment.h 

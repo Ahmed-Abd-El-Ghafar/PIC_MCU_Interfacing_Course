@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ecu/button/ecu_button.c ecu/dc_motor/ecu_dc_motor.c ecu/led/ecu_led.c ecu/realy/ecu_relay.c mcal/gpio/mcal_gpio.c application.c device_config.c ecu/char_lcd/ecu_char_lcd.c
+SOURCEFILES_QUOTED_IF_SPACED=ecu/button/ecu_button.c ecu/char_lcd/ecu_char_lcd.c ecu/dc_motor/ecu_dc_motor.c ecu/keypad/ecu_keypad.c ecu/led/ecu_led.c ecu/realy/ecu_relay.c mcal/gpio/mcal_gpio.c application.c device_config.c ecu/seven_segment/ecu_seven_segment.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ecu/button/ecu_button.p1 ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1 ${OBJECTDIR}/ecu/led/ecu_led.p1 ${OBJECTDIR}/ecu/realy/ecu_relay.p1 ${OBJECTDIR}/mcal/gpio/mcal_gpio.p1 ${OBJECTDIR}/application.p1 ${OBJECTDIR}/device_config.p1 ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ecu/button/ecu_button.p1.d ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1.d ${OBJECTDIR}/ecu/led/ecu_led.p1.d ${OBJECTDIR}/ecu/realy/ecu_relay.p1.d ${OBJECTDIR}/mcal/gpio/mcal_gpio.p1.d ${OBJECTDIR}/application.p1.d ${OBJECTDIR}/device_config.p1.d ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ecu/button/ecu_button.p1 ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1 ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1 ${OBJECTDIR}/ecu/led/ecu_led.p1 ${OBJECTDIR}/ecu/realy/ecu_relay.p1 ${OBJECTDIR}/mcal/gpio/mcal_gpio.p1 ${OBJECTDIR}/application.p1 ${OBJECTDIR}/device_config.p1 ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/ecu/button/ecu_button.p1.d ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1.d ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1.d ${OBJECTDIR}/ecu/led/ecu_led.p1.d ${OBJECTDIR}/ecu/realy/ecu_relay.p1.d ${OBJECTDIR}/mcal/gpio/mcal_gpio.p1.d ${OBJECTDIR}/application.p1.d ${OBJECTDIR}/device_config.p1.d ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ecu/button/ecu_button.p1 ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1 ${OBJECTDIR}/ecu/led/ecu_led.p1 ${OBJECTDIR}/ecu/realy/ecu_relay.p1 ${OBJECTDIR}/mcal/gpio/mcal_gpio.p1 ${OBJECTDIR}/application.p1 ${OBJECTDIR}/device_config.p1 ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1
+OBJECTFILES=${OBJECTDIR}/ecu/button/ecu_button.p1 ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1 ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1 ${OBJECTDIR}/ecu/led/ecu_led.p1 ${OBJECTDIR}/ecu/realy/ecu_relay.p1 ${OBJECTDIR}/mcal/gpio/mcal_gpio.p1 ${OBJECTDIR}/application.p1 ${OBJECTDIR}/device_config.p1 ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1
 
 # Source Files
-SOURCEFILES=ecu/button/ecu_button.c ecu/dc_motor/ecu_dc_motor.c ecu/led/ecu_led.c ecu/realy/ecu_relay.c mcal/gpio/mcal_gpio.c application.c device_config.c ecu/char_lcd/ecu_char_lcd.c
+SOURCEFILES=ecu/button/ecu_button.c ecu/char_lcd/ecu_char_lcd.c ecu/dc_motor/ecu_dc_motor.c ecu/keypad/ecu_keypad.c ecu/led/ecu_led.c ecu/realy/ecu_relay.c mcal/gpio/mcal_gpio.c application.c device_config.c ecu/seven_segment/ecu_seven_segment.c
 
 
 
@@ -102,6 +102,14 @@ ${OBJECTDIR}/ecu/button/ecu_button.p1: ecu/button/ecu_button.c  nbproject/Makefi
 	@-${MV} ${OBJECTDIR}/ecu/button/ecu_button.d ${OBJECTDIR}/ecu/button/ecu_button.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ecu/button/ecu_button.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1: ecu/char_lcd/ecu_char_lcd.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/ecu/char_lcd" 
+	@${RM} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d 
+	@${RM} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 ecu/char_lcd/ecu_char_lcd.c 
+	@-${MV} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.d ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1: ecu/dc_motor/ecu_dc_motor.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/ecu/dc_motor" 
 	@${RM} ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1.d 
@@ -109,6 +117,14 @@ ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1: ecu/dc_motor/ecu_dc_motor.c  nbprojec
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1 ecu/dc_motor/ecu_dc_motor.c 
 	@-${MV} ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.d ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ecu/keypad/ecu_keypad.p1: ecu/keypad/ecu_keypad.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/ecu/keypad" 
+	@${RM} ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1.d 
+	@${RM} ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1 ecu/keypad/ecu_keypad.c 
+	@-${MV} ${OBJECTDIR}/ecu/keypad/ecu_keypad.d ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/ecu/led/ecu_led.p1: ecu/led/ecu_led.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/ecu/led" 
@@ -150,13 +166,13 @@ ${OBJECTDIR}/device_config.p1: device_config.c  nbproject/Makefile-${CND_CONF}.m
 	@-${MV} ${OBJECTDIR}/device_config.d ${OBJECTDIR}/device_config.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/device_config.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1: ecu/char_lcd/ecu_char_lcd.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/ecu/char_lcd" 
-	@${RM} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d 
-	@${RM} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 ecu/char_lcd/ecu_char_lcd.c 
-	@-${MV} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.d ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1: ecu/seven_segment/ecu_seven_segment.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/ecu/seven_segment" 
+	@${RM} ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1.d 
+	@${RM} ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1 ecu/seven_segment/ecu_seven_segment.c 
+	@-${MV} ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.d ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/ecu/button/ecu_button.p1: ecu/button/ecu_button.c  nbproject/Makefile-${CND_CONF}.mk
@@ -167,6 +183,14 @@ ${OBJECTDIR}/ecu/button/ecu_button.p1: ecu/button/ecu_button.c  nbproject/Makefi
 	@-${MV} ${OBJECTDIR}/ecu/button/ecu_button.d ${OBJECTDIR}/ecu/button/ecu_button.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ecu/button/ecu_button.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1: ecu/char_lcd/ecu_char_lcd.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/ecu/char_lcd" 
+	@${RM} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d 
+	@${RM} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 ecu/char_lcd/ecu_char_lcd.c 
+	@-${MV} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.d ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1: ecu/dc_motor/ecu_dc_motor.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/ecu/dc_motor" 
 	@${RM} ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1.d 
@@ -174,6 +198,14 @@ ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1: ecu/dc_motor/ecu_dc_motor.c  nbprojec
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1 ecu/dc_motor/ecu_dc_motor.c 
 	@-${MV} ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.d ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ecu/dc_motor/ecu_dc_motor.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/ecu/keypad/ecu_keypad.p1: ecu/keypad/ecu_keypad.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/ecu/keypad" 
+	@${RM} ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1.d 
+	@${RM} ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1 ecu/keypad/ecu_keypad.c 
+	@-${MV} ${OBJECTDIR}/ecu/keypad/ecu_keypad.d ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ecu/keypad/ecu_keypad.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/ecu/led/ecu_led.p1: ecu/led/ecu_led.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/ecu/led" 
@@ -215,13 +247,13 @@ ${OBJECTDIR}/device_config.p1: device_config.c  nbproject/Makefile-${CND_CONF}.m
 	@-${MV} ${OBJECTDIR}/device_config.d ${OBJECTDIR}/device_config.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/device_config.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1: ecu/char_lcd/ecu_char_lcd.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/ecu/char_lcd" 
-	@${RM} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d 
-	@${RM} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1 ecu/char_lcd/ecu_char_lcd.c 
-	@-${MV} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.d ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/ecu/char_lcd/ecu_char_lcd.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1: ecu/seven_segment/ecu_seven_segment.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/ecu/seven_segment" 
+	@${RM} ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1.d 
+	@${RM} ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c    -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1 ecu/seven_segment/ecu_seven_segment.c 
+	@-${MV} ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.d ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/ecu/seven_segment/ecu_seven_segment.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

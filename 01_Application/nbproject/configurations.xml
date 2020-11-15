@@ -14,11 +14,19 @@
         <logicalFolder name="dc_motor" displayName="dc_motor" projectFiles="true">
           <itemPath>ecu/dc_motor/ecu_dc_motor.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="keypad" displayName="keypad" projectFiles="true">
+          <itemPath>ecu/keypad/ecu_keypad.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="led" displayName="led" projectFiles="true">
           <itemPath>ecu/led/ecu_led.h</itemPath>
         </logicalFolder>
         <logicalFolder name="realy" displayName="realy" projectFiles="true">
           <itemPath>ecu/realy/ecu_relay.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="seven_segment"
+                       displayName="seven_segment"
+                       projectFiles="true">
+          <itemPath>ecu/seven_segment/ecu_seven_segment.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="mcal" displayName="mcal" projectFiles="true">
@@ -47,11 +55,19 @@
         <logicalFolder name="dc_motor" displayName="dc_motor" projectFiles="true">
           <itemPath>ecu/dc_motor/ecu_dc_motor.c</itemPath>
         </logicalFolder>
+        <logicalFolder name="keypad" displayName="keypad" projectFiles="true">
+          <itemPath>ecu/keypad/ecu_keypad.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="led" displayName="led" projectFiles="true">
           <itemPath>ecu/led/ecu_led.c</itemPath>
         </logicalFolder>
         <logicalFolder name="realy" displayName="realy" projectFiles="true">
           <itemPath>ecu/realy/ecu_relay.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="seven_segment"
+                       displayName="seven_segment"
+                       projectFiles="true">
+          <itemPath>ecu/seven_segment/ecu_seven_segment.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="mcal" displayName="mcal" projectFiles="true">

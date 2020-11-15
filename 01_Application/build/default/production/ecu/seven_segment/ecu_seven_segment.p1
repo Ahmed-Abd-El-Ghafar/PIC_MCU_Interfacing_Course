@@ -1,0 +1,382 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"13 ecu/seven_segment/ecu_seven_segment.c
+[; ;ecu/seven_segment/ecu_seven_segment.c: 13: void seven_segment_direct_connection_initialize(const segment_t *_seg){
+[c E2460 0 1 2 3 4 .. ]
+[n E2460 . PORTA_INDEX PORTB_INDEX PORTC_INDEX PORTD_INDEX PORTE_INDEX  ]
+[c E2502 0 1 .. ]
+[n E2502 . COMMON_ANODE COMMON_CATHODE  ]
+"18 ecu/seven_segment/ecu_seven_segment.h
+[; ;ecu/seven_segment/ecu_seven_segment.h: 18: typedef struct{
+[s S270 `E2460 1 `E2502 1 ]
+[n S270 . port type ]
+"14 ecu/seven_segment/ecu_seven_segment.c
+[; ;ecu/seven_segment/ecu_seven_segment.c: 14:     gpio_port_direction_intialize(_seg->port, 0x00U);
+[c E2446 0 1 .. ]
+[n E2446 . DIRECTION_OUTPUT DIRECTION_INPUT  ]
+[c E2438 0 1 .. ]
+[n E2438 . R_NOK R_OK  ]
+"75 ecu/seven_segment/../../mcal/gpio/mcal_gpio.h
+[; ;ecu/seven_segment/../../mcal/gpio/mcal_gpio.h: 75: ret_status gpio_port_direction_intialize(port_index port, direction_t direction);
+[v _gpio_port_direction_intialize `(E2438 ~T0 @X0 0 ef2`E2460`E2446 ]
+"77
+[; ;ecu/seven_segment/../../mcal/gpio/mcal_gpio.h: 77: ret_status gpio_port_write_value(port_index port, uint8_t value);
+[v _gpio_port_write_value `(E2438 ~T0 @X0 0 ef2`E2460`uc ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h
+[; <" PORTA equ 0F80h ;# ">
+"191
+[; <" PORTB equ 0F81h ;# ">
+"362
+[; <" PORTC equ 0F82h ;# ">
+"537
+[; <" PORTD equ 0F83h ;# ">
+"679
+[; <" PORTE equ 0F84h ;# ">
+"882
+[; <" LATA equ 0F89h ;# ">
+"994
+[; <" LATB equ 0F8Ah ;# ">
+"1106
+[; <" LATC equ 0F8Bh ;# ">
+"1218
+[; <" LATD equ 0F8Ch ;# ">
+"1330
+[; <" LATE equ 0F8Dh ;# ">
+"1382
+[; <" TRISA equ 0F92h ;# ">
+"1387
+[; <" DDRA equ 0F92h ;# ">
+"1604
+[; <" TRISB equ 0F93h ;# ">
+"1609
+[; <" DDRB equ 0F93h ;# ">
+"1826
+[; <" TRISC equ 0F94h ;# ">
+"1831
+[; <" DDRC equ 0F94h ;# ">
+"2048
+[; <" TRISD equ 0F95h ;# ">
+"2053
+[; <" DDRD equ 0F95h ;# ">
+"2270
+[; <" TRISE equ 0F96h ;# ">
+"2275
+[; <" DDRE equ 0F96h ;# ">
+"2434
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"2499
+[; <" PIE1 equ 0F9Dh ;# ">
+"2576
+[; <" PIR1 equ 0F9Eh ;# ">
+"2653
+[; <" IPR1 equ 0F9Fh ;# ">
+"2730
+[; <" PIE2 equ 0FA0h ;# ">
+"2796
+[; <" PIR2 equ 0FA1h ;# ">
+"2862
+[; <" IPR2 equ 0FA2h ;# ">
+"2928
+[; <" EECON1 equ 0FA6h ;# ">
+"2994
+[; <" EECON2 equ 0FA7h ;# ">
+"3001
+[; <" EEDATA equ 0FA8h ;# ">
+"3008
+[; <" EEADR equ 0FA9h ;# ">
+"3015
+[; <" EEADRH equ 0FAAh ;# ">
+"3022
+[; <" RCSTA equ 0FABh ;# ">
+"3027
+[; <" RCSTA1 equ 0FABh ;# ">
+"3232
+[; <" TXSTA equ 0FACh ;# ">
+"3237
+[; <" TXSTA1 equ 0FACh ;# ">
+"3488
+[; <" TXREG equ 0FADh ;# ">
+"3493
+[; <" TXREG1 equ 0FADh ;# ">
+"3500
+[; <" RCREG equ 0FAEh ;# ">
+"3505
+[; <" RCREG1 equ 0FAEh ;# ">
+"3512
+[; <" SPBRG equ 0FAFh ;# ">
+"3517
+[; <" SPBRG1 equ 0FAFh ;# ">
+"3524
+[; <" SPBRGH equ 0FB0h ;# ">
+"3531
+[; <" T3CON equ 0FB1h ;# ">
+"3643
+[; <" TMR3 equ 0FB2h ;# ">
+"3650
+[; <" TMR3L equ 0FB2h ;# ">
+"3657
+[; <" TMR3H equ 0FB3h ;# ">
+"3664
+[; <" CMCON equ 0FB4h ;# ">
+"3754
+[; <" CVRCON equ 0FB5h ;# ">
+"3833
+[; <" ECCP1AS equ 0FB6h ;# ">
+"3915
+[; <" PWM1CON equ 0FB7h ;# ">
+"3985
+[; <" BAUDCON equ 0FB8h ;# ">
+"3990
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4157
+[; <" CCP2CON equ 0FBAh ;# ">
+"4236
+[; <" CCPR2 equ 0FBBh ;# ">
+"4243
+[; <" CCPR2L equ 0FBBh ;# ">
+"4250
+[; <" CCPR2H equ 0FBCh ;# ">
+"4257
+[; <" CCP1CON equ 0FBDh ;# ">
+"4354
+[; <" CCPR1 equ 0FBEh ;# ">
+"4361
+[; <" CCPR1L equ 0FBEh ;# ">
+"4368
+[; <" CCPR1H equ 0FBFh ;# ">
+"4375
+[; <" ADCON2 equ 0FC0h ;# ">
+"4446
+[; <" ADCON1 equ 0FC1h ;# ">
+"4531
+[; <" ADCON0 equ 0FC2h ;# ">
+"4650
+[; <" ADRES equ 0FC3h ;# ">
+"4657
+[; <" ADRESL equ 0FC3h ;# ">
+"4664
+[; <" ADRESH equ 0FC4h ;# ">
+"4671
+[; <" SSPCON2 equ 0FC5h ;# ">
+"4733
+[; <" SSPCON1 equ 0FC6h ;# ">
+"4803
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5024
+[; <" SSPADD equ 0FC8h ;# ">
+"5031
+[; <" SSPBUF equ 0FC9h ;# ">
+"5038
+[; <" T2CON equ 0FCAh ;# ">
+"5109
+[; <" PR2 equ 0FCBh ;# ">
+"5114
+[; <" MEMCON equ 0FCBh ;# ">
+"5219
+[; <" TMR2 equ 0FCCh ;# ">
+"5226
+[; <" T1CON equ 0FCDh ;# ">
+"5329
+[; <" TMR1 equ 0FCEh ;# ">
+"5336
+[; <" TMR1L equ 0FCEh ;# ">
+"5343
+[; <" TMR1H equ 0FCFh ;# ">
+"5350
+[; <" RCON equ 0FD0h ;# ">
+"5483
+[; <" WDTCON equ 0FD1h ;# ">
+"5511
+[; <" HLVDCON equ 0FD2h ;# ">
+"5516
+[; <" LVDCON equ 0FD2h ;# ">
+"5781
+[; <" OSCCON equ 0FD3h ;# ">
+"5858
+[; <" T0CON equ 0FD5h ;# ">
+"5935
+[; <" TMR0 equ 0FD6h ;# ">
+"5942
+[; <" TMR0L equ 0FD6h ;# ">
+"5949
+[; <" TMR0H equ 0FD7h ;# ">
+"5956
+[; <" STATUS equ 0FD8h ;# ">
+"6027
+[; <" FSR2 equ 0FD9h ;# ">
+"6034
+[; <" FSR2L equ 0FD9h ;# ">
+"6041
+[; <" FSR2H equ 0FDAh ;# ">
+"6048
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6055
+[; <" PREINC2 equ 0FDCh ;# ">
+"6062
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6069
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6076
+[; <" INDF2 equ 0FDFh ;# ">
+"6083
+[; <" BSR equ 0FE0h ;# ">
+"6090
+[; <" FSR1 equ 0FE1h ;# ">
+"6097
+[; <" FSR1L equ 0FE1h ;# ">
+"6104
+[; <" FSR1H equ 0FE2h ;# ">
+"6111
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6118
+[; <" PREINC1 equ 0FE4h ;# ">
+"6125
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6132
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6139
+[; <" INDF1 equ 0FE7h ;# ">
+"6146
+[; <" WREG equ 0FE8h ;# ">
+"6158
+[; <" FSR0 equ 0FE9h ;# ">
+"6165
+[; <" FSR0L equ 0FE9h ;# ">
+"6172
+[; <" FSR0H equ 0FEAh ;# ">
+"6179
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6186
+[; <" PREINC0 equ 0FECh ;# ">
+"6193
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6200
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6207
+[; <" INDF0 equ 0FEFh ;# ">
+"6214
+[; <" INTCON3 equ 0FF0h ;# ">
+"6306
+[; <" INTCON2 equ 0FF1h ;# ">
+"6376
+[; <" INTCON equ 0FF2h ;# ">
+"6493
+[; <" PROD equ 0FF3h ;# ">
+"6500
+[; <" PRODL equ 0FF3h ;# ">
+"6507
+[; <" PRODH equ 0FF4h ;# ">
+"6514
+[; <" TABLAT equ 0FF5h ;# ">
+"6523
+[; <" TBLPTR equ 0FF6h ;# ">
+"6530
+[; <" TBLPTRL equ 0FF6h ;# ">
+"6537
+[; <" TBLPTRH equ 0FF7h ;# ">
+"6544
+[; <" TBLPTRU equ 0FF8h ;# ">
+"6553
+[; <" PCLAT equ 0FF9h ;# ">
+"6560
+[; <" PC equ 0FF9h ;# ">
+"6567
+[; <" PCL equ 0FF9h ;# ">
+"6574
+[; <" PCLATH equ 0FFAh ;# ">
+"6581
+[; <" PCLATU equ 0FFBh ;# ">
+"6588
+[; <" STKPTR equ 0FFCh ;# ">
+"6694
+[; <" TOS equ 0FFDh ;# ">
+"6701
+[; <" TOSL equ 0FFDh ;# ">
+"6708
+[; <" TOSH equ 0FFEh ;# ">
+"6715
+[; <" TOSU equ 0FFFh ;# ">
+"10 ecu/seven_segment/ecu_seven_segment.c
+[; ;ecu/seven_segment/ecu_seven_segment.c: 10: static uint8_t common_anode_values[] = {0xC0, 0xF9, 0xA4, 0xB0, 0x99, 0x92, 0x82, 0xF8, 0x80, 0x90};
+[v _common_anode_values `uc ~T0 @X0 -> 10 `i s ]
+[i _common_anode_values
+:U ..
+-> -> 192 `i `uc
+-> -> 249 `i `uc
+-> -> 164 `i `uc
+-> -> 176 `i `uc
+-> -> 153 `i `uc
+-> -> 146 `i `uc
+-> -> 130 `i `uc
+-> -> 248 `i `uc
+-> -> 128 `i `uc
+-> -> 144 `i `uc
+..
+]
+"11
+[; ;ecu/seven_segment/ecu_seven_segment.c: 11: static uint8_t common_cathode_values[] = {0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F};
+[v _common_cathode_values `uc ~T0 @X0 -> 10 `i s ]
+[i _common_cathode_values
+:U ..
+-> -> 63 `i `uc
+-> -> 6 `i `uc
+-> -> 91 `i `uc
+-> -> 79 `i `uc
+-> -> 102 `i `uc
+-> -> 109 `i `uc
+-> -> 125 `i `uc
+-> -> 7 `i `uc
+-> -> 127 `i `uc
+-> -> 111 `i `uc
+..
+]
+"13
+[; ;ecu/seven_segment/ecu_seven_segment.c: 13: void seven_segment_direct_connection_initialize(const segment_t *_seg){
+[v _seven_segment_direct_connection_initialize `(v ~T0 @X0 1 ef1`*CS270 ]
+{
+[e :U _seven_segment_direct_connection_initialize ]
+[v __seg `*CS270 ~T0 @X0 1 r1 ]
+[f ]
+"14
+[; ;ecu/seven_segment/ecu_seven_segment.c: 14:     gpio_port_direction_intialize(_seg->port, 0x00U);
+[e ( _gpio_port_direction_intialize (2 , . *U __seg 0 -> -> 0 `ui `E2446 ]
+"15
+[; ;ecu/seven_segment/ecu_seven_segment.c: 15:     gpio_port_write_value(_seg->port, 0X00);
+[e ( _gpio_port_write_value (2 , . *U __seg 0 -> -> 0 `i `uc ]
+"16
+[; ;ecu/seven_segment/ecu_seven_segment.c: 16: }
+[e :UE 271 ]
+}
+"18
+[; ;ecu/seven_segment/ecu_seven_segment.c: 18: void seven_segment_direct_connection_write_number(const segment_t *_seg, uint8_t value){
+[v _seven_segment_direct_connection_write_number `(v ~T0 @X0 1 ef2`*CS270`uc ]
+{
+[e :U _seven_segment_direct_connection_write_number ]
+[v __seg `*CS270 ~T0 @X0 1 r1 ]
+[v _value `uc ~T0 @X0 1 r2 ]
+[f ]
+"19
+[; ;ecu/seven_segment/ecu_seven_segment.c: 19:     if(_seg->type == COMMON_ANODE){
+[e $ ! == -> . *U __seg 1 `ui -> . `E2502 0 `ui 273  ]
+{
+"20
+[; ;ecu/seven_segment/ecu_seven_segment.c: 20:         gpio_port_write_value(_seg->port, common_anode_values[value]);
+[e ( _gpio_port_write_value (2 , . *U __seg 0 *U + &U _common_anode_values * -> _value `ux -> -> # *U &U _common_anode_values `ui `ux ]
+"21
+[; ;ecu/seven_segment/ecu_seven_segment.c: 21:     }
+}
+[e $U 274  ]
+"22
+[; ;ecu/seven_segment/ecu_seven_segment.c: 22:     else{
+[e :U 273 ]
+{
+"23
+[; ;ecu/seven_segment/ecu_seven_segment.c: 23:         gpio_port_write_value(_seg->port, common_cathode_values[value]);
+[e ( _gpio_port_write_value (2 , . *U __seg 0 *U + &U _common_cathode_values * -> _value `ux -> -> # *U &U _common_cathode_values `ui `ux ]
+"24
+[; ;ecu/seven_segment/ecu_seven_segment.c: 24:     }
+}
+[e :U 274 ]
+"25
+[; ;ecu/seven_segment/ecu_seven_segment.c: 25: }
+[e :UE 272 ]
+}

@@ -40,10 +40,73 @@ BUTTON_PRESSED 1
 PIN_LOW 0
 PIN_HIGH 1
 ]
+"22 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/char_lcd/ecu_char_lcd.c
+[e E2778 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E2768 . `uc
+PIN0 0
+PIN1 1
+PIN2 2
+PIN3 3
+PIN4 4
+PIN5 5
+PIN6 6
+PIN7 7
+]
+[e E2760 . `uc
+PIN_LOW 0
+PIN_HIGH 1
+]
+[e E2756 . `uc
+R_NOK 0
+R_OK 1
+]
+"94
+[e E2764 . `uc
+DIRECTION_OUTPUT 0
+DIRECTION_INPUT 1
+]
 "10 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/dc_motor/ecu_dc_motor.c
 [e E2438 . `uc
 R_NOK 0
 R_OK 1
+]
+"21 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/keypad/ecu_keypad.c
+[e E2438 . `uc
+R_NOK 0
+R_OK 1
+]
+"29
+[e E2460 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
+[e E2450 . `uc
+PIN0 0
+PIN1 1
+PIN2 2
+PIN3 3
+PIN4 4
+PIN5 5
+PIN6 6
+PIN7 7
+]
+[e E2446 . `uc
+DIRECTION_OUTPUT 0
+DIRECTION_INPUT 1
+]
+"31
+[e E2442 . `uc
+PIN_LOW 0
+PIN_HIGH 1
 ]
 "16 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/led/ecu_led.c
 [e E2438 . `uc
@@ -151,7 +214,7 @@ DIRECTION_INPUT 1
 PIN_LOW 0
 PIN_HIGH 1
 ]
-"33 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
+"10 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
 [e E2778 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
@@ -159,55 +222,34 @@ PORTC_INDEX 2
 PORTD_INDEX 3
 PORTE_INDEX 4
 ]
-[e E2768 . `uc
-PIN0 0
-PIN1 1
-PIN2 2
-PIN3 3
-PIN4 4
-PIN5 5
-PIN6 6
-PIN7 7
+[e E2937 . `uc
+COMMON_ANODE 0
+COMMON_CATHODE 1
 ]
-"58
-[e E2756 . `uc
-R_NOK 0
-R_OK 1
-]
-"18 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/char_lcd/ecu_char_lcd.c
-[e E2778 . `uc
+"13 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/seven_segment/ecu_seven_segment.c
+[e E2460 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
 PORTC_INDEX 2
 PORTD_INDEX 3
 PORTE_INDEX 4
 ]
-[e E2768 . `uc
-PIN0 0
-PIN1 1
-PIN2 2
-PIN3 3
-PIN4 4
-PIN5 5
-PIN6 6
-PIN7 7
+[e E2502 . `uc
+COMMON_ANODE 0
+COMMON_CATHODE 1
 ]
-[e E2760 . `uc
-PIN_LOW 0
-PIN_HIGH 1
-]
-[e E2756 . `uc
-R_NOK 0
-R_OK 1
-]
-"65
-[e E2764 . `uc
+"14
+[e E2446 . `uc
 DIRECTION_OUTPUT 0
 DIRECTION_INPUT 1
 ]
-"56 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
+[e E2438 . `uc
+R_NOK 0
+R_OK 1
+]
+"24 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
 [v _main main `(i  1 e 2 0 ]
-"83
+"39
 [v _application_init application_init `(v  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -239,30 +281,30 @@ DIRECTION_INPUT 1
 [v _lcd_send_enable lcd_send_enable `(v  1 s 1 lcd_send_enable ]
 "34
 [v _lcd_set_cursor lcd_set_cursor `(v  1 s 1 lcd_set_cursor ]
-"64
-[v _lcd_8bit_intialize lcd_8bit_intialize `(v  1 s 1 lcd_8bit_intialize ]
-"121
-[v _lcd_intialize lcd_intialize `(E2756  1 e 1 0 ]
+"51
+[v _lcd_send_4bit lcd_send_4bit `(v  1 s 1 lcd_send_4bit ]
+"93
+[v _lcd_4bit_intialize lcd_4bit_intialize `(v  1 s 1 lcd_4bit_intialize ]
 "135
 [v _lcd_send_command lcd_send_command `(E2756  1 e 1 0 ]
 "164
 [v _lcd_send_char_data lcd_send_char_data `(E2756  1 e 1 0 ]
 "194
 [v _lcd_send_char_data_pos lcd_send_char_data_pos `(E2756  1 e 1 0 ]
-"237
-[v _lcd_send_string_data_pos lcd_send_string_data_pos `(E2756  1 e 1 0 ]
-"263
-[v _lcd_send_custome_char lcd_send_custome_char `(E2756  1 e 1 0 ]
 "10 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/realy/ecu_relay.c
 [v _relay_initialize relay_initialize `(E2438  1 e 1 0 ]
 "25
 [v _relay_turn_on relay_turn_on `(E2438  1 e 1 0 ]
 "39
 [v _relay_turn_off relay_turn_off `(E2438  1 e 1 0 ]
+"13 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/seven_segment/ecu_seven_segment.c
+[v _seven_segment_direct_connection_initialize seven_segment_direct_connection_initialize `(v  1 e 1 0 ]
+"18
+[v _seven_segment_direct_connection_write_number seven_segment_direct_connection_write_number `(v  1 e 1 0 ]
 "42 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
 [v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(E2438  1 e 1 0 ]
 "92
-[v _gpio_pin_write_value gpio_pin_write_value `(E2438  1 e 1 0 ]
+[v _gpio_pin_write_value gpio_pin_write_value `(E2756  1 e 1 0 ]
 "120
 [v _gpio_pin_read_value gpio_pin_read_value `(E2438  1 e 1 0 ]
 "140
@@ -271,31 +313,16 @@ DIRECTION_INPUT 1
 [v _gpio_port_direction_intialize gpio_port_direction_intialize `(E2438  1 e 1 0 ]
 "206
 [v _gpio_port_write_value gpio_port_write_value `(E2438  1 e 1 0 ]
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-"33 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
-[v _lcd_1 lcd_1 `S361  1 e 4 0 ]
-"47
-[v _character6 character6 `C[8]uc  1 e 8 0 ]
-"48
-[v _blt blt `C[8]uc  1 e 8 0 ]
-"49
-[v _Shab Shab `C[8]uc  1 e 8 0 ]
-"50
-[v _shab_bat1 shab_bat1 `C[8]uc  1 e 8 0 ]
-"51
-[v _shab_bat2 shab_bat2 `C[8]uc  1 e 8 0 ]
-"52
-[v _shab_bat3 shab_bat3 `C[8]uc  1 e 8 0 ]
-"53
-[v _mesg1 mesg1 `C[8]uc  1 e 8 0 ]
-"54
-[v _mesg2 mesg2 `C[8]uc  1 e 8 0 ]
+[s S582 . 2 `E2778 1 port 1 0 `E2937 1 type 1 1 ]
+"10 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
+[v _seg_1 seg_1 `S582  1 e 2 0 ]
+"15
+[v _seg_2 seg_2 `S582  1 e 2 0 ]
+"20
+[v _ones ones `uc  1 e 1 0 ]
+[v _tens tens `uc  1 e 1 0 ]
+"22
+[v _ptr ptr `*.37(i  1 e 2 0 ]
 "52 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "189
@@ -326,167 +353,42 @@ DIRECTION_INPUT 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2268
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"10 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/seven_segment/ecu_seven_segment.c
+[v _common_anode_values common_anode_values `[10]uc  1 s 10 common_anode_values ]
+"11
+[v _common_cathode_values common_cathode_values `[10]uc  1 s 10 common_cathode_values ]
 "11 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
 [v _tris_register tris_register `[5]*.39VEuc  1 s 10 tris_register ]
 "13
 [v _lat_register lat_register `[5]*.39VEuc  1 s 10 lat_register ]
 "15
 [v _port_register port_register `[5]*.39VEuc  1 s 10 port_register ]
-"56 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
+"24 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"81
+"37
 } 0
-"237 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/char_lcd/ecu_char_lcd.c
-[v _lcd_send_string_data_pos lcd_send_string_data_pos `(E2756  1 e 1 0 ]
+"18 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/seven_segment/ecu_seven_segment.c
+[v _seven_segment_direct_connection_write_number seven_segment_direct_connection_write_number `(v  1 e 1 0 ]
 {
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-[v lcd_send_string_data_pos@_lcd _lcd `*.39CS361  1 p 2 22 ]
-[v lcd_send_string_data_pos@row row `uc  1 p 1 24 ]
-[v lcd_send_string_data_pos@coulmn coulmn `uc  1 p 1 25 ]
-[v lcd_send_string_data_pos@_data _data `*.25uc  1 p 2 26 ]
-"252
+[s S582 . 2 `E2778 1 port 1 0 `E2937 1 type 1 1 ]
+[v seven_segment_direct_connection_write_number@_seg _seg `*.39CS582  1 p 2 5 ]
+[v seven_segment_direct_connection_write_number@value value `uc  1 p 1 7 ]
+"25
 } 0
-"263
-[v _lcd_send_custome_char lcd_send_custome_char `(E2756  1 e 1 0 ]
-{
-"265
-[v lcd_send_custome_char@l_counter l_counter `uc  1 a 1 38 ]
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-"263
-[v lcd_send_custome_char@_lcd _lcd `*.39CS361  1 p 2 28 ]
-[v lcd_send_custome_char@row row `uc  1 p 1 30 ]
-[v lcd_send_custome_char@coulmn coulmn `uc  1 p 1 31 ]
-[v lcd_send_custome_char@arr arr `*.25Cuc  1 p 2 32 ]
-[v lcd_send_custome_char@_pos _pos `uc  1 p 1 34 ]
-"279
-} 0
-"194
-[v _lcd_send_char_data_pos lcd_send_char_data_pos `(E2756  1 e 1 0 ]
-{
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-[v lcd_send_char_data_pos@_lcd _lcd `*.39CS361  1 p 2 22 ]
-[v lcd_send_char_data_pos@row row `uc  1 p 1 24 ]
-[v lcd_send_char_data_pos@coulmn coulmn `uc  1 p 1 25 ]
-[v lcd_send_char_data_pos@_data _data `uc  1 p 1 26 ]
-"206
-} 0
-"34
-[v _lcd_set_cursor lcd_set_cursor `(v  1 s 1 lcd_set_cursor ]
-{
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-[v lcd_set_cursor@_lcd _lcd `*.39CS361  1 p 2 16 ]
-[v lcd_set_cursor@row row `uc  1 p 1 18 ]
-[v lcd_set_cursor@coulmn coulmn `uc  1 p 1 19 ]
-"43
-} 0
-"164
-[v _lcd_send_char_data lcd_send_char_data `(E2756  1 e 1 0 ]
-{
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-[v lcd_send_char_data@_lcd _lcd `*.39CS361  1 p 2 11 ]
-[v lcd_send_char_data@_data _data `uc  1 p 1 13 ]
-"184
-} 0
-"83 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
+"39 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\application.c
 [v _application_init application_init `(v  1 e 1 0 ]
 {
-"92
+"42
 } 0
-"121 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/char_lcd/ecu_char_lcd.c
-[v _lcd_intialize lcd_intialize `(E2756  1 e 1 0 ]
+"13 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\ecu/seven_segment/ecu_seven_segment.c
+[v _seven_segment_direct_connection_initialize seven_segment_direct_connection_initialize `(v  1 e 1 0 ]
 {
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-[v lcd_intialize@_lcd _lcd `*.39CS361  1 p 2 19 ]
-"127
-} 0
-"64
-[v _lcd_8bit_intialize lcd_8bit_intialize `(v  1 s 1 lcd_8bit_intialize ]
-{
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-[v lcd_8bit_intialize@_lcd _lcd `*.39CS361  1 p 2 16 ]
-"85
-} 0
-"135
-[v _lcd_send_command lcd_send_command `(E2756  1 e 1 0 ]
-{
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-[v lcd_send_command@_lcd _lcd `*.39CS361  1 p 2 11 ]
-[v lcd_send_command@command command `uc  1 p 1 13 ]
-"156
-} 0
+[s S582 . 2 `E2778 1 port 1 0 `E2937 1 type 1 1 ]
+[v seven_segment_direct_connection_initialize@_seg _seg `*.39CS582  1 p 2 5 ]
 "16
-[v _lcd_send_enable lcd_send_enable `(v  1 s 1 lcd_send_enable ]
-{
-[s S361 . 4 `uc 1 lcd_data_port 1 0 :4:0 
-`uc 1 lcd_en_port 1 0 :4:4 
-`uc 1 lcd_rs_port 1 1 :4:0 
-`uc 1 lcd_en_pin 1 1 :3:4 
-`uc 1 lcd_rs_pin 1 2 :3:0 
-`uc 1 lcd_status 1 3 :6:0 
-]
-[v lcd_send_enable@_lcd _lcd `*.39CS361  1 p 2 9 ]
-"26
 } 0
-"92 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
-[v _gpio_pin_write_value gpio_pin_write_value `(E2438  1 e 1 0 ]
-{
-[v gpio_pin_write_value@port port `E2460  1 a 1 wreg ]
-[v gpio_pin_write_value@port port `E2460  1 a 1 wreg ]
-[v gpio_pin_write_value@pin pin `E2450  1 p 1 0 ]
-[v gpio_pin_write_value@logic logic `E2442  1 p 1 1 ]
-[v gpio_pin_write_value@port port `E2460  1 a 1 8 ]
-"110
-} 0
-"206
+"206 D:\Embedded_Systems\github\New folder\PIC_MCU_Interfacing_Course\01_Application\mcal/gpio/mcal_gpio.c
 [v _gpio_port_write_value gpio_port_write_value `(E2438  1 e 1 0 ]
 {
 [v gpio_port_write_value@port port `E2460  1 a 1 wreg ]
@@ -503,14 +405,4 @@ DIRECTION_INPUT 1
 [v gpio_port_direction_intialize@direction direction `E2446  1 p 1 0 ]
 [v gpio_port_direction_intialize@port port `E2460  1 a 1 4 ]
 "178
-} 0
-"42
-[v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(E2438  1 e 1 0 ]
-{
-[v gpio_pin_direction_intialize@port port `E2460  1 a 1 wreg ]
-[v gpio_pin_direction_intialize@port port `E2460  1 a 1 wreg ]
-[v gpio_pin_direction_intialize@pin pin `E2450  1 p 1 0 ]
-[v gpio_pin_direction_intialize@direction direction `E2446  1 p 1 1 ]
-[v gpio_pin_direction_intialize@port port `E2460  1 a 1 8 ]
-"61
 } 0
